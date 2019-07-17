@@ -71415,10 +71415,10 @@ function (_Component) {
         className: "leftButtons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: this.leftArrow,
-        className: "changeStyleBtnArrow fas fa-arrow-left fa-3x"
+        className: "changeStyleBtnArrow fas fa-arrow-left fa-1x"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].cardStyle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: this.rightArrow,
-        className: "changeStyleBtnArrow fas fa-arrow-right fa-3x"
+        className: "changeStyleBtnArrow fas fa-arrow-right fa-1x"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "rightButtons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -71950,10 +71950,10 @@ function (_Component) {
         className: "leftButtons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: this.leftArrow,
-        className: "changeStyleBtnArrow fas fa-arrow-left fa-3x"
+        className: "changeStyleBtnArrow fas fa-arrow-left fa-1x"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].cardStyle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: this.rightArrow,
-        className: "changeStyleBtnArrow fas fa-arrow-right fa-3x"
+        className: "changeStyleBtnArrow fas fa-arrow-right fa-1x"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "rightButtons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {

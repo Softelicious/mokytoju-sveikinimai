@@ -128,9 +128,9 @@ class PublicGreetingCreate extends Component {
                         </div>
                         <div className={"createBottom"}>
                             <ul className={"leftButtons"}>
-                                <li onClick={this.leftArrow} className="changeStyleBtnArrow fas fa-arrow-left fa-3x"></li>
+                                <li onClick={this.leftArrow} className="changeStyleBtnArrow fas fa-arrow-left fa-1x"></li>
                                 <li>{StringValues.cardStyle}</li>
-                                <li onClick={this.rightArrow} className="changeStyleBtnArrow fas fa-arrow-right fa-3x"></li>
+                                <li onClick={this.rightArrow} className="changeStyleBtnArrow fas fa-arrow-right fa-1x"></li>
                             </ul>
                             <ul className={"rightButtons"}>
                                 <input type={"submit"} value={StringValues.send}/>
