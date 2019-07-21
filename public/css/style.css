@@ -327,7 +327,11 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 }
 .greetingsBottom{
     height: 57vh;
-    overflow: hidden;
+    overflow: scroll;
+
+}
+::-webkit-scrollbar {
+    display: none;
 }
 .greeting{
     width: 100%;
@@ -1110,11 +1114,11 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     -webkit-appearance: none;
     color: black;
     font-size: 16px;
-    text-align: left;
+    text-align: center;
     padding: 0;
-
+    width: 110px;
 }
-#student-name:focus{
+#student-name:focus, #teacher-school:focus{
     outline: none;
 }
 #btn-unique-greeting{
@@ -1148,4 +1152,22 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     outline: none;
     font-family: Arial;
     height: 350px;
+}
+#teacher-school{
+    appearance: none;
+    -webkit-appearance: none;
+    color: black;
+    font-size: 16px;
+    text-align: right;
+    float: right;
+    padding: 0;
+}
+.adress-student{
+    display: inline-block;
+}
+.adress-student div{
+    float: left;
+}
+.adress-student div input{
+    background: transparent;
 }

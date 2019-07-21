@@ -5,6 +5,7 @@ import Cards from "../../Cards";
 import axios from "axios";
 
 
+
 class PublicGreetingCreate extends Component {
     constructor(props){
         super(props);
@@ -12,6 +13,7 @@ class PublicGreetingCreate extends Component {
             styleChars: 11,
             teacher: '',
             student: '',
+            school: '',
             card: 0
         }
     }
@@ -36,13 +38,15 @@ class PublicGreetingCreate extends Component {
         this.setState({
             styleChars: 11,
             teacher: '',
-            student: ''
+            student: '',
+            school: ''
         });
         var bodyFormData = new FormData;
         bodyFormData.append('student', this.state.student);
         bodyFormData.append('teacher', this.state.teacher);
         bodyFormData.append('greeting', 1);
         bodyFormData.append('card', this.state.card);
+        bodyFormData.append('school', this.state.school);
         axios({
             method: 'post',
             url: '/api/store',
@@ -50,7 +54,7 @@ class PublicGreetingCreate extends Component {
             config: { headers: {'Content-Type': 'multipart/form-data' }}
         })
             .then(function (response) {
-                alert("Patalpinta")
+                alert("Patalpinta");
             })
             .catch(function (response) {
                 alert("Nepavyko")
@@ -88,7 +92,18 @@ class PublicGreetingCreate extends Component {
 
 
     };
+    onChangeSchool = (e) => {
+        console.log(44);
+        this.setState({
+            school: e.target.value
+        })
+    };
+
     render() {
+        let style;
+        if(this.state.styleChars> 11){
+            style = {width: this.state.styleChars*9+"px"}
+        }
         return (
             <form  onSubmit={this.submit}>
                 <div className={"contentContainer"}>
@@ -112,10 +127,19 @@ class PublicGreetingCreate extends Component {
                                 <div className={"infoBottom"}>
                                     <div>{StringValues.adress2}</div>
                                     <div>{StringValues.thanks}</div>
-                                    <div>{StringValues.adress3}
-                                        <input required onChange={this.changeWidth} type="text"
-                                               style={{ width: this.state.styleChars*9+7+"px"}} id={"student-name"}
-                                               name={"student-name"} placeholder={"Įveskite vardą"} value={this.state.student}/>
+                                    <div className={"adress-student"}>
+                                        <div id={"adress3"}>
+                                            {StringValues.adress3}
+                                        </div>
+                                        <div>
+                                            <input required onChange={this.changeWidth} type="text"
+                                                   style={style} id={"student-name"}
+                                                   name={"student-name"} placeholder={"Įveskite vardą"} value={this.state.student}/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input required onChange={this.onChangeSchool} type="text" id={"teacher-school"}
+                                               name={"student-name"} placeholder={"Įveskite mokytojo mokyklą"} value={this.state.school}/>
                                     </div>
                                 </div>
                                 <Link to={StringValues.CreateUniquePublicGreetings_path}>

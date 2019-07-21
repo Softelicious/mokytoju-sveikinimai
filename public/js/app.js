@@ -62345,7 +62345,7 @@ exports.default = _Notifications2.default;
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69874,14 +69874,14 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/assets/placeholders/14.jpg":
-/*!*******************************************!*\
-  !*** ./public/assets/placeholders/14.jpg ***!
-  \*******************************************/
+/***/ "./public/assets/placeholders/tch.png":
+/*!********************************************!*\
+  !*** ./public/assets/placeholders/tch.png ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/14.jpg?b059ddbbd625a452e07fc2b6c3e931a4";
+module.exports = "/images/tch.png?7061b90961e51e285347f6bf3c1fd38b";
 
 /***/ }),
 
@@ -70696,8 +70696,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _StringValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../StringValues */ "./resources/js/StringValues.js");
-/* harmony import */ var _public_assets_placeholders_14_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../public/assets/placeholders/14.jpg */ "./public/assets/placeholders/14.jpg");
-/* harmony import */ var _public_assets_placeholders_14_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_public_assets_placeholders_14_jpg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _public_assets_placeholders_tch_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../public/assets/placeholders/tch.png */ "./public/assets/placeholders/tch.png");
+/* harmony import */ var _public_assets_placeholders_tch_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_public_assets_placeholders_tch_png__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70725,10 +70725,10 @@ var Greeting =
 function (_Component) {
   _inherits(Greeting, _Component);
 
-  function Greeting() {
+  function Greeting(props) {
     _classCallCheck(this, Greeting);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Greeting).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
   }
 
   _createClass(Greeting, [{
@@ -70741,14 +70741,14 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "leftContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _public_assets_placeholders_14_jpg__WEBPACK_IMPORTED_MODULE_2___default.a
+        src: _public_assets_placeholders_tch_png__WEBPACK_IMPORTED_MODULE_2___default.a
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middleContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fullName"
-      }, "Vardas Pavard\u0117"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.data.teacher), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "school"
-      }, "Mokykla")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.data.school)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "rightContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playGreeting fas fa-chevron-right fa-1x"
@@ -70778,6 +70778,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StringValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../StringValues */ "./resources/js/StringValues.js");
 /* harmony import */ var _SearchGreetings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchGreetings */ "./resources/js/components/layouts/SearchGreetings.jsx");
 /* harmony import */ var _Greeting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Greeting */ "./resources/js/components/layouts/Greeting.jsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70788,13 +70790,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -70807,15 +70812,46 @@ var GreetingsSection =
 function (_Component) {
   _inherits(GreetingsSection, _Component);
 
-  function GreetingsSection() {
+  function GreetingsSection(props) {
+    var _this;
+
     _classCallCheck(this, GreetingsSection);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GreetingsSection).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GreetingsSection).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "onSearch", function (e) {
+      _this.setState({
+        search: e.target.value
+      });
+    });
+
+    _this.state = {
+      search: '',
+      data: []
+    };
+    return _this;
   }
 
   _createClass(GreetingsSection, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('/api/get').then(function (res) {
+        _this2.setState({
+          data: res.data
+        });
+      })["catch"]();
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
+      var filtered;
+      filtered = this.state.data.filter(function (item) {
+        return item.teacher.toLowerCase().includes(_this3.state.search.toLowerCase());
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greetingsSection"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -70829,11 +70865,26 @@ function (_Component) {
         className: "greetingsBtn list"
       }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].createBtnGreetings))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greetingsCenter"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchGreetings__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        width: 100
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "searchSection"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "searchFormGreetings"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.onSearch,
+        className: "inputSearchGreetings",
+        type: "text",
+        placeholder: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].placeholderSearch,
+        value: this.state.search
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "searchBtnGreetings fas fa-search fa-2x"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greetingsBottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+      }, filtered.map(function (data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Greeting__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          key: data.id,
+          data: data
+        });
+      })));
     }
   }]);
 
@@ -71297,7 +71348,8 @@ function (_Component) {
       _this.setState({
         styleChars: 11,
         teacher: '',
-        student: ''
+        student: '',
+        school: ''
       });
 
       var bodyFormData = new FormData();
@@ -71305,6 +71357,7 @@ function (_Component) {
       bodyFormData.append('teacher', _this.state.teacher);
       bodyFormData.append('greeting', 1);
       bodyFormData.append('card', _this.state.card);
+      bodyFormData.append('school', _this.state.school);
       axios__WEBPACK_IMPORTED_MODULE_4___default()({
         method: 'post',
         url: '/api/store',
@@ -71349,10 +71402,19 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onChangeSchool", function (e) {
+      console.log(44);
+
+      _this.setState({
+        school: e.target.value
+      });
+    });
+
     _this.state = {
       styleChars: 11,
       teacher: '',
       student: '',
+      school: '',
       card: 0
     };
     return _this;
@@ -71361,6 +71423,14 @@ function (_Component) {
   _createClass(PublicGreetingCreate, [{
     key: "render",
     value: function render() {
+      var style;
+
+      if (this.state.styleChars > 11) {
+        style = {
+          width: this.state.styleChars * 9 + "px"
+        };
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.submit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71392,17 +71462,27 @@ function (_Component) {
         className: "infoMiddle"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "infoBottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].thanks), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress3, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].thanks), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "adress-student"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "adress3"
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress3), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         onChange: this.changeWidth,
         type: "text",
-        style: {
-          width: this.state.styleChars * 9 + 7 + "px"
-        },
+        style: style,
         id: "student-name",
         name: "student-name",
         placeholder: "Įveskite vardą",
         value: this.state.student
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        required: true,
+        onChange: this.onChangeSchool,
+        type: "text",
+        id: "teacher-school",
+        name: "student-name",
+        placeholder: "Įveskite mokytojo mokyklą",
+        value: this.state.school
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].CreateUniquePublicGreetings_path
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71819,7 +71899,8 @@ function (_Component) {
         styleChars: 11,
         teacher: '',
         student: '',
-        greeting: ''
+        greeting: '',
+        school: ''
       });
 
       var bodyFormData = new FormData();
@@ -71827,6 +71908,7 @@ function (_Component) {
       bodyFormData.append('teacher', _this.state.teacher);
       bodyFormData.append('greeting', _this.state.greeting);
       bodyFormData.append('card', _this.state.card);
+      bodyFormData.append('school', _this.state.school);
       axios__WEBPACK_IMPORTED_MODULE_1___default()({
         method: 'post',
         url: '/api/store-unique',
@@ -71877,12 +71959,21 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onChangeSchool", function (e) {
+      console.log(44);
+
+      _this.setState({
+        school: e.target.value
+      });
+    });
+
     _this.state = {
       styleChars: 11,
       teacher: '',
       student: '',
       card: 0,
-      greeting: ''
+      greeting: '',
+      school: ''
     };
     return _this;
   }
@@ -71890,6 +71981,14 @@ function (_Component) {
   _createClass(UniquePublicGreetingCreate, [{
     key: "render",
     value: function render() {
+      var style;
+
+      if (this.state.styleChars > 11) {
+        style = {
+          width: this.state.styleChars * 9 + "px"
+        };
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.submit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71926,17 +72025,27 @@ function (_Component) {
         className: "infoMiddle"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "infoBottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].thanks), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress3, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].thanks), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "adress-student"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "adress3"
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].adress3), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         required: true,
         onChange: this.changeWidth,
         type: "text",
-        style: {
-          width: this.state.styleChars * 9 + 7 + "px"
-        },
+        style: style,
         id: "student-name",
         name: "student-name",
         placeholder: "Įveskite vardą",
         value: this.state.student
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        required: true,
+        onChange: this.onChangeSchool,
+        type: "text",
+        id: "teacher-school",
+        name: "teacher-school",
+        placeholder: "Įveskite mokytojo mokyklą",
+        value: this.state.school
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
         to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].CreatePublicGreetings_path,
         className: "linkStyle"

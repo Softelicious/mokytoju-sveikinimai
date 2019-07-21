@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import StringValues from '../../StringValues';
-import foto2 from '../../../../public/assets/placeholders/14.jpg';
+import foto2 from '../../../../public/assets/placeholders/tch.png';
 
 
 class Greeting extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <div className={"greeting"}>
@@ -13,10 +16,10 @@ class Greeting extends Component {
                     </div>
                     <div className={"middleContent"}>
                         <div className={"fullName"}>
-                            Vardas Pavardė
+                            {this.props.data.teacher}
                         </div>
                         <div className={"school"}>
-                            Mokykla
+                            {this.props.data.school}
                         </div>
                     </div>
                     <div className={"rightContent"}>

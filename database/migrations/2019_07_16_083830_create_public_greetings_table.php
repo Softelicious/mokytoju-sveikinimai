@@ -19,6 +19,7 @@ class CreatePublicGreetingsTable extends Migration
             $table->string('student');
             $table->integer('greeting');
             $table->integer('card');
+            $table->string('school');
             $table->timestamps();
         });
     }
