@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicUniqueGreetingsTable extends Migration
+class CreatePublicGreetingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePublicUniqueGreetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('public_unique_greetings', function (Blueprint $table) {
+        Schema::create('public_greetings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('teacher');
             $table->string('student');
@@ -31,6 +31,6 @@ class CreatePublicUniqueGreetingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('public_unique_greetings');
+        Schema::dropIfExists('public_greetings');
     }
 }

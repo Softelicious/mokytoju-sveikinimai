@@ -62345,7 +62345,7 @@ exports.default = _Notifications2.default;
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69978,7 +69978,8 @@ var StringValues = {
   closeSearchTeacher: "Uždaryti",
   "return": "Grįžti į pagrindinį puslapį",
   sent: "Jūsų sveikinimas išsiųstas",
-  tutorial_description: "Vaidzo įrašas kuriame yra papasakojama kaip sveikinti mokytojus"
+  tutorial_description: "Vaidzo įrašas kuriame yra papasakojama kaip sveikinti mokytojus",
+  greetings: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et" + " dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco", "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam" + " rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt" + " explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit", "qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora" + " incidunt ut labore et dolore magnam aliquam quaerat voluptatem."]
 };
 /* harmony default export */ __webpack_exports__["default"] = (StringValues);
 
@@ -71355,7 +71356,7 @@ function (_Component) {
       var bodyFormData = new FormData();
       bodyFormData.append('student', _this.state.student);
       bodyFormData.append('teacher', _this.state.teacher);
-      bodyFormData.append('greeting', 1);
+      bodyFormData.append('greeting', _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].greetings[0]);
       bodyFormData.append('card', _this.state.card);
       bodyFormData.append('school', _this.state.school);
       axios__WEBPACK_IMPORTED_MODULE_4___default()({
@@ -71458,7 +71459,7 @@ function (_Component) {
         name: "teacher-name",
         placeholder: "Įveskite vardą",
         value: this.state.teacher
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].greeting)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].greetings[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "infoMiddle"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "infoBottom"
@@ -71911,7 +71912,7 @@ function (_Component) {
       bodyFormData.append('school', _this.state.school);
       axios__WEBPACK_IMPORTED_MODULE_1___default()({
         method: 'post',
-        url: '/api/store-unique',
+        url: '/api/store',
         data: bodyFormData,
         config: {
           headers: {

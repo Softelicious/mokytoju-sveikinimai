@@ -44,7 +44,7 @@ class PublicGreetingCreate extends Component {
         var bodyFormData = new FormData;
         bodyFormData.append('student', this.state.student);
         bodyFormData.append('teacher', this.state.teacher);
-        bodyFormData.append('greeting', 1);
+        bodyFormData.append('greeting', StringValues.greetings[0]);
         bodyFormData.append('card', this.state.card);
         bodyFormData.append('school', this.state.school);
         axios({
@@ -121,7 +121,7 @@ class PublicGreetingCreate extends Component {
                                         <input onChange={this.onChangeTeacher} required type="text" id={"teacher-name"} name={"teacher-name"}
                                                placeholder={"Įveskite vardą"} value={this.state.teacher}/>
                                     </h3>
-                                    <p>{StringValues.greeting}</p>
+                                    <p>{StringValues.greetings[0]}</p>
                                 </div>
                                 <div className={"infoMiddle"}></div>
                                 <div className={"infoBottom"}>

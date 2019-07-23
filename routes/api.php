@@ -17,6 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/store', 'PublicGreetingController@store');
-Route::post('/store-unique', 'PublicGreetingController@storeUnique');
 Route::get('/get', 'PublicGreetingController@get');
-Route::get('/get-unique', 'PublicGreetingController@getUnique');
