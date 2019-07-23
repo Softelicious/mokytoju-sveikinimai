@@ -104,6 +104,7 @@ class PublicGreetingCreate extends Component {
         if(this.state.styleChars> 11){
             style = {width: this.state.styleChars*9+"px"}
         }
+
         return (
             <form  onSubmit={this.submit}>
                 <div className={"contentContainer"}>

@@ -330,7 +330,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     overflow: scroll;
 
 }
-::-webkit-scrollbar {
+.greetingsBottom::-webkit-scrollbar {
     display: none;
 }
 .greeting{
