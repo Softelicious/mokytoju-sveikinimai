@@ -1171,3 +1171,120 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 .adress-student div input{
     background: transparent;
 }
+/*//////////////////////////////////////////////*/
+/*////////////////ADMIN/////////////////////////*/
+.dashboard-container{
+    width: 100%;
+}
+.dashboard-nav{
+    display: inline-block;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+.dashboard-title{
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    width: 300px;
+    float: left;
+}
+.dashboard-logout{
+    margin: 10px;
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+    float: right;
+}
+.dashboard-logout:hover{
+    color: #000;
+    background: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+/*/////////////////////////////////////////////////////*/
+/*/////////////////////ADMIN CARDS/////////////////////*/
+
+.dashboard-cards{
+    width: 1400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.dashboard-cards-form{
+    width: 100%;
+}
+.dashboard-cards-title{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    margin: 25px;
+}
+.dashboard-cards-input{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.dashboard-cards-input:focus {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+.dashboard-cards-input * {
+    pointer-events: none;
+}
+.dashboard-cards-label{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+
+    display: block;
+    line-height: 150%;
+}
+.dashboard-cards-label:hover {
+    background-color: grey;
+}
+.dashboard-cards-submit{
+    padding:5px 15px;
+    background-color: darkcyan;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+}
+.dashboard-cards-submit:hover{
+    color: black;
+    background-color: white;
+}
+.dashboard-w100{
+    width: 100%;
+}
+
+/*///////////////ADMIN CARDS - CONTAINER OF CARDS////////////////*/
+
+.dashboard-cards-cardsContainer{
+
+}

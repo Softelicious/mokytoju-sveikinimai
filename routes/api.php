@@ -22,4 +22,11 @@ Route::get('/get', 'PublicGreetingController@get');
 
 Route::post('/register', 'AuthenticateController@register');
 Route::post('/login', 'AuthenticateController@login');
+Route::get('/check', 'AuthenticateController@check');
+
+Route::middleware('auth:api')->group(function (){
+    Route::get('/admin/index', 'AdminController@index');
+    Route::get('/admin/getCards', 'AdminController@getCards');
+    Route::post('/admin/uploadCards', 'AdminController@uploadCards');
+});
 

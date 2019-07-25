@@ -14,8 +14,8 @@ import StringValues from '../StringValues';
 import CreateUniquePublicGreeting from "./pages/CreateUniquePublicGreeting";
 import Register from "./pages/Register";
 import Login from "./pages/login";
-import Dashboard from "./pages/admin/dashboard";
-
+import Dashboard from "./pages/admin/Dashboard";
+import PrivateRoute from "./helpers/PrivateRoute";
 
 class Entry extends Component {
 
@@ -33,7 +33,7 @@ class Entry extends Component {
                         <Route exact path={StringValues.Video_path} component={Video}/>
                         <Route exact path={"/register"} component={Register}/>
                         <Route exact path={"/login"} component={Login}/>
-                        <Route exact path={"/admin"} component={Dashboard}/>
+                        <PrivateRoute exact path={"/admin"} component={Dashboard}/>
                         <Route exact path={"/sandbox"} component={Sandbox}/>
                         <Route exact path={StringValues.Error_path} component={Error}/>
                         <Redirect to={StringValues.Error_path}/>

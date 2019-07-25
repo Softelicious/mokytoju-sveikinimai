@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\LoginProxy;
+use App\Http\LoginRequest;
 use App\PublicGreetings;
 use Illuminate\Http\Request;
 use App\User;
@@ -28,13 +30,18 @@ class AuthenticateController extends Controller
             'password' => 'required'
         ]);
 
-        if(!auth()->attempt($loginData)) {
-            return response(['message'=>'Invalid credentials']);
+       $a = auth()->attempt($loginData, true);
+        if(!$a) {
+            return response(['message'=>'Invalid credentials', 'auth' => false]);
         }
         $accessToken = auth()->user()->createToken('authToken')->accessToken;
-        return response(['user' => auth()->user(), 'access_token' => $accessToken]);
+        return response(['user' => auth()->user(), 'access_token' => $accessToken, 'auth' => true, "attempt" => $a, "auth()" => auth()]);
     }
 
+    public function check(){
+        $check= auth()->check();
+        return response(['auth' => $check]);
+    }
 }
 
 
