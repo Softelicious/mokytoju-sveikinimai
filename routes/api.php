@@ -16,7 +16,18 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::post('/store', 'PublicGreetingController@store');
-Route::post('/store-unique', 'PublicGreetingController@storeUnique');
 Route::get('/get', 'PublicGreetingController@get');
-Route::get('/get-unique', 'PublicGreetingController@getUnique');
+
+Route::post('/register', 'AuthenticateController@register');
+Route::post('/login', 'AuthenticateController@login');
+Route::get('/check', 'AuthenticateController@check');
+
+Route::middleware('auth:api')->group(function (){
+    Route::get('/admin/getCards', 'AdminController@getCards');
+    Route::get('/admin/getGreetings', 'AdminController@getGreetings');
+    Route::post('/admin/uploadCards', 'AdminController@uploadCards');
+    Route::post('/admin/uploadGreetings', 'AdminController@uploadGreetings');
+});
+

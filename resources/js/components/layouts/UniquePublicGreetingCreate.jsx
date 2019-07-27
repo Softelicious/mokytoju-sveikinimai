@@ -69,7 +69,7 @@ class UniquePublicGreetingCreate extends Component {
         bodyFormData.append('school', this.state.school);
         axios({
             method: 'post',
-            url: '/api/store-unique',
+            url: '/api/store',
             data: bodyFormData,
             config: { headers: {'Content-Type': 'multipart/form-data' }}
         })

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel</title>
 
@@ -17,5 +18,11 @@
             <div id="root"></div>
             <script src={{asset("js/app.js")}}></script>
         </div>
+        <script>
+            window.axios.defaults.headers.common = {
+                'X-Requested-With': 'XMLHttpRequest',
+            };
+        </script>
+
     </body>
 </html>
