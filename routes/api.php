@@ -25,8 +25,9 @@ Route::post('/login', 'AuthenticateController@login');
 Route::get('/check', 'AuthenticateController@check');
 
 Route::middleware('auth:api')->group(function (){
-    Route::get('/admin/index', 'AdminController@index');
     Route::get('/admin/getCards', 'AdminController@getCards');
+    Route::get('/admin/getGreetings', 'AdminController@getGreetings');
     Route::post('/admin/uploadCards', 'AdminController@uploadCards');
+    Route::post('/admin/uploadGreetings', 'AdminController@uploadGreetings');
 });
 

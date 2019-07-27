@@ -71387,11 +71387,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -71422,7 +71440,7 @@ function _isAuthenticated() {
                 'Authorization': 'Bearer ' + cookie.get('access_token')
               }
             }).then(function (response) {
-              console.log(response.data.auth);
+              console.log(response.data.auth + " data-auth");
               return response.data.auth;
             })["catch"](function (response) {
               console.log("Klaida isAuthenticated PrivateRoute");
@@ -71439,25 +71457,81 @@ function _isAuthenticated() {
   return _isAuthenticated.apply(this, arguments);
 }
 
-var PrivateRoute = function PrivateRoute(_ref) {
-  var Component = _ref.component,
-      rest = _objectWithoutProperties(_ref, ["component"]);
+var PrivateRoute =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(PrivateRoute, _React$Component);
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Route"], _extends({}, rest, {
-    render: function render(props) {
-      return isAuthenticated() ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-        to: {
+  function PrivateRoute() {
+    _classCallCheck(this, PrivateRoute);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(PrivateRoute).apply(this, arguments));
+  }
+
+  _createClass(PrivateRoute, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          Component = _this$props.component,
+          rest = _objectWithoutProperties(_this$props, ["component"]);
+
+      var renderRoute = function renderRoute(props) {
+        if (isAuthenticated()) {
+          return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, props);
+        }
+
+        var to = {
           pathname: '/login',
           state: {
             from: props.location
           }
-        }
-      });
-    }
-  }));
-};
+        };
+        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+          to: to
+        });
+      };
 
-/* harmony default export */ __webpack_exports__["default"] = (PrivateRoute);
+      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Route"], _extends({}, rest, {
+        render: renderRoute
+      }));
+    }
+  }]);
+
+  return PrivateRoute;
+}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component); // const PrivateRoute = ({ component: Component, ...rest }) => (
+//     <Route {...rest}
+//         render={props =>
+//             if(isAuthenticated()){
+//             <Component {...props}/>
+//         }else{
+//             <Redirect to={{
+//                 pathname: '/login',
+//                 state: {from: props.location }
+//             }}/>
+//         }
+//
+//         }
+//     />
+// );
+
+
+/* harmony default export */ __webpack_exports__["default"] = (PrivateRoute); //
+// isAuthenticated() ?
+//     <Component {...props}/>
+//
+//     :
+//     <Redirect to={{
+//         pathname: '/login',
+//         state: {from: props.location }
+//     }}/>
+// if(isAuthenticated()){
+//     <Component {...props}/>
+// }else{
+//     <Redirect to={{
+//         pathname: '/login',
+//         state: {from: props.location }
+//     }}/>
+// }
 
 /***/ }),
 
@@ -73443,6 +73517,298 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/layouts/admin/GreetingText.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/layouts/admin/GreetingText.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var GreetingText =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(GreetingText, _Component);
+
+  function GreetingText(props) {
+    _classCallCheck(this, GreetingText);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(GreetingText).call(this, props));
+  }
+
+  _createClass(GreetingText, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "greetingText-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "greetingText-text"
+      }, this.props.text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "greetingText-edit fas fa-edit fa-2x"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "greetingText-close fas fa-times fa-2x"
+      }));
+    }
+  }]);
+
+  return GreetingText;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (GreetingText);
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/admin/LandingBottomAdmin.jsx":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/layouts/admin/LandingBottomAdmin.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _StringValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../StringValues */ "./resources/js/StringValues.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
+/* harmony import */ var _Photo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Photo */ "./resources/js/components/layouts/admin/Photo.js");
+/* harmony import */ var _GreetingText__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GreetingText */ "./resources/js/components/layouts/admin/GreetingText.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var LandingBottomAdmin =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(LandingBottomAdmin, _Component);
+
+  function LandingBottomAdmin(props) {
+    var _this;
+
+    _classCallCheck(this, LandingBottomAdmin);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LandingBottomAdmin).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "load", function () {
+      var self = _assertThisInitialized(_this);
+
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_3__["default"]();
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'get',
+        url: '/api/admin/getGreetings',
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        self.setState({
+          greetings: response.data
+        });
+        console.log(response.data);
+      })["catch"](function (response) {
+        alert("Nepavyko ikelt teksto");
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "submit", function (e) {
+      e.preventDefault();
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_3__["default"]();
+
+      var self = _assertThisInitialized(_this);
+
+      var bodyFormData = new FormData();
+      bodyFormData.append('text', _this.state.text);
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'post',
+        url: '/api/admin/uploadGreetings',
+        data: bodyFormData,
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        self.load();
+      })["catch"](function (response) {
+        alert("Nepavyko ikelt teksto");
+      });
+
+      _this.setState({
+        text: ''
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (e) {
+      _this.setState({
+        text: e.target.value
+      });
+    });
+
+    _this.state = {
+      text: '',
+      greetings: []
+    };
+    return _this;
+  }
+
+  _createClass(LandingBottomAdmin, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.load();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "add-greetings-title"
+      }, "Sveikinimai"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "add-greetings-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.submit,
+        className: "add-greetings-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.onChange,
+        className: "add-greetings-input",
+        type: "text",
+        name: "",
+        id: "",
+        placeholder: "Įvesk sveikinimą",
+        value: this.state.text
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "add-greetings-submit",
+        type: "submit",
+        value: "Įkelk"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "add-greetings-greetingsContainer"
+      }, this.state.greetings.map(function (data) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreetingText__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          key: data.id,
+          text: data.greeting
+        });
+      }))));
+    }
+  }]);
+
+  return LandingBottomAdmin;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (LandingBottomAdmin);
+
+/***/ }),
+
+/***/ "./resources/js/components/layouts/admin/Photo.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/layouts/admin/Photo.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+ //import foto from '/public/storage/'
+
+var Photo =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Photo, _Component);
+
+  function Photo(props) {
+    _classCallCheck(this, Photo);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Photo).call(this, props));
+  }
+
+  _createClass(Photo, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-img-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "photo-img",
+        src: this.props.path,
+        alt: "foto"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-close fas fa-times fa-2x"
+      }));
+    }
+  }]);
+
+  return Photo;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Photo);
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/CreateMultipleGreetings.jsx":
 /*!*******************************************************************!*\
   !*** ./resources/js/components/pages/CreateMultipleGreetings.jsx ***!
@@ -74229,19 +74595,24 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../layouts/FixedCircle */ "./resources/js/components/layouts/FixedCircle.js");
-/* harmony import */ var _layouts_LandingTop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../layouts/LandingTop */ "./resources/js/components/layouts/LandingTop.jsx");
-/* harmony import */ var _layouts_LandingBottom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../layouts/LandingBottom */ "./resources/js/components/layouts/LandingBottom.jsx");
-/* harmony import */ var _layouts_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../layouts/Footer */ "./resources/js/components/layouts/Footer.jsx");
-/* harmony import */ var _layouts_Greeting__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../layouts/Greeting */ "./resources/js/components/layouts/Greeting.jsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Photo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Photo */ "./resources/js/components/pages/admin/Photo.js");
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../layouts/FixedCircle */ "./resources/js/components/layouts/FixedCircle.js");
+/* harmony import */ var _layouts_admin_LandingBottomAdmin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../layouts/admin/LandingBottomAdmin */ "./resources/js/components/layouts/admin/LandingBottomAdmin.jsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _layouts_admin_Photo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../layouts/admin/Photo */ "./resources/js/components/layouts/admin/Photo.js");
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -74269,9 +74640,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-
 var Dashboard =
 /*#__PURE__*/
 function (_Component) {
@@ -74284,169 +74652,166 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Dashboard).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "onChangePhoto", function (e) {
-      var files = Array.from(e.target.files);
-
-      _this.setState({
-        uploading: true,
-        files: files
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "uploadPhoto", function (e) {
-      e.preventDefault();
-      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_9__["default"]();
-      var formData = new FormData();
-      var $index;
-
-      _this.state.files.forEach(function (file, i) {
-        formData.append("".concat(i), file);
-        $index = i;
-      });
-
-      formData.append('index', $index); //formData.append(`nuotrauka`, this.state.files[0]);
-
-      axios__WEBPACK_IMPORTED_MODULE_7___default()({
-        method: 'post',
-        url: '/api/admin/uploadCards',
-        data: formData,
+    _defineProperty(_assertThisInitialized(_this), "load", function () {
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_7__["default"]();
+      axios__WEBPACK_IMPORTED_MODULE_5___default()({
+        method: 'get',
+        url: '/api/admin/getCards',
         headers: {
           'Authorization': 'Bearer ' + cookie.get('access_token')
         }
-      }).then(function (response) {
-        console.log(response.data.images);
-        this.setState({
-          files: []
+      }).then(function (res) {
+        _this.setState({
+          files: res.data.cards,
+          img_names: res.data.names
         });
-      })["catch"](function (response) {
-        alert("Nepavyko");
-      }); //console.log(this.state.files);
+
+        console.log(res.data.sk + " - iteraciju is db - " + res.data.names);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleFileChange", function (e) {
+      if (e.target.files) {
+        var files = Array.from(e.target.files);
+        var promises = files.map(function (file) {
+          return new Promise(function (resolve, reject) {
+            var reader = new FileReader();
+            reader.addEventListener('load', function (ev) {
+              resolve(ev.target.result);
+            });
+            reader.addEventListener('error', reject);
+            reader.readAsDataURL(file);
+          });
+        });
+        Promise.all(promises).then(function (images) {
+          _this.setState({
+            imageArray: images
+          });
+        }, function (error) {
+          console.error(error);
+        });
+      }
     });
 
     _this.state = {
       files: [],
-      card: '',
-      uploading: ''
+      imageArray: [],
+      img_names: []
     };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Dashboard, [{
     key: "componentWillMount",
-    value: function componentWillMount() {// const cookie = new Cookie();
-      // axios.get("/api/admin/getCards", {
-      //     headers : {
-      //         'Authorization' : 'Bearer ' + cookie.get('access_token')
-      //     }}).then(res =>
-      //     {
-      //         this.setState({
-      //             cards: res.data
-      //         })
-      //
-      //     }
-      // ).catch();
+    value: function componentWillMount() {
+      this.load();
     }
+  }, {
+    key: "handleSubmit",
+    value: function () {
+      var _handleSubmit = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(e) {
+        var self, i, cookie, formData;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+                self = this;
+                i = 0;
+                cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_7__["default"]();
+                formData = new FormData();
+                this.state.imageArray.forEach(function (image_file) {
+                  formData.append("file".concat(i), image_file);
+                  i++;
+                });
+                formData.append("index", i);
+                axios__WEBPACK_IMPORTED_MODULE_5___default()({
+                  method: 'post',
+                  url: '/api/admin/uploadCards',
+                  data: formData,
+                  headers: {
+                    'Authorization': 'Bearer ' + cookie.get('access_token'),
+                    "Content-type": "multipart/form-data"
+                  }
+                }).then(function (response) {
+                  console.log(response.data);
+                  self.setState({
+                    imageArray: []
+                  });
+                  self.load();
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+
+      return handleSubmit;
+    }()
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bookshelfContainer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-title"
-      }, "Admino panele"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Admino panele"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "btn dashboard-logout"
-      }, "Atsijungti")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Atsijungti")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-cards"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.uploadPhoto,
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
         className: "dashboard-cards-form",
         encType: "multipart/form-data"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-cards-title"
-      }, "Atvirut\u0117s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.onChangePhoto,
+      }, "Atvirut\u0117s"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        onChange: this.handleFileChange,
         type: "file",
         className: "dashboard-cards-input",
         name: "dashboard-cards-input",
         id: "dashboard-cards-input",
         multiple: true
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
         className: "dashboard-cards-label",
         htmlFor: "dashboard-cards-input"
-      }, "Pasirink atvirutes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Pasirink atvirutes"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "submit",
         value: "Įkelk",
         className: "dashboard-cards-submit"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-cards-cardsContainer"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_LandingBottom__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      }, this.state.files.map(function (data) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_admin_Photo__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          key: data.id,
+          path: data.path
+        });
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_admin_LandingBottomAdmin__WEBPACK_IMPORTED_MODULE_4__["default"], null));
     }
   }]);
 
   return Dashboard;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/admin/Photo.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/pages/admin/Photo.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var Photo =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Photo, _Component);
-
-  function Photo(props) {
-    _classCallCheck(this, Photo);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Photo).call(this, props));
-  }
-
-  _createClass(Photo, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.data + "Hey");
-    }
-  }]);
-
-  return Photo;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (Photo);
 
 /***/ }),
 

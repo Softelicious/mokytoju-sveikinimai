@@ -1216,6 +1216,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 }
 .dashboard-cards-form{
     width: 100%;
+    margin-top: 120px;
 }
 .dashboard-cards-title{
     color: white;
@@ -1286,5 +1287,141 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 /*///////////////ADMIN CARDS - CONTAINER OF CARDS////////////////*/
 
 .dashboard-cards-cardsContainer{
+    display: -webkit-box;
+    margin-top: 150px;
+    height: 400px;
+    overflow-y: hidden;
+}
+.dashboard-cards-cardsContainer::-webkit-scrollbar {
+    height: 6px;              /* height of horizontal scrollbar ← You're missing this */
+    width: 6px;               /* width of vertical scrollbar */
+    border: 1px solid darkgrey;
+}
+.dashboard-cards-cardsContainer::-webkit-scrollbar-thumb:horizontal{
+    background: grey;
+    border-radius: 10px;
+}
+.photo-container{
+    width: 200px;
+    position: relative;
+    margin-right: 40px;
+    height: 350px;
+}
+.photo-img-wrap{
+    width: 200px;
+    height: 350px;
 
+    position: absolute;
+    z-index: 1;
+}
+.photo-img{
+    width: 200px;
+    height: 350px;
+}
+.photo-close{
+    color: darkred;
+    float: right;
+    margin-left: -30px;
+
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+}
+.photo-close:hover{
+    color: darkcyan;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*//////////////////ADMIN SVEIKINIMAI/////////////////*/
+/*///////////////////////////////////////////////////*/
+
+#add-greetings-title{
+    width: 200px;
+    position: relative;
+    color: #004572;
+    font-size: 42px;
+    margin: 123px auto 55px;
+}
+#add-greetings-title:after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 42%;
+    width: 30px;
+    border-bottom: 2px solid #004572;
+}
+#add-greetings-content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 864px;
+    display: grid;
+}
+.add-greetings-form{
+    display: inline-flex;
+}
+.add-greetings-input{
+    float: left;
+    width: 90%;
+    font-size: 20px;
+    color: black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    border: 1px solid darkcyan;
+    border-radius: 6px;
+}
+.add-greetings-input:focus{
+    outline: none
+}
+.add-greetings-submit{
+    background-color: darkcyan;
+    font-size: 20px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    border: 1px solid darkcyan;
+    border-radius: 6px;
+    float: right;
+}
+.add-greetings-submit:hover{
+    background-color: white;
+    color: darkcyan;
+    -webkit-transition: 0.2s;
+    transition: 0.2s ;
+    cursor: pointer;
+}
+
+.add-greetings-submit:focus{
+    outline: none;
+}
+/*/////////////////////////GreetingText///////////////*/
+/*/////////////////////////////ADMIN//////////////////*/
+.greetingText-edit:hover, .greetingText-close:hover{
+    color: grey;
+}
+.greetingText-container{
+    display: flex;
+    font-size: 20px;
+    color: black;
+    border-bottom: 1px solid darkcyan;
+    padding: 5px;
+    margin-top: 20px;
+}
+.greetingText-edit, .greetingText-close{
+    color: darkcyan;
+    cursor: pointer;
+    transition: 0.2s;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.greetingText-text{
+    width: 790px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
 }

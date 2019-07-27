@@ -12,7 +12,7 @@ async function isAuthenticated(){
             'Authorization' : 'Bearer ' + cookie.get('access_token')
         }})
         .then(function (response) {
-            console.log(response.data.auth);
+            console.log(response.data.auth+" data-auth");
             return response.data.auth;
         })
         .catch(function (response) {
@@ -21,18 +21,64 @@ async function isAuthenticated(){
         });
 }
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route {...rest} render={props => (
-        isAuthenticated() ? (
-            <Component {...props}/>
+class PrivateRoute extends React.Component {
+    render() {
+        const {component: Component, ...rest} = this.props;
 
-        ) : (
-            <Redirect to={{
+        const renderRoute = props => {
+            if (isAuthenticated()) {
+                return (
+                    <Component {...props} />
+                );
+            }
+
+            const to = {
                 pathname: '/login',
-               state: {from: props.location }
-            }}/>
-        )
-    )}/>
-);
+                state: {from: props.location}
+            };
+
+            return (
+                <Redirect to={to} />
+            );
+        };
+
+        return (
+            <Route {...rest} render={renderRoute}/>
+        );
+    }
+}
+// const PrivateRoute = ({ component: Component, ...rest }) => (
+//     <Route {...rest}
+//         render={props =>
+//             if(isAuthenticated()){
+//             <Component {...props}/>
+//         }else{
+//             <Redirect to={{
+//                 pathname: '/login',
+//                 state: {from: props.location }
+//             }}/>
+//         }
+//
+//         }
+//     />
+// );
 
 export default PrivateRoute;
+//
+// isAuthenticated() ?
+//     <Component {...props}/>
+//
+//     :
+//     <Redirect to={{
+//         pathname: '/login',
+//         state: {from: props.location }
+//     }}/>
+
+// if(isAuthenticated()){
+//     <Component {...props}/>
+// }else{
+//     <Redirect to={{
+//         pathname: '/login',
+//         state: {from: props.location }
+//     }}/>
+// }

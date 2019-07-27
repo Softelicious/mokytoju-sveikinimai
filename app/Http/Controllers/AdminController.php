@@ -4,57 +4,55 @@ namespace App\Http\Controllers;
 
 
 use App\Cards;
+use App\Greeting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image as Image;
 
 
 class AdminController extends Controller
 {
-
-    public function index(){
-        return response(['foto' => 'storage/1.jpg']);
-    }
     public function getCards(){
-        $files = Storage::files("cards");
-        return response()->json($files);
-    }
-    public function uploadCards(Request $request){
-//        for($i = 0; $i<$request->index; $i++){
-//            $path = $request->file($i)->store('cards');
-//            $card = new Cards();
-//            $card->path = $path;
-//            $card->save();
-//        }
-        //$path = $request->file($request[0])->store('cards');
-       // Storage::disk('local')->put('file.txt', 'Contents');
-//        $path = $request->file('card')->store('cards');
-//        $path = $request->file('card')->storeAs(
-//            'cards', $request->user()->id
-//        );
-        if($file = $request->file("file0")){
-            return response(['images'=> true, 'file' => $file]);
-        }else{
-            return response(['images'=> false]);
+        $names = [];
+        $sk = 0;
+        $cards = Cards::all();
+        foreach ($cards as $card){
+            array_push($names, Storage::url($card->path));
+            $sk++;
         }
-
-
+        return response(['sk' =>$sk, 'cards' => $cards, 'names'=>$names]);
     }
-    public function store(Request $request)
-    {
-        if($request->get('file'))
-        {
-            $image = $request->get('file');
-            $name = time().'.' . explode('/', explode(':', substr($image, 0, strpos($image, ';')))[1])[1];
-            //\Image::make($request->get('file'))->save(public_path('images/').$name);
+    public function getGreetings(){
+        $greetings = Greeting::all();
+        return response()->json($greetings);
+    }
+
+
+    public function uploadCards(Request $request) {
+        $sk =0;
+        $arr = [];
+        if ($files = $request->index) {
+            for($i = 0; $i<$request->index; $i++){
+                $name = time() . '.' . explode('/', explode(':', substr($request["file".$i], 0, strpos($request["file".$i], ';')))[1])[1];
+                //Storage::disk('public')->put("card".$i.$name, Image::make($request["file".$i]));
+                Image::make($request["file".$i])->save(public_path('storage/') . "card".$i.$name);
+                array_push($arr, "card".$i.$name);
+                $sk++;
+
+                $card = new Cards();
+                $card->path = Storage::url("card".$i.$name);
+                $card->save();
+            }
+            return response(['upload' => 'success', 'sk'=>$arr]);
         }
-
-
-
-        $fileupload = new Fileupload();
-        $fileupload->filename=$name;
-        $fileupload->save();
-        return response()->json('Successfully added');
-
+        return response(['upload' => 'error no files ']);
     }
+    public function uploadGreetings(Request $request) {
 
+                $greeting = new Greeting();
+                $greeting->greeting = $request->text;
+                $greeting->save();
+
+        return response()->json($greeting);
+    }
 }
