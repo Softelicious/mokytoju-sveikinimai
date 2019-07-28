@@ -135,6 +135,11 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
+    position: relative;
+    min-height: 78vh;
+    display: block;
+    overflow: hidden;
 }
 
 
@@ -612,13 +617,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 /*/////////////////////////////////*/
 /*Landing Bottom*/
 
-#container{
-    background-color: white;
-    position: relative;
-    width: 100%;
-    min-height: 78vh;
-    display: block;
-}
+
 #title{
     width: 673px;
     position: relative;
@@ -1479,4 +1478,12 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 .login-submit:hover{
     background-color: white;
     color: darkcyan;
+}
+/*/////////////////////about/////////////////*/
+.about{
+    width: 300px;
+    color: white;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }

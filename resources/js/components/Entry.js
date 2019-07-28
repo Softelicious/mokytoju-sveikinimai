@@ -16,6 +16,7 @@ import Register from "./pages/Register";
 import Login from "./pages/login";
 import Dashboard from "./pages/admin/Dashboard";
 import PrivateRoute from "./helpers/PrivateRoute";
+import About from "./pages/About";
 
 class Entry extends Component {
 
@@ -34,6 +35,7 @@ class Entry extends Component {
                         <Route exact path={"/register"} component={Register}/>
                         <Route exact path={"/login"} component={Login}/>
                         <PrivateRoute exact path={"/admin"} component={Dashboard}/>
+                        <Route exact path={"/about"} component={About}/>
                         <Route exact path={"/sandbox"} component={Sandbox}/>
                         <Route exact path={StringValues.Error_path} component={Error}/>
                         <Redirect to={StringValues.Error_path}/>

@@ -17,7 +17,7 @@ class Navigation extends Component {
                             {StringValues.buttonInfo}
                         </li>
                     </Link>
-                    <Link className={"linkStyle"} to={"/"}>
+                    <Link className={"linkStyle"} to={"/about"}>
                         <li id={"aboutBtn"} className={" list"}>
                             {StringValues.buttonAbout}
                         </li>

@@ -22,7 +22,7 @@ Route::get('/get', 'PublicGreetingController@get');
 
 Route::post('/register', 'AuthenticateController@register');
 Route::post('/login', 'AuthenticateController@login');
-Route::get('/check', 'AuthenticateController@check');
+
 
 Route::get('/getCards', 'PublicGreetingController@getCards');
 Route::get('/getGreetings', 'PublicGreetingController@getGreetings');
@@ -34,5 +34,6 @@ Route::middleware('auth:api')->group(function (){
     Route::post('/admin/updateGreeting', 'AdminController@updateGreeting');
     Route::post('/admin/deleteGreeting', 'AdminController@deleteGreeting');
     Route::get('/admin/logout','AdminController@logout');
+    Route::get('/admin/check', 'AdminController@check');
 });
 

@@ -39,10 +39,7 @@ class AuthenticateController extends Controller
         return response(['user' => auth()->user(), 'access_token' => $accessToken, 'auth' => true, "attempt" => $a, "auth()" => auth()]);
     }
 
-    public function check(){
-        $check= Auth::check();
-        return response(['auth' => $check]);
-    }
+
 }
 
 

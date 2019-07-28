@@ -32,7 +32,7 @@ class PrivateRoute extends React.Component {
     componentWillMount() {
         const cookie = new Cookie();
         let self =this;
-        axios.get("/api/check", {
+        axios.get("/api/admin/check", {
             headers : {
                 'Authorization' : 'Bearer ' + cookie.get('access_token')
             }})
@@ -45,6 +45,10 @@ class PrivateRoute extends React.Component {
             })
             .catch(function (response) {
                 console.log("Klaida isAuthenticated PrivateRoute");
+                self.setState({
+                    auth: false,
+                    res: true
+                });
             });
     }
 

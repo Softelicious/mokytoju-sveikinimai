@@ -15,6 +15,10 @@ use Intervention\Image\Facades\Image as Image;
 
 class AdminController extends Controller
 {
+    public function check(){
+        $check= Auth::check();
+        return response(['auth' => $check]);
+    }
     public function uploadCards(Request $request) {
         $sk =0;
         $arr = [];
