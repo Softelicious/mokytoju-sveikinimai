@@ -14,10 +14,28 @@ class UniquePublicGreetingCreate extends Component {
             student: '',
             card: 0,
             greeting: '',
-            school: ''
+            school: '',
+            cards: [],
+            load: false,
+            max:0
         }
     }
 
+    componentWillMount() {
+        axios({
+            method: 'get',
+            url: '/api/getCards',
+        }).then(res =>{
+            this.setState({
+                cards: res.data.names,
+                load: true,
+                max: res.data.sk-1,
+            });
+            console.log(res.data.names)
+        }).catch( err =>{
+            console.log(err)
+        });
+    }
     createNotification = (type) => {
         return () => {
             switch (type) {
@@ -65,7 +83,7 @@ class UniquePublicGreetingCreate extends Component {
         bodyFormData.append('student', this.state.student);
         bodyFormData.append('teacher', this.state.teacher);
         bodyFormData.append('greeting', this.state.greeting);
-        bodyFormData.append('card', this.state.card);
+        bodyFormData.append('card', this.state.cards[this.state.card]);
         bodyFormData.append('school', this.state.school);
         axios({
             method: 'post',
@@ -90,15 +108,14 @@ class UniquePublicGreetingCreate extends Component {
             })
         }else{
             this.setState({
-
-                card: 14
+                card: this.state.max
             })
         }
 
     };
     rightArrow = () => {
         console.log(44);
-        if(this.state.card!==14){
+        if(this.state.card!==this.state.max){
             this.setState({
 
                 card: this.state.card+1
@@ -135,7 +152,7 @@ class UniquePublicGreetingCreate extends Component {
                             {StringValues.publicTitle}
                         </div>
                         <div className={"createSecond"}>
-                            <div className={"card"} style={{backgroundImage:  `url(${Cards.data[this.state.card].url})`}}>
+                            <div className={"card"} style={{backgroundImage:  `url(${this.state.cards[this.state.card]})`}}>
 
                             </div>
                             <div className={"cardInfo"}>

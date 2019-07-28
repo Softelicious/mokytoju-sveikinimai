@@ -7,6 +7,7 @@ use App\Http\LoginRequest;
 use App\PublicGreetings;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthenticateController extends Controller
 {
@@ -39,7 +40,7 @@ class AuthenticateController extends Controller
     }
 
     public function check(){
-        $check= auth()->check();
+        $check= Auth::check();
         return response(['auth' => $check]);
     }
 }

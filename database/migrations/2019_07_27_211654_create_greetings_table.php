@@ -11,7 +11,7 @@ class CreateGreetingsTable extends Migration
     {
         Schema::create('greetings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('greeting');
+            $table->string('greeting', 1000);
             $table->timestamps();
         });
     }

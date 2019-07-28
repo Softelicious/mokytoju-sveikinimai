@@ -10,7 +10,9 @@ class LandingBottomAdmin extends Component {
         super(props);
         this.state = {
             text: '',
-            greetings: []
+            greetings: [],
+            submit: 'Įkelk',
+            id: 0
         }
     }
     componentWillMount() {
@@ -19,44 +21,64 @@ class LandingBottomAdmin extends Component {
 
     load = () => {
         var self = this;
-        var cookie = new Cookies();
         axios({
             method: 'get',
-            url: '/api/admin/getGreetings',
-            headers: {
-                'Authorization' : 'Bearer ' + cookie.get('access_token'),
-            }
+            url: '/api/getGreetings',
         })
             .then(function (response) {
                 self.setState({
-                    greetings: response.data
+                    greetings: response.data.greetings
                 });
                 console.log(response.data)
             })
             .catch(function (response) {
-                alert("Nepavyko ikelt teksto")
+                alert("Nepavyko atnaujinti teksto")
             });
     };
     submit = (e) => {
         e.preventDefault();
         var cookie = new Cookies();
         var self = this;
-        var bodyFormData = new FormData;
-        bodyFormData.append('text', this.state.text);
-        axios({
-            method: 'post',
-            url: '/api/admin/uploadGreetings',
-            data: bodyFormData,
-            headers: {
-                'Authorization' : 'Bearer ' + cookie.get('access_token'),
-            }
-        })
-            .then(function (response) {
-                self.load();
+
+        if(this.state.submit === "Įkelk"){
+            var bodyFormData = new FormData;
+            bodyFormData.append('text', this.state.text);
+            axios({
+                method: 'post',
+                url: '/api/admin/uploadGreeting',
+                data: bodyFormData,
+                headers: {
+                    'Authorization' : 'Bearer ' + cookie.get('access_token'),
+                }
             })
-            .catch(function (response) {
-                alert("Nepavyko ikelt teksto")
+                .then(function (response) {
+                    self.load();
+                })
+                .catch(function (response) {
+                    alert("Nepavyko ikelt teksto")
+                });
+        }else{
+            this.setState({
+                submit: "Įkelk"
             });
+            var bodyFormDataa = new FormData;
+            bodyFormDataa.append('text', this.state.text);
+            bodyFormDataa.append('index', this.state.id);
+            axios({
+                method: 'post',
+                url: '/api/admin/updateGreeting',
+                data: bodyFormDataa,
+                headers: {
+                    'Authorization' : 'Bearer ' + cookie.get('access_token'),
+                }
+            })
+                .then(function (response) {
+                    self.load();
+                })
+                .catch(function (response) {
+                    alert("Nepavyko ikelt teksto")
+                });
+        }
 
         this.setState({
             text: '',
@@ -68,6 +90,13 @@ class LandingBottomAdmin extends Component {
             text: e.target.value
         })
     };
+    edit = (text, id) =>{
+        this.setState({
+            text: text,
+            submit: "Pakeisk",
+            id: id
+        })
+    };
     render() {
         return (
             <div id={"container"}>
@@ -77,16 +106,17 @@ class LandingBottomAdmin extends Component {
                 <div id={"add-greetings-content"}>
                     <form onSubmit={this.submit} className={"add-greetings-form"}>
                         <input onChange={this.onChange} className={"add-greetings-input"} type="text" name="" id="" placeholder={"Įvesk sveikinimą"} value={this.state.text}/>
-                        <input className={"add-greetings-submit"} type="submit" value={"Įkelk"}/>
+                        <input className={"add-greetings-submit"} type="submit" value={this.state.submit}/>
                     </form>
                     <div className={"add-greetings-greetingsContainer"}>
                         {
                             this.state.greetings.map((data) =>
-                                <GreetingText key={data.id} text={data.greeting}/>
+                                <GreetingText edit={this.edit} load={this.load} key={data.id} id={data.id} text={data.greeting}/>
                             )
 
                         }
                     </div>
+
                 </div>
             </div>
         );

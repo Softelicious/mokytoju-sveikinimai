@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import FixedCircle from "../../layouts/FixedCircle";
 import LandingBottomAdmin from "../../layouts/admin/LandingBottomAdmin";
 import axios from "axios";
@@ -12,7 +12,8 @@ class Dashboard extends Component {
         this.state = {
             files: [],
             imageArray: [],
-            img_names: []
+            img_names: [],
+            redirect: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -21,7 +22,7 @@ class Dashboard extends Component {
         var cookie = new Cookie();
         axios({
             method: 'get',
-            url: '/api/admin/getCards',
+            url: '/api/getCards',
             headers: {
                 'Authorization' : 'Bearer ' + cookie.get('access_token'),
             }
@@ -94,7 +95,31 @@ class Dashboard extends Component {
             })
 
     };
-
+    logout = () => {
+        var cookie = new Cookie();
+        let self =this;
+        axios({
+            method: 'get',
+            url: '/api/admin/logout',
+            headers: {
+                'Authorization' : 'Bearer ' + cookie.get('access_token')
+            }
+        })
+            .then(function (response) {
+                console.log(response.data.logout+" check - "+ response.data.check + " chk2 = " +response.data.check2);
+                self.setState({
+                    redirect: true
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    };
+    redirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to={"/"}/>;
+        }
+    };
     render() {
 
         return (
@@ -103,7 +128,7 @@ class Dashboard extends Component {
                 <div className={"bookshelfContainer"}>
                     <div className="dashboard-nav">
                         <div className={"dashboard-title"}>Admino panele</div>
-                        <div className={"btn dashboard-logout"}>Atsijungti</div>
+                        <div onClick={this.logout} className={"btn dashboard-logout"}>Atsijungti</div>
                     </div>
                     <div className={"dashboard-cards"}>
                         <form onSubmit={this.handleSubmit} className={"dashboard-cards-form"} encType={"multipart/form-data"} >
@@ -115,7 +140,7 @@ class Dashboard extends Component {
                         <div className={"dashboard-cards-cardsContainer"}>
                             {
                                 this.state.files.map((data) =>
-                                    <Photo key={data.id} path={data.path}/>
+                                    <Photo load={this.load} key={data.id} id={data.id} path={data.path}/>
                                     )
 
                             }
@@ -126,6 +151,7 @@ class Dashboard extends Component {
                     <div></div>
                 </div>
                 <LandingBottomAdmin/>
+                {this.redirect()}
             </div>
 
         );

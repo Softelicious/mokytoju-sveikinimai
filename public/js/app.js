@@ -71376,17 +71376,13 @@ if (document.getElementById('root')) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _StringValues__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../StringValues */ "./resources/js/StringValues.js");
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
-
-
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _StringValues__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../StringValues */ "./resources/js/StringValues.js");
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -71411,127 +71407,120 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
 
-
-
-
-function isAuthenticated() {
-  return _isAuthenticated.apply(this, arguments);
-}
-
-function _isAuthenticated() {
-  _isAuthenticated = _asyncToGenerator(
-  /*#__PURE__*/
-  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-    var cookie;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_5__["default"]();
-            axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/check", {
-              headers: {
-                'Authorization': 'Bearer ' + cookie.get('access_token')
-              }
-            }).then(function (response) {
-              console.log(response.data.auth + " data-auth");
-              return response.data.auth;
-            })["catch"](function (response) {
-              console.log("Klaida isAuthenticated PrivateRoute");
-              return false;
-            });
-
-          case 2:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _isAuthenticated.apply(this, arguments);
-}
+ // function isAuthenticated(){
+//     const cookie = new Cookie();
+//
+//     axios.get("/api/check", {
+//         headers : {
+//             'Authorization' : 'Bearer ' + cookie.get('access_token')
+//         }})
+//         .then(function (response) {
+//             console.log(response.data.auth+" data-auth");
+//             return response.data.auth;
+//         })
+//         .catch(function (response) {
+//             console.log("Klaida isAuthenticated PrivateRoute");
+//             return false;
+//         });
+// }
 
 var PrivateRoute =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(PrivateRoute, _React$Component);
 
-  function PrivateRoute() {
+  function PrivateRoute(props) {
+    var _this;
+
     _classCallCheck(this, PrivateRoute);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PrivateRoute).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PrivateRoute).call(this, props));
+    _this.state = {
+      auth: false,
+      res: false
+    };
+    return _this;
   }
 
   _createClass(PrivateRoute, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_4__["default"]();
+      var self = this;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/check", {
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        self.setState({
+          auth: response.data.auth,
+          res: true
+        });
+        console.log(self.state.auth);
+      })["catch"](function (response) {
+        console.log("Klaida isAuthenticated PrivateRoute");
+      });
+    } // authentication = () =>{
+    //     const cookie = new Cookie();
+    //     var self =this;
+    //     axios.get("/api/check", {
+    //         headers : {
+    //             'Authorization' : 'Bearer ' + cookie.get('access_token')
+    //         }})
+    //         .then(function (response) {
+    //             self.setState({
+    //                 auth: response.data.auth
+    //             })
+    //         })
+    //         .catch(function (response) {
+    //             console.log("Klaida isAuthenticated PrivateRoute");
+    //             self.setState({
+    //                 auth: false
+    //             })
+    //         });
+    // };
+
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           Component = _this$props.component,
           rest = _objectWithoutProperties(_this$props, ["component"]);
 
       var renderRoute = function renderRoute(props) {
-        if (isAuthenticated()) {
-          return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, props);
-        }
-
         var to = {
           pathname: '/login',
           state: {
             from: props.location
           }
         };
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+        console.log(_this2.state.auth);
+        if (_this2.state.auth) return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, props);
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__["Redirect"], {
           to: to
         });
       };
 
-      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Route"], _extends({}, rest, {
-        render: renderRoute
-      }));
+      if (this.state.res) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__["Route"], _extends({}, rest, {
+          render: renderRoute
+        }));
+      } else {
+        return 'loading..';
+      }
     }
   }]);
 
   return PrivateRoute;
-}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component); // const PrivateRoute = ({ component: Component, ...rest }) => (
-//     <Route {...rest}
-//         render={props =>
-//             if(isAuthenticated()){
-//             <Component {...props}/>
-//         }else{
-//             <Redirect to={{
-//                 pathname: '/login',
-//                 state: {from: props.location }
-//             }}/>
-//         }
-//
-//         }
-//     />
-// );
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
-
-/* harmony default export */ __webpack_exports__["default"] = (PrivateRoute); //
-// isAuthenticated() ?
-//     <Component {...props}/>
-//
-//     :
-//     <Redirect to={{
-//         pathname: '/login',
-//         state: {from: props.location }
-//     }}/>
-// if(isAuthenticated()){
-//     <Component {...props}/>
-// }else{
-//     <Redirect to={{
-//         pathname: '/login',
-//         state: {from: props.location }
-//     }}/>
-// }
+/* harmony default export */ __webpack_exports__["default"] = (PrivateRoute);
 
 /***/ }),
 
@@ -72626,6 +72615,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Cards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Cards */ "./resources/js/Cards.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72645,6 +72635,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -72695,18 +72686,13 @@ function (_Component) {
       var bodyFormData = new FormData();
       bodyFormData.append('student', _this.state.student);
       bodyFormData.append('teacher', _this.state.teacher);
-      bodyFormData.append('greeting', _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].greetings[0]);
-      bodyFormData.append('card', _this.state.card);
+      bodyFormData.append('greeting', _this.state.greetings[_this.state.rand]);
+      bodyFormData.append('card', _this.state.cards[_this.state.card]);
       bodyFormData.append('school', _this.state.school);
       axios__WEBPACK_IMPORTED_MODULE_4___default()({
         method: 'post',
         url: '/api/store',
-        data: bodyFormData,
-        config: {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
+        data: bodyFormData
       }).then(function (response) {
         alert("Patalpinta");
       })["catch"](function (response) {
@@ -72723,7 +72709,7 @@ function (_Component) {
         });
       } else {
         _this.setState({
-          card: 14
+          card: _this.state.max
         });
       }
     });
@@ -72731,7 +72717,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "rightArrow", function () {
       console.log(44);
 
-      if (_this.state.card !== 14) {
+      if (_this.state.card !== _this.state.max) {
         _this.setState({
           card: _this.state.card + 1
         });
@@ -72755,12 +72741,55 @@ function (_Component) {
       teacher: '',
       student: '',
       school: '',
-      card: 0
+      card: 0,
+      cards: [],
+      load: false,
+      max: 0,
+      greetings: [],
+      gmax: 0,
+      rand: 0
     };
     return _this;
   }
 
   _createClass(PublicGreetingCreate, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_4___default()({
+        method: 'get',
+        url: '/api/getCards'
+      }).then(function (res) {
+        _this2.setState({
+          cards: res.data.names,
+          load: true,
+          max: res.data.sk - 1
+        });
+
+        console.log(res.data.names);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_4___default()({
+        method: 'get',
+        url: '/api/getGreetings'
+      }).then(function (res) {
+        _this2.setState({
+          greetings: res.data.names,
+          gmax: res.data.sk
+        });
+
+        _this2.setState({
+          rand: Math.floor(Math.random() * _this2.state.gmax)
+        });
+
+        console.log(res.data.names);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var style;
@@ -72784,7 +72813,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card",
         style: {
-          backgroundImage: "url(".concat(_Cards__WEBPACK_IMPORTED_MODULE_3__["default"].data[this.state.card].url, ")")
+          backgroundImage: "url(".concat(this.state.cards[this.state.card], ")")
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cardInfo"
@@ -72798,7 +72827,7 @@ function (_Component) {
         name: "teacher-name",
         placeholder: "Įveskite vardą",
         value: this.state.teacher
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].greetings[0])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.greetings[this.state.rand])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "infoMiddle"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "infoBottom"
@@ -73247,7 +73276,7 @@ function (_Component) {
       bodyFormData.append('student', _this.state.student);
       bodyFormData.append('teacher', _this.state.teacher);
       bodyFormData.append('greeting', _this.state.greeting);
-      bodyFormData.append('card', _this.state.card);
+      bodyFormData.append('card', _this.state.cards[_this.state.card]);
       bodyFormData.append('school', _this.state.school);
       axios__WEBPACK_IMPORTED_MODULE_1___default()({
         method: 'post',
@@ -73274,7 +73303,7 @@ function (_Component) {
         });
       } else {
         _this.setState({
-          card: 14
+          card: _this.state.max
         });
       }
     });
@@ -73282,7 +73311,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "rightArrow", function () {
       console.log(44);
 
-      if (_this.state.card !== 14) {
+      if (_this.state.card !== _this.state.max) {
         _this.setState({
           card: _this.state.card + 1
         });
@@ -73313,12 +73342,35 @@ function (_Component) {
       student: '',
       card: 0,
       greeting: '',
-      school: ''
+      school: '',
+      cards: [],
+      load: false,
+      max: 0
     };
     return _this;
   }
 
   _createClass(UniquePublicGreetingCreate, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default()({
+        method: 'get',
+        url: '/api/getCards'
+      }).then(function (res) {
+        _this2.setState({
+          cards: res.data.names,
+          load: true,
+          max: res.data.sk - 1
+        });
+
+        console.log(res.data.names);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var style;
@@ -73342,7 +73394,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card",
         style: {
-          backgroundImage: "url(".concat(_Cards__WEBPACK_IMPORTED_MODULE_3__["default"].data[this.state.card].url, ")")
+          backgroundImage: "url(".concat(this.state.cards[this.state.card], ")")
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cardInfo"
@@ -73528,6 +73580,9 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -73538,13 +73593,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -73554,9 +73613,37 @@ function (_Component) {
   _inherits(GreetingText, _Component);
 
   function GreetingText(props) {
+    var _this;
+
     _classCallCheck(this, GreetingText);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GreetingText).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GreetingText).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "clickEdit", function (e) {
+      _this.props.edit(_this.props.text, _this.props.id);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "clickClose", function () {
+      var self = _assertThisInitialized(_this);
+
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_1__["default"]();
+      var formData = new FormData();
+      formData.append("index", _this.props.id);
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'post',
+        url: '/api/admin/deleteGreeting',
+        data: formData,
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        self.props.load();
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    });
+
+    return _this;
   }
 
   _createClass(GreetingText, [{
@@ -73567,8 +73654,10 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greetingText-text"
       }, this.props.text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.clickEdit,
         className: "greetingText-edit fas fa-edit fa-2x"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.clickClose,
         className: "greetingText-close fas fa-times fa-2x"
       }));
     }
@@ -73640,20 +73729,16 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "load", function () {
       var self = _assertThisInitialized(_this);
 
-      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_3__["default"]();
       axios__WEBPACK_IMPORTED_MODULE_2___default()({
         method: 'get',
-        url: '/api/admin/getGreetings',
-        headers: {
-          'Authorization': 'Bearer ' + cookie.get('access_token')
-        }
+        url: '/api/getGreetings'
       }).then(function (response) {
         self.setState({
-          greetings: response.data
+          greetings: response.data.greetings
         });
         console.log(response.data);
       })["catch"](function (response) {
-        alert("Nepavyko ikelt teksto");
+        alert("Nepavyko atnaujinti teksto");
       });
     });
 
@@ -73663,20 +73748,42 @@ function (_Component) {
 
       var self = _assertThisInitialized(_this);
 
-      var bodyFormData = new FormData();
-      bodyFormData.append('text', _this.state.text);
-      axios__WEBPACK_IMPORTED_MODULE_2___default()({
-        method: 'post',
-        url: '/api/admin/uploadGreetings',
-        data: bodyFormData,
-        headers: {
-          'Authorization': 'Bearer ' + cookie.get('access_token')
-        }
-      }).then(function (response) {
-        self.load();
-      })["catch"](function (response) {
-        alert("Nepavyko ikelt teksto");
-      });
+      if (_this.state.submit === "Įkelk") {
+        var bodyFormData = new FormData();
+        bodyFormData.append('text', _this.state.text);
+        axios__WEBPACK_IMPORTED_MODULE_2___default()({
+          method: 'post',
+          url: '/api/admin/uploadGreeting',
+          data: bodyFormData,
+          headers: {
+            'Authorization': 'Bearer ' + cookie.get('access_token')
+          }
+        }).then(function (response) {
+          self.load();
+        })["catch"](function (response) {
+          alert("Nepavyko ikelt teksto");
+        });
+      } else {
+        _this.setState({
+          submit: "Įkelk"
+        });
+
+        var bodyFormDataa = new FormData();
+        bodyFormDataa.append('text', _this.state.text);
+        bodyFormDataa.append('index', _this.state.id);
+        axios__WEBPACK_IMPORTED_MODULE_2___default()({
+          method: 'post',
+          url: '/api/admin/updateGreeting',
+          data: bodyFormDataa,
+          headers: {
+            'Authorization': 'Bearer ' + cookie.get('access_token')
+          }
+        }).then(function (response) {
+          self.load();
+        })["catch"](function (response) {
+          alert("Nepavyko ikelt teksto");
+        });
+      }
 
       _this.setState({
         text: ''
@@ -73689,9 +73796,19 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "edit", function (text, id) {
+      _this.setState({
+        text: text,
+        submit: "Pakeisk",
+        id: id
+      });
+    });
+
     _this.state = {
       text: '',
-      greetings: []
+      greetings: [],
+      submit: 'Įkelk',
+      id: 0
     };
     return _this;
   }
@@ -73704,6 +73821,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -73724,12 +73843,15 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "add-greetings-submit",
         type: "submit",
-        value: "Įkelk"
+        value: this.state.submit
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-greetings-greetingsContainer"
       }, this.state.greetings.map(function (data) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreetingText__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          edit: _this2.edit,
+          load: _this2.load,
           key: data.id,
+          id: data.id,
           text: data.greeting
         });
       }))));
@@ -73754,6 +73876,9 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -73764,13 +73889,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
  //import foto from '/public/storage/'
 
@@ -73780,9 +73909,34 @@ function (_Component) {
   _inherits(Photo, _Component);
 
   function Photo(props) {
+    var _this;
+
     _classCallCheck(this, Photo);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Photo).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Photo).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "delete", function () {
+      var self = _assertThisInitialized(_this);
+
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_1__["default"]();
+      var formData = new FormData();
+      formData.append("index", _this.props.id);
+      formData.append("name", _this.props.path);
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'post',
+        url: '/api/admin/deleteCard',
+        data: formData,
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        self.props.load();
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    });
+
+    return _this;
   }
 
   _createClass(Photo, [{
@@ -73797,6 +73951,7 @@ function (_Component) {
         src: this.props.path,
         alt: "foto"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this["delete"],
         className: "photo-close fas fa-times fa-2x"
       }));
     }
@@ -74422,24 +74577,34 @@ function (_Component) {
   _createClass(Register, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bookshelfContainer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "login-title"
+      }, "Register"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "login-form",
         onSubmit: this.submit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-username",
         onChange: this.changeName,
         name: "name",
         type: "text",
         placeholder: "name",
         value: this.state.name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-password",
         onChange: this.changePass,
         name: "password",
         type: "password",
         placeholder: "password",
         value: this.state.password
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-submit",
         type: "submit",
         value: "submit"
-      })), this.redirect());
+      })), this.redirect()));
     }
   }]);
 
@@ -74656,7 +74821,7 @@ function (_Component) {
       var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_7__["default"]();
       axios__WEBPACK_IMPORTED_MODULE_5___default()({
         method: 'get',
-        url: '/api/admin/getCards',
+        url: '/api/getCards',
         headers: {
           'Authorization': 'Bearer ' + cookie.get('access_token')
         }
@@ -74695,10 +74860,40 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "logout", function () {
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_7__["default"]();
+
+      var self = _assertThisInitialized(_this);
+
+      axios__WEBPACK_IMPORTED_MODULE_5___default()({
+        method: 'get',
+        url: '/api/admin/logout',
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        console.log(response.data.logout + " check - " + response.data.check + " chk2 = " + response.data.check2);
+        self.setState({
+          redirect: true
+        });
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "redirect", function () {
+      if (_this.state.redirect) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+          to: "/"
+        });
+      }
+    });
+
     _this.state = {
       files: [],
       imageArray: [],
-      img_names: []
+      img_names: [],
+      redirect: false
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -74765,6 +74960,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-container"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -74774,6 +74971,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-title"
       }, "Admino panele"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        onClick: this.logout,
         className: "btn dashboard-logout"
       }, "Atsijungti")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "dashboard-cards"
@@ -74801,10 +74999,12 @@ function (_Component) {
         className: "dashboard-cards-cardsContainer"
       }, this.state.files.map(function (data) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_admin_Photo__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          load: _this2.load,
           key: data.id,
+          id: data.id,
           path: data.path
         });
-      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_admin_LandingBottomAdmin__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layouts_admin_LandingBottomAdmin__WEBPACK_IMPORTED_MODULE_4__["default"], null), this.redirect());
     }
   }]);
 
@@ -75001,24 +75201,34 @@ function (_Component) {
   _createClass(Login, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bookshelfContainer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "login-title"
+      }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "login-form",
         onSubmit: this.submit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-username",
         onChange: this.changeName,
         name: "name",
         type: "text",
         placeholder: "name",
         value: this.state.name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-password",
         onChange: this.changePass,
         name: "password",
         type: "password",
         placeholder: "password",
         value: this.state.password
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-submit",
         type: "submit",
         value: "submit"
-      })), this.redirect());
+      })), this.redirect()));
     }
   }]);
 

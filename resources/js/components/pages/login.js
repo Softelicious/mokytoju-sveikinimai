@@ -63,15 +63,19 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Login</h1>
-                <form onSubmit={this.submit}>
-                    <input onChange={this.changeName} name={"name"} type="text" placeholder={"name"} value={this.state.name}/>
-                    <input onChange={this.changePass} name={"password"} type="password" placeholder={"password"} value={this.state.password}/>
-                    <input type="submit" value={"submit"}/>
-                </form>
-                {this.redirect()}
+            <div className={"bookshelfContainer"}>
+                <div></div>
+                <div className={"login-container"}>
+                    <h1 className={"login-title"}>Login</h1>
+                    <form className={"login-form"} onSubmit={this.submit}>
+                        <input className={"login-username"} onChange={this.changeName} name={"name"} type="text" placeholder={"name"} value={this.state.name}/>
+                        <input className={"login-password"} onChange={this.changePass} name={"password"} type="password" placeholder={"password"} value={this.state.password}/>
+                        <input className={"login-submit"} type="submit" value={"submit"}/>
+                    </form>
+                    {this.redirect()}
+                </div>
             </div>
+
         );
     }
 }

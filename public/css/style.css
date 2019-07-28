@@ -1337,6 +1337,9 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 /*//////////////////ADMIN SVEIKINIMAI/////////////////*/
 /*///////////////////////////////////////////////////*/
 
+.add-greetings-greetingsContainer{
+    margin-bottom: 150px;
+}
 #add-greetings-title{
     width: 200px;
     position: relative;
@@ -1421,7 +1424,59 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 
 .greetingText-text{
     width: 790px;
-    height: 50px;
+    padding-right: 20px;
+    overflow-wrap: break-word;
     line-height: 50px;
     vertical-align: middle;
+}
+
+/*/////////////////////////////////////LOGIN///////////*/
+
+.login-container{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -100px;
+}
+.login-title{
+    width: 100px;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 3px black;
+}
+.login-form{
+    display: block;
+}
+.login-username{
+    font-size: 20px;
+    padding: 10px;
+    width: 500px;
+    color: black;
+    border-radius: 6px;
+    border: 1px solid darkcyan;
+    margin-top: 15px;
+}
+.login-password{
+    font-size: 20px;
+    padding: 10px;
+    width: 500px;
+    color: black;
+    border-radius: 6px;
+    border: 1px solid darkcyan;
+    margin-top: 15px;
+}
+.login-submit{
+    font-size: 20px;
+    padding: 10px;
+    width: 520px;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid darkcyan;
+    margin-top: 15px;
+    background-color: darkcyan;
+
+}
+.login-submit:hover{
+    background-color: white;
+    color: darkcyan;
 }

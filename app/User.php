@@ -30,4 +30,8 @@ class User extends Authenticatable
     ];
     protected $primaryKey = 'id';
 
+    public function AauthAccessToken(){
+        return $this->hasMany('\App\OauthAccessToken');
+    }
+
 }

@@ -17,8 +17,8 @@ class CreatePublicGreetingsTable extends Migration
             $table->bigIncrements('id');
             $table->string('teacher');
             $table->string('student');
-            $table->string('greeting');
-            $table->integer('card');
+            $table->string('greeting', 1500);
+            $table->string('card');
             $table->string('school');
             $table->timestamps();
         });
