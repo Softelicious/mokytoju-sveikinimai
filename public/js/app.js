@@ -73522,7 +73522,6 @@ function (_Component) {
         self.setState({
           tutorial: ''
         });
-        self.load();
         console.log(response);
       })["catch"](function (error) {
         console.log(error);
@@ -73534,32 +73533,9 @@ function (_Component) {
       tutorialFile: ''
     };
     return _this;
-  } //
-  // load =()=>{
-  //     var cookie = new Cookie();
-  //     axios({
-  //         method: 'get',
-  //         url: '/api/getTutorial',
-  //         headers: {
-  //             'Authorization' : 'Bearer ' + cookie.get('access_token'),
-  //         }
-  //     }).then(res =>{
-  //         this.setState({
-  //             tutorialFile: res.data.tutorial[0],
-  //         });
-  //         console.log("Tutorial gautas");
-  //         console.log(res.data.tutorial[0])
-  //     }).catch( err =>{
-  //         console.log(err)
-  //     });
-  // };
-
+  }
 
   _createClass(TutorialControl, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {//this.load();
-    }
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

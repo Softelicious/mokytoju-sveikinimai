@@ -12,28 +12,6 @@ class TutorialControl extends Component {
         };
     }
 
-    //
-    // load =()=>{
-    //     var cookie = new Cookie();
-    //     axios({
-    //         method: 'get',
-    //         url: '/api/getTutorial',
-    //         headers: {
-    //             'Authorization' : 'Bearer ' + cookie.get('access_token'),
-    //         }
-    //     }).then(res =>{
-    //         this.setState({
-    //             tutorialFile: res.data.tutorial[0],
-    //         });
-    //         console.log("Tutorial gautas");
-    //         console.log(res.data.tutorial[0])
-    //     }).catch( err =>{
-    //         console.log(err)
-    //     });
-    // };
-    componentWillMount() {
-        //this.load();
-    }
     changeTutorial = (e) => {
         if (e.target.files ) {
             const reader = new FileReader();
@@ -80,7 +58,6 @@ class TutorialControl extends Component {
                 self.setState({
                     tutorial: ''
                 });
-                self.load();
                 console.log(response)
             })
             .catch(error => {
@@ -101,10 +78,6 @@ class TutorialControl extends Component {
                     </form>
                 </div>
                 <div className={"tutorial-player-container"}>
-                    {/*<video className="tutorial-player" src={ this.state.tutorialFile.path} preload="" autoPlay={true}>*/}
-                    {/*    <source src={this.state.tutorialFile.path} type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>*/}
-                    {/*    <p>Sorry, but your browser does not support this video format.</p>*/}
-                    {/*</video>*/}
                 </div>
                 <div></div>
             </div>
