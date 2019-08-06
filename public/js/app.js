@@ -73558,8 +73558,7 @@ function (_Component) {
 
   _createClass(TutorialControl, [{
     key: "componentWillMount",
-    value: function componentWillMount() {
-      this.load();
+    value: function componentWillMount() {//this.load();
     }
   }, {
     key: "render",
@@ -73589,15 +73588,7 @@ function (_Component) {
         className: "dashboard-cards-submit"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tutorial-player-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
-        className: "tutorial-player",
-        src: this.state.tutorialFile.path,
-        preload: "",
-        autoPlay: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
-        src: this.state.tutorialFile.path,
-        type: "video/mp4; codecs=\"avc1.4D401E, mp4a.40.2\""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sorry, but your browser does not support this video format."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
     }
   }]);
 
