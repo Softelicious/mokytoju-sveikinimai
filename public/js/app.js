@@ -73474,26 +73474,6 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TutorialControl).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "load", function () {
-      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_1__["default"]();
-      axios__WEBPACK_IMPORTED_MODULE_2___default()({
-        method: 'get',
-        url: '/api/getTutorial',
-        headers: {
-          'Authorization': 'Bearer ' + cookie.get('access_token')
-        }
-      }).then(function (res) {
-        _this.setState({
-          tutorialFile: res.data.tutorial[0]
-        });
-
-        console.log("Tutorial gautas");
-        console.log(res.data.tutorial[0]);
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    });
-
     _defineProperty(_assertThisInitialized(_this), "changeTutorial", function (e) {
       if (e.target.files) {
         var reader = new FileReader();
@@ -73554,7 +73534,26 @@ function (_Component) {
       tutorialFile: ''
     };
     return _this;
-  }
+  } //
+  // load =()=>{
+  //     var cookie = new Cookie();
+  //     axios({
+  //         method: 'get',
+  //         url: '/api/getTutorial',
+  //         headers: {
+  //             'Authorization' : 'Bearer ' + cookie.get('access_token'),
+  //         }
+  //     }).then(res =>{
+  //         this.setState({
+  //             tutorialFile: res.data.tutorial[0],
+  //         });
+  //         console.log("Tutorial gautas");
+  //         console.log(res.data.tutorial[0])
+  //     }).catch( err =>{
+  //         console.log(err)
+  //     });
+  // };
+
 
   _createClass(TutorialControl, [{
     key: "componentWillMount",

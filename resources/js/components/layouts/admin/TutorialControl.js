@@ -12,25 +12,25 @@ class TutorialControl extends Component {
         };
     }
 
-
-    load =()=>{
-        var cookie = new Cookie();
-        axios({
-            method: 'get',
-            url: '/api/getTutorial',
-            headers: {
-                'Authorization' : 'Bearer ' + cookie.get('access_token'),
-            }
-        }).then(res =>{
-            this.setState({
-                tutorialFile: res.data.tutorial[0],
-            });
-            console.log("Tutorial gautas");
-            console.log(res.data.tutorial[0])
-        }).catch( err =>{
-            console.log(err)
-        });
-    };
+    //
+    // load =()=>{
+    //     var cookie = new Cookie();
+    //     axios({
+    //         method: 'get',
+    //         url: '/api/getTutorial',
+    //         headers: {
+    //             'Authorization' : 'Bearer ' + cookie.get('access_token'),
+    //         }
+    //     }).then(res =>{
+    //         this.setState({
+    //             tutorialFile: res.data.tutorial[0],
+    //         });
+    //         console.log("Tutorial gautas");
+    //         console.log(res.data.tutorial[0])
+    //     }).catch( err =>{
+    //         console.log(err)
+    //     });
+    // };
     componentWillMount() {
         //this.load();
     }
