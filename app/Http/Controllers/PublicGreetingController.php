@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cards;
 use App\Greeting;
 use App\PublicGreetings;
+use App\Tutorial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,6 +20,21 @@ class PublicGreetingController extends Controller
             $sk++;
         }
         return response(['sk' =>$sk, 'cards' => $cards, 'names'=>$names]);
+    }
+    public function getTutorial(){
+        $tutorial = Tutorial::all();
+        return response(['tutorial'=>$tutorial]);
+    }
+    public function getVideos(){
+//        $names = [];
+//        $sk = 0;
+//        $cards = Cards::all();
+//        foreach ($cards as $card){
+//            array_push($names, $card->path);
+//            $sk++;
+//        }
+//        return response(['sk' =>$sk, 'cards' => $cards, 'names'=>$names]);
+        return response(['videos'=>'yra']);
     }
     public function getGreetings(){
         $sk = 0;

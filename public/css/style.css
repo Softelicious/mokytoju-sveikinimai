@@ -64,13 +64,13 @@ video{
 /* background color and gradient */
 video, #start, #stop, #pause, #plus, #minus, #mute {
     /* background color */
-    background-color: #002339;
+    background-color: black;
     /* background gradient */
-    background-image: linear-gradient(top, #fff, #fcc);
-    background-image: -moz-linear-gradient(top, #fff, #fcc);
-    background-image: -webkit-linear-gradient(top, #fff, #fcc);
-    background-image: -o-linear-gradient(top, #fff, #fcc);
-    background-image: -ms-linear-gradient(top, #fff, #fcc);
+    /*background-image: linear-gradient(top, #fff, #fcc);*/
+    /*background-image: -moz-linear-gradient(top, #fff, #fcc);*/
+    /*background-image: -webkit-linear-gradient(top, #fff, #fcc);*/
+    /*background-image: -o-linear-gradient(top, #fff, #fcc);*/
+    /*background-image: -ms-linear-gradient(top, #fff, #fcc);*/
 }
 /* shadows */
 video, #start, #stop, #pause, #plus, #minus, #mute {
@@ -1215,7 +1215,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 }
 .dashboard-cards-form{
     width: 100%;
-    margin-top: 120px;
+    margin-top: 70px;
 }
 .dashboard-cards-title{
     color: white;
@@ -1484,6 +1484,55 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     width: 300px;
     color: white;
     font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*////////////////Tutorial///////////////////*/
+.tutorial-upload{
+    width: 100%;
+    height: 800px;
+    position: absolute;
+}
+.tutorial-upload-title{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 30px;
+}
+.tutorial-upload-form{
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+.tutorial-upload-input{
+    color: darkcyan;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+.tutorial-upload-submit{
+    color: white;
+    background-color: darkcyan;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/*///////////////////Tutorial player ///////////////////////////*/
+/*//////////////////////////////////////////////////////////////*/
+
+.tutorial-player-container{
+    margin-top: 300px;
+    display: flex;
+    width: 100%;
+}
+.tutorial-player{
+    width: 1200px;
+    height: 670px;
     margin-left: auto;
     margin-right: auto;
 }

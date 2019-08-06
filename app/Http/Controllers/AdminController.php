@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Cards;
 use App\Greeting;
+use App\Tutorial;
 use http\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +38,39 @@ class AdminController extends Controller
         }
         return response(['upload' => 'error no files ']);
     }
+    public function uploadVideos(Request $request) {
+//        $sk =0;
+//        $arr = [];
+//        if ($files = $request->index) {
+//            for($i = 0; $i<$request->index; $i++){
+//                $name = time() . '.' . explode('/', explode(':', substr($request["file".$i], 0, strpos($request["file".$i], ';')))[1])[1];
+//                Image::make($request["file".$i])->save(public_path('storage/') . "card".$i.$name);
+//                array_push($arr, "card".$i.$name);
+//                $sk++;
+//
+//                $card = new Cards();
+//                $card->path = Storage::url("card".$i.$name);
+//                $card->save();
+//            }
+//            return response(['upload' => 'success', 'sk'=>$arr]);
+//        }
+        return response(['upload' => 'error no files ']);
+    }
+    public function uploadTutorial(Request $request) {
+        $name = 'tutorial'.time() . '.' . explode('/', explode(':', substr($request->tutorial, 0, strpos($request->tutorial, ';')))[1])[1];
+        $video = file_get_contents($request->tutorial);
+
+        $files = Storage::allFiles('/public/tutorial');
+        Storage::delete($files);
+        DB::table('tutorial')->delete();
+        Storage::disk('public')->put("tutorial/".$name, $video);
+
+        $tutorial = new Tutorial();
+        $tutorial->path = "/storage/tutorial/".$name;
+        $tutorial->save();
+        return response(['upload' => 'yes']);
+    }
+
     public function uploadGreeting(Request $request) {
         $greeting = new Greeting();
         $greeting->greeting = $request->text;

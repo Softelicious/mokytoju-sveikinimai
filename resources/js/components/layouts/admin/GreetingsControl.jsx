@@ -5,7 +5,7 @@ import Cookies from "universal-cookie";
 import Photo from "./Photo";
 import GreetingText from "./GreetingText";
 
-class LandingBottomAdmin extends Component {
+class GreetingsControl extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -123,4 +123,4 @@ class LandingBottomAdmin extends Component {
     }
 }
 
-export default LandingBottomAdmin;
+export default GreetingsControl;

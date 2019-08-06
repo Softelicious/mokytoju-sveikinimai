@@ -27,7 +27,12 @@ Route::post('/login', 'AuthenticateController@login');
 Route::get('/getCards', 'PublicGreetingController@getCards');
 Route::get('/getGreetings', 'PublicGreetingController@getGreetings');
 
+Route::get('/getTutorial', 'PublicGreetingController@getTutorial');
+Route::get('/getVideos', 'PublicGreetingController@getVideos');
+
 Route::middleware('auth:api')->group(function (){
+    Route::post('/admin/uploadTutorial', 'AdminController@uploadTutorial');
+    Route::post('/admin/uploadVideos', 'AdminController@uploadVideos');
     Route::post('/admin/uploadCards', 'AdminController@uploadCards');
     Route::post('/admin/deleteCard', 'AdminController@deleteCard');
     Route::post('/admin/uploadGreeting', 'AdminController@uploadGreeting');
