@@ -48,7 +48,7 @@ class Dashboard extends Component {
                 <FixedCircle/>
                 <CardsControl/>
                 <GreetingsControl/>
-                <TutorialControl/>
+
                 {this.redirect()}
             </div>
 

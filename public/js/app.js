@@ -74523,7 +74523,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_CardsControl__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_GreetingsControl__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_TutorialControl__WEBPACK_IMPORTED_MODULE_8__["default"], null), this.redirect());
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_CardsControl__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_GreetingsControl__WEBPACK_IMPORTED_MODULE_3__["default"], null), this.redirect());
     }
   }]);
 
