@@ -71837,7 +71837,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "greetingsBtn",
         className: "list"
-      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonGreetings)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonGreetings + " test")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "linkStyle",
         to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Video_path
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {

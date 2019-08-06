@@ -9,7 +9,7 @@ class Navigation extends Component {
                 <ul id={"ul"}>
                     <Link className={"linkStyle"} to={StringValues.Greetings_path}>
                         <li id={"greetingsBtn"} className={"list"}>
-                            {StringValues.buttonGreetings}
+                            {StringValues.buttonGreetings+" test"}
                         </li>
                     </Link>
                     <Link className={"linkStyle"} to={StringValues.Video_path}>
