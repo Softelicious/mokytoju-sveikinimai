@@ -6,7 +6,7 @@ import axios from "axios";
 import Photo from "../../layouts/admin/Photo";
 import Cookie from "universal-cookie";
 import CardsControl from "../../layouts/admin/CardsControl";
-import TutorialControl from "../../layouts/admin/TutorialControl";
+
 
 class Dashboard extends Component {
     constructor(props){

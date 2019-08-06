@@ -73424,156 +73424,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/layouts/admin/TutorialControl.js":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/layouts/admin/TutorialControl.js ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var TutorialControl =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(TutorialControl, _Component);
-
-  function TutorialControl(props) {
-    var _this;
-
-    _classCallCheck(this, TutorialControl);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TutorialControl).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "changeTutorial", function (e) {
-      if (e.target.files) {
-        var reader = new FileReader();
-        reader.addEventListener('load', function (ev) {
-          _this.setState({
-            tutorial: ev.target.result
-          });
-        });
-        reader.readAsDataURL(e.target.files[0]);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "submitTutorial", function (e) {
-      e.preventDefault(); //console.log(this.state.tutorial)
-
-      var self = _assertThisInitialized(_this);
-
-      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_1__["default"]();
-      var formData = new FormData();
-      formData.append("tutorial", _this.state.tutorial);
-      var config = {
-        onUploadProgress: function onUploadProgress(progressEvent) {
-          return console.log(progressEvent.loaded);
-        }
-      };
-      axios__WEBPACK_IMPORTED_MODULE_2___default()({
-        method: 'post',
-        url: '/api/admin/uploadTutorial',
-        data: formData,
-        headers: {
-          'Authorization': 'Bearer ' + cookie.get('access_token'),
-          'Content-Type': "multipart/form-data;"
-        },
-        onUploadProgress: function onUploadProgress(progressEvent) {
-          var i = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-          console.log(i);
-
-          if (i !== 100) {
-            alert("Keliama");
-          } else {
-            alert("Ikelta");
-          }
-        }
-      }).then(function (response) {
-        //console.log(response.data);
-        self.setState({
-          tutorial: ''
-        });
-        console.log(response);
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    });
-
-    _this.state = {
-      tutorial: '',
-      tutorialFile: ''
-    };
-    return _this;
-  }
-
-  _createClass(TutorialControl, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bookshelfContainer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "tutorial-upload"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.submitTutorial,
-        className: "dashboard-cards-form",
-        encType: "multipart/form-data"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dashboard-cards-title"
-      }, "Vaizdo pamoka"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.changeTutorial,
-        type: "file",
-        className: "dashboard-cards-input",
-        name: "file",
-        id: "dashboard-cards-inputt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "dashboard-cards-label",
-        htmlFor: "dashboard-cards-inputt"
-      }, "Pasirink pamok\u0105"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Pakeisk",
-        className: "dashboard-cards-submit"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "tutorial-player-container"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
-    }
-  }]);
-
-  return TutorialControl;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (TutorialControl);
-
-/***/ }),
-
 /***/ "./resources/js/components/pages/About.js":
 /*!************************************************!*\
   !*** ./resources/js/components/pages/About.js ***!
@@ -74440,7 +74290,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_admin_Photo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../layouts/admin/Photo */ "./resources/js/components/layouts/admin/Photo.js");
 /* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 /* harmony import */ var _layouts_admin_CardsControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../layouts/admin/CardsControl */ "./resources/js/components/layouts/admin/CardsControl.js");
-/* harmony import */ var _layouts_admin_TutorialControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../layouts/admin/TutorialControl */ "./resources/js/components/layouts/admin/TutorialControl.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -74460,7 +74309,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
