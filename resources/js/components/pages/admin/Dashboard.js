@@ -45,9 +45,7 @@ class Dashboard extends Component {
 
         return (
             <div className={"dashboard-container"}>
-                <FixedCircle/>
-                <CardsControl/>
-                <GreetingsControl/>
+
 
                 {this.redirect()}
             </div>
