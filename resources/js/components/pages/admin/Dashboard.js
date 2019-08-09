@@ -6,7 +6,8 @@ import axios from "axios";
 import Photo from "../../layouts/admin/Photo";
 import Cookie from "universal-cookie";
 import CardsControl from "../../layouts/admin/CardsControl";
-
+import TutorialControl from "../../layouts/admin/TutorialControl";
+import VideosControl from "../../layouts/admin/VideosControl";
 
 class Dashboard extends Component {
     constructor(props){
@@ -45,8 +46,11 @@ class Dashboard extends Component {
 
         return (
             <div className={"dashboard-container"}>
-
-
+                <FixedCircle/>
+                <CardsControl/>
+                <GreetingsControl/>
+                <TutorialControl/>
+                <VideosControl/>
                 {this.redirect()}
             </div>
 

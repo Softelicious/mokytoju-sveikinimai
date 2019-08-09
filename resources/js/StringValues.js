@@ -7,6 +7,7 @@ const StringValues = {
         CreateUniquePublicGreetings_path: "/Unikalus",
         CreateMultipleGreetings_path: "/Sukurti-Kelis",
         CreateUniqueGreetings_path: "/Sukurti-Unikalius",
+        OpenedGreeting: "/Sveikinimas",
         Finish: "/Pabaiga",
         Video_path: "/video",
         Error_path: "/404",

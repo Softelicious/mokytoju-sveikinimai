@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Cards;
 use App\Greeting;
 use App\Tutorial;
+use App\Videos;
 use http\Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,21 +40,22 @@ class AdminController extends Controller
         return response(['upload' => 'error no files ']);
     }
     public function uploadVideos(Request $request) {
-//        $sk =0;
-//        $arr = [];
-//        if ($files = $request->index) {
-//            for($i = 0; $i<$request->index; $i++){
-//                $name = time() . '.' . explode('/', explode(':', substr($request["file".$i], 0, strpos($request["file".$i], ';')))[1])[1];
-//                Image::make($request["file".$i])->save(public_path('storage/') . "card".$i.$name);
-//                array_push($arr, "card".$i.$name);
-//                $sk++;
-//
-//                $card = new Cards();
-//                $card->path = Storage::url("card".$i.$name);
-//                $card->save();
-//            }
-//            return response(['upload' => 'success', 'sk'=>$arr]);
-//        }
+        $sk =0;
+        $arr = [];
+        if ($files = $request->index) {
+            for($i = 0; $i<$request->index; $i++){
+                $name = time() . '.' . explode('/', explode(':', substr($request["file".$i], 0, strpos($request["file".$i], ';')))[1])[1];
+                $video = file_get_contents($request["file".$i]);
+                Storage::disk('public')->put("videos/video".$i.$name, $video);
+                array_push($arr, "video".$i.$name);
+                $sk++;
+
+                $video = new Videos();
+                $video->path = Storage::url("videos/video".$i.$name);
+                $video->save();
+            }
+            return response(['upload' => 'success', 'sk'=>$arr]);
+        }
         return response(['upload' => 'error no files ']);
     }
     public function uploadTutorial(Request $request) {
@@ -88,6 +90,12 @@ class AdminController extends Controller
     }
     public function deleteCard(Request $request) {
         $card = DB::table('cards')->where('id', $request->index)->delete();
+        $productImage = str_replace('/storage', '', $request->name);
+        Storage::delete('/public' . $productImage);
+        return response(['id'=>$request->index]);
+    }
+    public function deleteVideo(Request $request) {
+        $vid = DB::table('videos')->where('id', $request->index)->delete();
         $productImage = str_replace('/storage', '', $request->name);
         Storage::delete('/public' . $productImage);
         return response(['id'=>$request->index]);

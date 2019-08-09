@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 import StringValues from "../../StringValues";
 import Cards from "../../Cards";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 class UniquePublicGreetingCreate extends Component {
@@ -17,7 +17,8 @@ class UniquePublicGreetingCreate extends Component {
             school: '',
             cards: [],
             load: false,
-            max:0
+            max:0,
+            redirect: false
         }
     }
 
@@ -71,6 +72,7 @@ class UniquePublicGreetingCreate extends Component {
     };
     submit = (e) => {
         e.preventDefault();
+        self=this;
         console.log(2);
         this.setState({
             styleChars: 11,
@@ -92,7 +94,9 @@ class UniquePublicGreetingCreate extends Component {
             config: { headers: {'Content-Type': 'multipart/form-data' }}
         })
             .then(function (response) {
-                alert("Patalpinta")
+                self.setState({
+                    redirect: true
+                });
             })
             .catch(function (response) {
                 alert("Nepavyko")
@@ -138,6 +142,14 @@ class UniquePublicGreetingCreate extends Component {
             school: e.target.value
         })
     };
+    redirect = () => {
+        if(this.state.redirect){
+            const to = {
+                pathname: StringValues.Finish,
+            };
+            return (<Redirect to={to}/>);
+        }
+    };
     render() {
         let style;
         if(this.state.styleChars> 11){
@@ -145,65 +157,69 @@ class UniquePublicGreetingCreate extends Component {
         }
         return (
 
-            <form  onSubmit={this.submit}>
-                <div className={"contentContainer"}>
-                    <div className={"newGreetingContent"}>
-                        <div className={"createTop"}>
-                            {StringValues.publicTitle}
-                        </div>
-                        <div className={"createSecond"}>
-                            <div className={"card"} style={{backgroundImage:  `url(${this.state.cards[this.state.card]})`}}>
-
+            <>
+                <form  onSubmit={this.submit}>
+                    <div className={"contentContainer"}>
+                        <div className={"newGreetingContent"}>
+                            <div className={"createTop"}>
+                                {StringValues.publicTitle}
                             </div>
-                            <div className={"cardInfo"}>
-                                <div className={"infoTop"}>
-                                    <h3>{StringValues.adress }
-                                        <input onChange={this.onChangeTeacher} required type="text" id={"teacher-name"} name={"teacher-name"}
-                                               placeholder={"Įveskite vardą"} value={this.state.teacher}/>
-                                    </h3>
-                                    <p><textarea onChange={this.onChangeGreeting} className={"unique-greeting-text"} placeholder={'Įveskite sveikinimą'} value={this.state.greeting}/></p>
+                            <div className={"createSecond"}>
+                                <div className={"card"} style={{backgroundImage:  `url(${this.state.cards[this.state.card]})`}}>
+
                                 </div>
-                                <div className={"infoMiddle"}></div>
-                                <div className={"infoBottom"}>
-                                    <div>{StringValues.adress2}</div>
-                                    <div>{StringValues.thanks}</div>
-                                    <div className={"adress-student"}>
-                                        <div id={"adress3"}>
-                                            {StringValues.adress3}
+                                <div className={"cardInfo"}>
+                                    <div className={"infoTop"}>
+                                        <h3>{StringValues.adress }
+                                            <input onChange={this.onChangeTeacher} required type="text" id={"teacher-name"} name={"teacher-name"}
+                                                   placeholder={"Įveskite vardą"} value={this.state.teacher}/>
+                                        </h3>
+                                        <p><textarea onChange={this.onChangeGreeting} className={"unique-greeting-text"} placeholder={'Įveskite sveikinimą'} value={this.state.greeting}/></p>
+                                    </div>
+                                    <div className={"infoMiddle"}></div>
+                                    <div className={"infoBottom"}>
+                                        <div>{StringValues.adress2}</div>
+                                        <div>{StringValues.thanks}</div>
+                                        <div className={"adress-student"}>
+                                            <div id={"adress3"}>
+                                                {StringValues.adress3}
+                                            </div>
+                                            <div>
+                                                <input required onChange={this.changeWidth} type="text"
+                                                       style={style} id={"student-name"}
+                                                       name={"student-name"} placeholder={"Įveskite vardą"} value={this.state.student}/>
+                                            </div>
                                         </div>
                                         <div>
-                                            <input required onChange={this.changeWidth} type="text"
-                                                   style={style} id={"student-name"}
-                                                   name={"student-name"} placeholder={"Įveskite vardą"} value={this.state.student}/>
+                                            <input required onChange={this.onChangeSchool} type="text" id={"teacher-school"}
+                                                   name={"teacher-school"} placeholder={"Įveskite mokytojo mokyklą"} value={this.state.school}/>
                                         </div>
                                     </div>
-                                    <div>
-                                        <input required onChange={this.onChangeSchool} type="text" id={"teacher-school"}
-                                               name={"teacher-school"} placeholder={"Įveskite mokytojo mokyklą"} value={this.state.school}/>
-                                    </div>
+                                    <Link to={StringValues.CreatePublicGreetings_path} className={"linkStyle"}>
+                                        <div id={"btn-unique-greeting"}>Sugeneruotas sveikinimas</div>
+                                    </Link>
                                 </div>
-                                <Link to={StringValues.CreatePublicGreetings_path} className={"linkStyle"}>
-                                    <div id={"btn-unique-greeting"}>Sugeneruotas sveikinimas</div>
-                                </Link>
+                            </div>
+                            <div className={"createThird"}>
+                                {StringValues.messageDelivery}
+                            </div>
+                            <div className={"createBottom"}>
+                                <ul className={"leftButtons"}>
+                                    <li onClick={this.leftArrow} className="changeStyleBtnArrow fas fa-arrow-left fa-1x"></li>
+                                    <li>{StringValues.cardStyle}</li>
+                                    <li onClick={this.rightArrow} className="changeStyleBtnArrow fas fa-arrow-right fa-1x"></li>
+                                </ul>
+                                <ul className={"rightButtons"}>
+                                    <input type={"submit"} value={StringValues.send}/>
+                                </ul>
                             </div>
                         </div>
-                        <div className={"createThird"}>
-                            {StringValues.messageDelivery}
-                        </div>
-                        <div className={"createBottom"}>
-                            <ul className={"leftButtons"}>
-                                <li onClick={this.leftArrow} className="changeStyleBtnArrow fas fa-arrow-left fa-1x"></li>
-                                <li>{StringValues.cardStyle}</li>
-                                <li onClick={this.rightArrow} className="changeStyleBtnArrow fas fa-arrow-right fa-1x"></li>
-                            </ul>
-                            <ul className={"rightButtons"}>
-                                <input type={"submit"} value={StringValues.send}/>
-                            </ul>
-                        </div>
                     </div>
-                </div>
 
-            </form>
+                </form>
+                {this.redirect()}
+            </>
+
 
         );
     }

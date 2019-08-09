@@ -132,7 +132,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     background-image: -ms-linear-gradient(top, #ffffff, #9acd00);
 }
 #container{
-    width: 60%;
+
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -202,8 +202,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 .returnLogo{
     float: left;
     height: 30px;
-    line-height: 30px;
-    vertical-align: middle;
+    line-height: 28px!important;
 }
 .returnTitle{
     height: 30px;
@@ -355,6 +354,10 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     color: white;
     text-decoration: none;
 }
+.linkStyle-greeting{
+    color: black;
+    text-decoration: none;
+}
 .leftContent{
     float: left;
     width: 41px;
@@ -436,6 +439,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: auto;
     margin-bottom: 5px;
     text-shadow: 0 2px 6px #000000;
+    color: white;
 }
 
 .descriptionReturn{
@@ -444,6 +448,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: auto;
     margin-bottom: 20px;
     text-shadow: 0 2px 6px #000000;
+    color: white;
 }
 
 
@@ -649,7 +654,6 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: auto;
     margin-top: 80px;
     text-align: center;
-    width: 864px;
 }
 #left{
     float: left;
@@ -1350,7 +1354,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     content: "";
     position: absolute;
     bottom: -100%;
-    left: 42%;
+    left: 45%;
     width: 30px;
     border-bottom: 2px solid #004572;
 }
@@ -1536,3 +1540,37 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: auto;
     margin-right: auto;
 }
+
+/*/////////////////////////////Video///////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////*/
+
+.video-container{
+    margin-bottom: 100px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.video-item-container{
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+}
+
+.video-close{
+    margin-left: 10px;
+    top: 0px;
+    position: absolute;
+    z-index: 10;
+}
+.video-close:hover{
+    color: darkcyan;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.video-wrapper{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

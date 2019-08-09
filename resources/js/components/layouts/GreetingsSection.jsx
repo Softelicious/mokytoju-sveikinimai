@@ -57,7 +57,21 @@ class GreetingsSection extends Component {
                 <div className={"greetingsBottom"}>
                     {
                         filtered.map(
-                            (data) => <Greeting key={data.id} data={data}/>
+                            (data) =>
+                             <Link key={data.id} className={"linkStyle-greeting"}
+                                   to={{
+                                       pathname: StringValues.OpenedGreeting,
+                                       state: {
+                                           teacher: data.teacher,
+                                           student: data.student,
+                                           school: data.school,
+                                           card: data.card,
+                                           greeting: data.greeting,
+                                       }
+                                   }
+                                   }>
+                                <Greeting key={data.id} data={data}/>
+                             </Link>
                         )
                     }
                 </div>

@@ -38,6 +38,7 @@ Route::middleware('auth:api')->group(function (){
     Route::post('/admin/uploadGreeting', 'AdminController@uploadGreeting');
     Route::post('/admin/updateGreeting', 'AdminController@updateGreeting');
     Route::post('/admin/deleteGreeting', 'AdminController@deleteGreeting');
+    Route::post('/admin/deleteVideo', 'AdminController@deleteVideo');
     Route::get('/admin/logout','AdminController@logout');
     Route::get('/admin/check', 'AdminController@check');
 });
