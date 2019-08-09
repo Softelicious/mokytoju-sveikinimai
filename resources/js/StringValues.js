@@ -32,7 +32,7 @@ const StringValues = {
             " sveikinimas mokytojui. Automatiškai sugeneruotas sistemos sveikinimas mokytojui. Automatiškai" +
             " sugeneruotas sistemos sveikinimas mokytojui.",
         thanks: "Ačiū, kad manimi tikėjote",
-        thanks2: "Ačiū kad naudojatės mūsų platforma",
+        thanks2: "Ačiū kad naudojates mūsų platforma",
         cardStyle: "Atvirutės Stilius",
         send: "Siųsti Sveikinimą",
         messageDelivery: "Sveikinimas bus pristatytas 10-05",

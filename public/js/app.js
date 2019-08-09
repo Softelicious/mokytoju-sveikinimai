@@ -62544,7 +62544,7 @@ exports.default = _Notifications2.default;
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70361,7 +70361,7 @@ var StringValues = {
   adress3: "- Jūsų mokinys, ",
   greeting: "Automatiškai sugeneruotas sistemos sveikinimas mokytojui. Automatiškai sugeneruotas sistemos" + " sveikinimas mokytojui. Automatiškai sugeneruotas sistemos sveikinimas mokytojui. Automatiškai" + " sugeneruotas sistemos sveikinimas mokytojui.",
   thanks: "Ačiū, kad manimi tikėjote",
-  thanks2: "Ačiū kad naudojatės mūsų platforma",
+  thanks2: "Ačiū kad naudojates mūsų platforma",
   cardStyle: "Atvirutės Stilius",
   send: "Siųsti Sveikinimą",
   messageDelivery: "Sveikinimas bus pristatytas 10-05",
@@ -72021,7 +72021,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "redirect", function () {
       if (_this.state.redirect) {
         var to = {
-          pathname: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Finish
+          pathname: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Greetings_path
         };
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
           to: to
@@ -72636,7 +72636,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "redirect", function () {
       if (_this.state.redirect) {
         var to = {
-          pathname: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Finish
+          pathname: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Greetings_path
         };
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Redirect"], {
           to: to
@@ -72793,6 +72793,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _StringValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../StringValues */ "./resources/js/StringValues.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72803,15 +72805,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- //import vid from '-!file-loader!../../../../public/assets/video.mp4';
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -72821,35 +72825,66 @@ var VideoTutorial =
 function (_Component) {
   _inherits(VideoTutorial, _Component);
 
-  function VideoTutorial() {
+  function VideoTutorial(props) {
+    var _this;
+
     _classCallCheck(this, VideoTutorial);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(VideoTutorial).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(VideoTutorial).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "play", function () {
+      _this.setState({
+        displayVid: 'block',
+        displayPre: 'none'
+      });
+    });
+
+    _this.state = {
+      tutorial: '',
+      displayVid: 'none',
+      displayPre: 'block'
+    };
+    return _this;
   }
 
   _createClass(VideoTutorial, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/getTutorial').then(function (response) {
+        _this2.setState({
+          tutorial: response.data.tutorial[0].path
+        });
+      })["catch"](function (response) {
+        console.log(response);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "videoContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "video"
+        className: "video",
+        style: {
+          display: this.state.displayVid
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         className: "video-player",
-        src: '/video.mp4',
-        preload: "none",
-        autoPlay: false
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sorry, but your browser does not support this video format.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "action action-close"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-window-close"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pre-video"
+        src: this.state.tutorial,
+        controls: true
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sorry, but your browser does not support this video format."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pre-video",
+        style: {
+          display: this.state.displayPre
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "loader"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fa fa-spinner fa-pulse"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.play,
         className: "play"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "big-icon fa fa-play-circle "
@@ -73985,6 +74020,7 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _layouts_Navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layouts/Navigation */ "./resources/js/components/layouts/Navigation.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -74005,6 +74041,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var About =
 /*#__PURE__*/
 function (_Component) {
@@ -74021,7 +74058,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bookshelfContainer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_Navigation__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "about"
       }, "Kas mes esame"));
     }

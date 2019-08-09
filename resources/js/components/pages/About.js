@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import Navigation from "../layouts/Navigation";
 
 class About extends Component {
     render() {
         return (
             <div className={"bookshelfContainer"}>
-                <div></div>
+                <Navigation/>
                 <div className={"about"}>Kas mes esame</div>
             </div>
         );

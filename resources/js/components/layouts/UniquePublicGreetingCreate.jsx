@@ -145,7 +145,7 @@ class UniquePublicGreetingCreate extends Component {
     redirect = () => {
         if(this.state.redirect){
             const to = {
-                pathname: StringValues.Finish,
+                pathname: StringValues.Greetings_path,
             };
             return (<Redirect to={to}/>);
         }
