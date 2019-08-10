@@ -132,7 +132,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     background-image: -ms-linear-gradient(top, #ffffff, #9acd00);
 }
 #container{
-
+    min-width: 1032px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -154,6 +154,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     background-repeat: no-repeat;
     position: relative;
     width: 100%;
+    min-width: 1032px;
     min-height: 100vh;
     display: grid;
 }
@@ -471,6 +472,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     background: linear-gradient(#004572, #002339);
 
     width: 100%;
+    min-width: 1032px;
     height: 140px;
     text-align: center;
     padding-top: 20px;
