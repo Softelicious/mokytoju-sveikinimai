@@ -72923,6 +72923,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Photo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Photo */ "./resources/js/components/layouts/admin/Photo.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72942,6 +72943,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -73039,6 +73041,35 @@ function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "logout", function () {
+      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_1__["default"]();
+
+      var self = _assertThisInitialized(_this);
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'get',
+        url: '/api/admin/logout',
+        headers: {
+          'Authorization': 'Bearer ' + cookie.get('access_token')
+        }
+      }).then(function (response) {
+        console.log('logout');
+        self.setState({
+          redirect: true
+        });
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "redirect", function () {
+      if (_this.state.redirect) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Redirect"], {
+          to: "/"
+        });
+      }
+    });
+
     _this.state = {
       files: [],
       imageArray: [],
@@ -73100,7 +73131,7 @@ function (_Component) {
           id: data.id,
           path: data.path
         });
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), this.redirect());
     }
   }]);
 
@@ -74957,15 +74988,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -74989,36 +75018,6 @@ function (_Component) {
     _classCallCheck(this, Dashboard);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Dashboard).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "logout", function () {
-      var cookie = new universal_cookie__WEBPACK_IMPORTED_MODULE_6__["default"]();
-
-      var self = _assertThisInitialized(_this);
-
-      axios__WEBPACK_IMPORTED_MODULE_4___default()({
-        method: 'get',
-        url: '/api/admin/logout',
-        headers: {
-          'Authorization': 'Bearer ' + cookie.get('access_token')
-        }
-      }).then(function (response) {
-        console.log(response.data.logout + " check - " + response.data.check + " chk2 = " + response.data.check2);
-        self.setState({
-          redirect: true
-        });
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "redirect", function () {
-      if (_this.state.redirect) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-          to: "/"
-        });
-      }
-    });
-
     _this.state = {
       redirect: false
     };
@@ -75030,7 +75029,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_CardsControl__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_GreetingsControl__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_TutorialControl__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_VideosControl__WEBPACK_IMPORTED_MODULE_9__["default"], null), this.redirect());
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_FixedCircle__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_CardsControl__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_GreetingsControl__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_TutorialControl__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_admin_VideosControl__WEBPACK_IMPORTED_MODULE_9__["default"], null));
     }
   }]);
 

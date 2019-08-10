@@ -17,31 +17,6 @@ class Dashboard extends Component {
         };
     }
 
-    logout = () => {
-        var cookie = new Cookie();
-        let self =this;
-        axios({
-            method: 'get',
-            url: '/api/admin/logout',
-            headers: {
-                'Authorization' : 'Bearer ' + cookie.get('access_token')
-            }
-        })
-            .then(function (response) {
-                console.log(response.data.logout+" check - "+ response.data.check + " chk2 = " +response.data.check2);
-                self.setState({
-                    redirect: true
-                })
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    };
-    redirect = () => {
-        if (this.state.redirect) {
-            return <Redirect to={"/"}/>;
-        }
-    };
     render() {
 
         return (
@@ -51,7 +26,6 @@ class Dashboard extends Component {
                 <GreetingsControl/>
                 <TutorialControl/>
                 <VideosControl/>
-                {this.redirect()}
             </div>
 
         );

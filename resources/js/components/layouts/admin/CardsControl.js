@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Cookie from "universal-cookie";
 import axios from "axios";
 import Photo from "./Photo";
+import {Redirect} from "react-router";
 
 class CardsControl extends Component {
     constructor(props){
@@ -92,6 +93,32 @@ class CardsControl extends Component {
     componentWillMount() {
         this.load();
     }
+    logout = () => {
+        var cookie = new Cookie();
+        let self =this;
+        axios({
+            method: 'get',
+            url: '/api/admin/logout',
+            headers: {
+                'Authorization' : 'Bearer ' + cookie.get('access_token')
+            }
+        })
+            .then(function (response) {
+                console.log('logout');
+                self.setState({
+                    redirect: true
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    };
+
+    redirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to={"/"}/>;
+        }
+    };
     render() {
         return (
             <div className={"bookshelfContainer"}>
@@ -118,6 +145,7 @@ class CardsControl extends Component {
                 <div></div>
                 <div></div>
                 <div></div>
+                {this.redirect()}
             </div>
         );
     }

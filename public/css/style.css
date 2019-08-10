@@ -1574,5 +1574,13 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: auto;
     margin-right: auto;
 }
+@media only screen and (max-width: 1032px) {
+    /*#nav{*/
+    /*    min-width: 80%;*/
+    /*}*/
+    /*#section1{*/
+    /*    margin-top: -150px*/
+    /*}*/
+}
 
 

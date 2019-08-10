@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import StringValues from '../../StringValues';
 
+
 class Navigation extends Component {
     render() {
         return (
+
             <nav id={"nav"}>
                 <ul id={"ul"}>
                     <Link className={"linkStyle"} to={StringValues.Greetings_path}>
