@@ -640,7 +640,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     content:"";
     position: absolute;
     bottom: -100%;
-    left: 42%;
+    left: 47%;
     width: 30px;
     border-bottom: 2px solid #004572;
 }
@@ -713,8 +713,9 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     text-shadow: 0 3px 6px #000000;
     outline: none;
     margin-left: 7%;
-
-
+}
+.playBtn:active, .playBtn:focus{
+    outline:none;
 }
 .playBtn:hover{
     color: grey;
@@ -1296,6 +1297,9 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-top: 150px;
     height: 400px;
     overflow-y: hidden;
+    width: 1034px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .dashboard-cards-cardsContainer::-webkit-scrollbar {
     height: 6px;              /* height of horizontal scrollbar ← You're missing this */
@@ -1574,13 +1578,242 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: auto;
     margin-right: auto;
 }
+
+#nav-toggled{
+    display: none;
+}
+.biggerBtn{
+    font-size: 30px;
+}
+.biggerSearch{
+    font-size: 35px;
+}
+.openedGreeting{
+    marginTop: '-200px
+}
 @media only screen and (max-width: 1032px) {
-    /*#nav{*/
-    /*    min-width: 80%;*/
-    /*}*/
-    /*#section1{*/
-    /*    margin-top: -150px*/
-    /*}*/
+    .biggerSearch{
+        font-size: 30px;
+    }
+    .biggerBtn{
+        font-size: initial;
+    }
+    .bookshelfContainer{
+        min-width: 100%;
+    }
+    #nav{
+        display: none;
+    }
+    #nav-toggled{
+        display: inline-block;
+    }
+    #ul-toggled{
+        width: 100%;
+        position: fixed;
+        background-image: linear-gradient(to right, #004572 , #1E90FF);
+        transition: 0.3s ease-out;
+        display: block;
+        transform: translateY(30px);
+        z-index: 9999;
+    }
+    #greetingsBtn{
+        float: initial;
+    }
+    #moreBtn{
+        float: initial;
+    }
+    #aboutBtn{
+        float: initial;
+    }
+    #nav-listener{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: middle;
+        display: inline-block;
+        background-image: linear-gradient(to right, #004572 , #1E90FF);
+        position: fixed;
+        z-index: 99999999;
+    }
+    .nav-btn{
+        float: left;
+        color: white;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    .nav-btn:hover{
+        color: gainsboro;
+        cursor: pointer;
+        transition: 0.2s ease-out;
+    }
+    #title1{
+        font-size: 30px;
+    }
+    #description1{
+        font-size: 15px;
+    }
+    #search1{
+        min-width: 333px;
+        width: 90%;
+        margin-top: 20px;
+        padding-left: 30px;
+    }
+    #form1 span{
+        margin-left: 83%;
+        margin-top: -55px;
+
+    }
+    #form1{
+        width: 100%;
+
+    }
+
+
+    #title{
+        font-size: 20px;
+        width: 350px;
+    }
+    #container{
+        min-width: 20px;
+    }
+    #content{
+        width: initial;
+        display: block;
+    }
+    #ads {
+        display: block;
+        width: 206px;
+    }
+    #ad0{
+        width: 206px;
+        height: 134.5px;
+        line-height: 134.5px;
+    }
+    #left{
+        float: initial;
+    }
+    #right{
+        float: initial;
+    }
+    #info{
+        margin-top: 20px;
+    }
+    .footer{
+        min-width: 100%;
+    }
+    #section1{
+        margin-top: -100px;
+    }
+
+    .createSecond{
+        width: 100%;
+    }
+    .card{
+        background-size: 100% 100%;
+        width: 100%;
+        float: initial;
+    }
+    .cardInfo{
+        float: initial;
+        width: initial;
+        min-height: 600px;
+        height: initial;
+    }
+    .contentContainer{
+        width: 100%;
+        margin-top: initial;
+    }
+    .newGreetingContent{
+        width: 100%;
+    }
+    .createBottom{
+        display: inline-grid;
+    }
+    .leftButtons, .rightButtons{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .infoMiddle{
+        min-height: 200px;
+        height: initial;
+    }
+    .greetingsSection{
+        height: initial;
+        width: 90%;
+    }
+    .searchFormGreetings span{
+        margin-right: 30px;
+    }
+
+    .login-container{
+        width: 90%;
+    }
+    .login-username{
+        width: 94%;
+    }
+    .login-password{
+        width: 94%;
+    }
+    .login-submit{
+        width: 100%;
+    }
+    .dashboard-nav{
+        width: 100%;
+    }
+    .dashboard-title{
+        width: initial;
+    }
+    .dashboard-cards{
+        width: 100%;
+    }
+    #add-greetings-content{
+        width: 90%;
+    }
+    .tutorial-player {
+        width: 90%;
+        height: auto;
+    }
+    .greetingText-text{
+        width: 90%;
+    }
+    .tutorial-player-container{
+        display: grid;
+    }
+    .dashboard-cards-cardsContainer{
+        width: 340px;
+    }
+    #videoContainer{
+        width: 100%;
+        height: auto;
+        background-color: initial;
+    }
+    .video {
+        width: 100%;
+        display: block;
+        background-color: initial;
+        height: 150px;
+    }
+    .video video {
+        width: 100%;
+        height: auto;
+    }
+    .pre-video:before {
+        border-top: 220px solid rgba(0,0,0,0.95);
+        border-right: 370px solid rgba(0,0,0,0.85);
+    }
+    .play {
+        margin-top: 10px;
+        left: 25%;
+         height: initial;
+         line-height: initial;
+    }
+    .tutorial-description {
+        margin-bottom: 20px;
+    }
+    .pre-video {
+        width: 93%;
+        height: initial;
+    }
 }
 
 

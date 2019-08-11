@@ -70961,10 +70961,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "contentContainer",
-        style: {
-          marginTop: '-200px'
-        }
+        className: "contentContainer openedGreeting"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "newGreetingContent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71623,7 +71620,7 @@ function (_Component) {
         placeholder: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].placeholderSearch
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         id: "searchBtn",
-        className: " fas fa-search fa-3x"
+        className: " fas fa-search biggerSearch"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "notFound1",
         className: "linkStyle",
@@ -71699,7 +71696,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "ad0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "playBtn fas fa-play fa-2x"
+        className: "biggerBtn playBtn fas fa-play "
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71818,13 +71815,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -71835,16 +71834,40 @@ var Navigation =
 function (_Component) {
   _inherits(Navigation, _Component);
 
-  function Navigation() {
+  function Navigation(props) {
+    var _this;
+
     _classCallCheck(this, Navigation);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Navigation).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Navigation).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "toggle", function () {
+      _this.setState(function (prevState) {
+        if (prevState.toggle) {
+          return {
+            toggle: false,
+            style: 'translateY(-100%)'
+          };
+        } else {
+          return {
+            toggle: true,
+            style: 'translateY(30px)'
+          };
+        }
+      });
+    });
+
+    _this.state = {
+      style: 'translateY(-100%)',
+      toggle: false
+    };
+    return _this;
   }
 
   _createClass(Navigation, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         id: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "ul"
@@ -71866,7 +71889,37 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "aboutBtn",
         className: " list"
-      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonAbout))));
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonAbout)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        id: "nav-toggled"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "nav-listener"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.toggle,
+        className: "nav-btn fas fa-bars fa-2x"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        id: "ul-toggled",
+        style: {
+          transform: this.state.style
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "linkStyle",
+        to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Greetings_path
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "greetingsBtn",
+        className: "list"
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonGreetings)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "linkStyle",
+        to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Video_path
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "moreBtn",
+        className: " list"
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonInfo)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "linkStyle",
+        to: "/about"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "aboutBtn",
+        className: " list"
+      }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonAbout)))));
     }
   }]);
 

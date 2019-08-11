@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 class CardNormal extends Component {
     render() {
         return (
-            <div className={"contentContainer"} style={{marginTop: '-200px'}}>
+            <div className={"contentContainer openedGreeting"} >
                 <div className={"newGreetingContent"} >
                     <div className={"createSecond"}>
                         <div className={"card"} style={{backgroundImage:  `url(${this.props.card})`}}></div>

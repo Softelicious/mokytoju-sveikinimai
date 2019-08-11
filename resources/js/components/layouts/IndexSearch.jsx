@@ -10,7 +10,7 @@ class IndexSearch extends Component {
                 <form id={"form1"}>
                     <label id={"title1"}>{StringValues.titleSearch}</label>
                     <label id={"description1"}>{StringValues.descriptionSearch}</label>
-                    <input id={"search1"} type={"text"} placeholder={StringValues.placeholderSearch} /><span id={"searchBtn"} className={" fas fa-search fa-3x"}></span>
+                    <input id={"search1"} type={"text"} placeholder={StringValues.placeholderSearch} /><span id={"searchBtn"} className={" fas fa-search biggerSearch"}></span>
                     <Link id={"notFound1"} className={"linkStyle"} to={StringValues.CreatePublicGreetings_path}>
                        {StringValues.notFoundSearch}
                     </Link>

@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <div id="root"></div>
+            <div style="overflow: hidden" id="root"></div>
             <script src={{asset("js/app.js")}}></script>
         </div>
         <script>

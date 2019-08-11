@@ -12,7 +12,7 @@ class LandingBottom extends Component {
                     <div id={"ads"}>
                         <div id={"left"}>
                             <div id={"ad0"}>
-                                <span className="playBtn fas fa-play fa-2x"></span>
+                                <span className={"biggerBtn playBtn fas fa-play "}></span>
                             </div>
                         </div>
                         <div id={"right"}>

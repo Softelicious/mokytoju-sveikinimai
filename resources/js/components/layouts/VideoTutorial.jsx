@@ -35,6 +35,7 @@ class VideoTutorial extends Component {
 
     render() {
         return (
+
             <div id={"videoContainer"}>
                 <div className="video" style={{display: this.state.displayVid}}>
                     <video  className="video-player"  src={this.state.tutorial} controls >
