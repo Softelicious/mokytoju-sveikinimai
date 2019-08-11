@@ -1716,7 +1716,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     .cardInfo{
         float: initial;
         width: initial;
-        min-height: 600px;
+        min-height: 700px;
         height: initial;
     }
     .contentContainer{
@@ -1734,7 +1734,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
         margin-right: auto;
     }
     .infoMiddle{
-        min-height: 200px;
+        min-height: 300px;
         height: initial;
     }
     .greetingsSection{
