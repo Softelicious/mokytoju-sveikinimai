@@ -73757,14 +73757,14 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "dashboard-cards-label",
         htmlFor: "dashboard-cards-inputt"
-      }, "Pasirink pamok\u0105"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.state.choose), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Pakeisk",
         className: "dashboard-cards-submit"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "tutorial-player-container"
       }, function () {
-        if (_this2.state.tutorialFile !== []) {
+        if (_this2.state.tutorialFile !== undefined) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
             id: "myVideo",
             className: "tutorial-player",

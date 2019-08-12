@@ -103,13 +103,13 @@ class TutorialControl extends Component {
                     <form onSubmit={this.submitTutorial} className={"dashboard-cards-form"} encType={"multipart/form-data"} >
                         <div className={"dashboard-cards-title"}>Vaizdo pamoka</div>
                         <input onChange={this.changeTutorial} accept="video/*" type="file" className={"dashboard-cards-input"} name="file" id="dashboard-cards-inputt" />
-                        <label className={"dashboard-cards-label"} htmlFor="dashboard-cards-inputt">Pasirink pamoką</label>
+                        <label className={"dashboard-cards-label"} htmlFor="dashboard-cards-inputt">{this.state.choose}</label>
                         <input type={"submit"} value={"Pakeisk"} className={"dashboard-cards-submit"}/>
                     </form>
                 </div>
                 <div className={"tutorial-player-container"}>
                     {(() => {
-                        if (this.state.tutorialFile !== []) {
+                        if (this.state.tutorialFile !== undefined) {
                             return (
                                 <video id="myVideo" className="tutorial-player" src={ this.state.tutorialFile.path} controls>
                                     <source src={this.state.tutorialFile.path} type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
