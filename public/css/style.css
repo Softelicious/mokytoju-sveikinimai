@@ -1589,9 +1589,13 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     font-size: 35px;
 }
 .openedGreeting{
-    marginTop: '-200px
+    margin-top: -450px;
 }
 @media only screen and (max-width: 1032px) {
+    .openedGreeting{
+        margin-top: initial;
+    }
+
     .biggerSearch{
         font-size: 30px;
     }
@@ -1706,7 +1710,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     }
 
     .createSecond{
-        width: 100%;
+        width: 90%;
     }
     .card{
         background-size: 100% 100%;
