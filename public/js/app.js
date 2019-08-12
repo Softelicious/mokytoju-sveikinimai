@@ -62544,7 +62544,7 @@ exports.default = _Notifications2.default;
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74444,7 +74444,7 @@ function (_Component) {
         className: "bookshelfContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "try"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_UniquePublicGreetingCreate__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications__WEBPACK_IMPORTED_MODULE_3__["NotificationContainer"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_UniquePublicGreetingCreate__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
     }
   }]);
 

@@ -13,7 +13,6 @@ class CreateUniquePublicGreeting extends Component {
                 <div id="try">
                     <UniquePublicGreetingCreate/>
                 </div>
-                <NotificationContainer/>
             </div>
         );
     }
