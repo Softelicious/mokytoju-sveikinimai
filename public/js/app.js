@@ -73698,12 +73698,11 @@ function (_Component) {
         },
         onUploadProgress: function onUploadProgress(progressEvent) {
           var i = Math.round(progressEvent.loaded * 100 / progressEvent.total);
-          console.log(i);
 
           if (i !== 100) {
-            alert("Keliama");
+            alert("Keliama ".i);
           } else {
-            alert("Ikelta");
+            alert("Ikelta. Apdorojama...");
           }
         }
       }).then(function (response) {
@@ -73972,6 +73971,15 @@ function (_Component) {
         headers: {
           'Authorization': 'Bearer ' + cookie.get('access_token'),
           "Content-type": "multipart/form-data"
+        },
+        onUploadProgress: function onUploadProgress(progressEvent) {
+          var i = Math.round(progressEvent.loaded * 100 / progressEvent.total);
+
+          if (i !== 100) {
+            alert("Keliama " + i);
+          } else {
+            alert("Ikelta. Apdorojama...");
+          }
         }
       }).then(function (response) {
         //console.log(response.data);

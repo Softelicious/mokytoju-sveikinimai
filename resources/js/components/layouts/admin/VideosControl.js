@@ -35,6 +35,14 @@ class VideosControl extends Component {
             headers: {
                 'Authorization' : 'Bearer ' + cookie.get('access_token'),
                 "Content-type": "multipart/form-data"
+            },
+            onUploadProgress: progressEvent => {
+                var i = Math.round( (progressEvent.loaded * 100) / progressEvent.total);
+                if(i!==100){
+                    alert("Keliama "+i)
+                }else{
+                    alert("Ikelta. Apdorojama...")
+                }
             }
         })
             .then(function (response) {

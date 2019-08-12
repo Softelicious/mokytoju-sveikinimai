@@ -71,11 +71,10 @@ class TutorialControl extends Component {
             },
             onUploadProgress: progressEvent => {
                 var i = Math.round( (progressEvent.loaded * 100) / progressEvent.total);
-                console.log(i);
                 if(i!==100){
-                    alert("Keliama")
+                    alert("Keliama ".i)
                 }else{
-                    alert("Ikelta")
+                    alert("Ikelta. Apdorojama...")
                 }
             }
         })
