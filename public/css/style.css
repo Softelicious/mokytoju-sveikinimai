@@ -1658,9 +1658,7 @@ html::-webkit-scrollbar-thumb{
     #info{
         margin-top: 20px;
     }
-    .footer{
-        min-width: 100%;
-    }
+
     #section1{
         margin-top: -100px;
     }
@@ -1702,7 +1700,7 @@ html::-webkit-scrollbar-thumb{
         width: 90%;
     }
     .searchFormGreetings span{
-        margin-right: 30px;
+        display: none;
     }
 
     .login-container{
@@ -1773,6 +1771,35 @@ html::-webkit-scrollbar-thumb{
     .pre-video {
         width: 93%;
         height: initial;
+    }
+
+/*    //////////////////////Footer//////////////////////*/
+/*    /////////////////////////////////////////////////*/
+
+    .footerTable div{
+        display: inline-block;
+    }
+    .footer-line{
+        display: none!important;
+    }
+    .footer-middle{
+        display: grid!important;
+    }
+
+    .footer{
+        min-width: 100%;
+    }
+    /*.footerTable{*/
+    /*    color: white;*/
+    /*    display: table;*/
+    /*    width: 400px;*/
+    /*    margin-right: auto;*/
+    /*    margin-left: auto;*/
+
+    /*}*/
+
+    .footerTable div div{
+        float: initial;
     }
 }
 

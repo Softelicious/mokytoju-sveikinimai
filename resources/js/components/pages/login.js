@@ -74,7 +74,7 @@ class Login extends Component {
                     </form>
                     {this.redirect()}
                 </div>
-            </div>5
+            </div>
 
         );
     }

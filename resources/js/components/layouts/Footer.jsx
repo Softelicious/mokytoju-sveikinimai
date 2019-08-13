@@ -19,11 +19,11 @@ class Footer extends Component {
                             <i className="btn fas fa-envelope fa-2x"></i>
                         </div>
                     </div>
-                    <div>
+                    <div className={"footer-middle"}>
                         <Link className={"linkStyle"}  to={StringValues.Video_path}>
                             <div>{StringValues.buttonAbout}</div>
                         </Link>
-                        <div className={"line"}></div>
+                        <div className={"line footer-line"}></div>
                         <Link className={"linkStyle"} to={StringValues.Video_path}>
                             <div>{StringValues.buttonInfo}</div>
                         </Link>

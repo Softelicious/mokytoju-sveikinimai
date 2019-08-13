@@ -71256,11 +71256,13 @@ function (_Component) {
         className: "btn fab fa-youtube fa-2x"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "btn fas fa-envelope fa-2x"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "footer-middle"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "linkStyle",
         to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Video_path
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].buttonAbout)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "line"
+        className: "line footer-line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "linkStyle",
         to: _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].Video_path
@@ -75293,7 +75295,7 @@ function (_Component) {
         className: "login-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "login-title"
-      }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "Prisijungimas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "login-form",
         onSubmit: this.submit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -75301,14 +75303,14 @@ function (_Component) {
         onChange: this.changeName,
         name: "name",
         type: "text",
-        placeholder: "name",
+        placeholder: "Įveskite vardą",
         value: this.state.name
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-password",
         onChange: this.changePass,
         name: "password",
         type: "password",
-        placeholder: "password",
+        placeholder: "Įveskite slaptažodį",
         value: this.state.password
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-submit",
