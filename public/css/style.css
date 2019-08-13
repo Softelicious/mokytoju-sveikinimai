@@ -276,7 +276,8 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 }
 .greetingsBottom{
     height: 57vh;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     webkit-overflow-scrolling: auto;
 }
 .greetingsBottom::-webkit-scrollbar {
