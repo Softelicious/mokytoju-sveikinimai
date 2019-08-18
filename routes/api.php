@@ -29,6 +29,7 @@ Route::get('/getGreetings', 'PublicGreetingController@getGreetings');
 
 Route::get('/getTutorial', 'PublicGreetingController@getTutorial');
 Route::get('/getVideos', 'PublicGreetingController@getVideos');
+Route::post('/recaptcha', 'PublicGreetingController@recaptcha');
 
 Route::middleware('auth:api')->group(function (){
     Route::post('/admin/uploadTutorial', 'AdminController@uploadTutorial');
@@ -41,5 +42,6 @@ Route::middleware('auth:api')->group(function (){
     Route::post('/admin/deleteVideo', 'AdminController@deleteVideo');
     Route::get('/admin/logout','AdminController@logout');
     Route::get('/admin/check', 'AdminController@check');
+    Route::post('/admin/deletePublicGreeting', 'AdminController@deletePublicGreeting');
 });
 

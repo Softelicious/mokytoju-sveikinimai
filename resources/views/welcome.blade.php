@@ -13,6 +13,7 @@
         <link href={{asset('css/style.css')}} rel="stylesheet">
 
         <script src="https://kit.fontawesome.com/3451ecd6e5.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">

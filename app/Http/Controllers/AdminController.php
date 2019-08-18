@@ -126,4 +126,9 @@ class AdminController extends Controller
 
         return response(['logout'=>false, 'check' => Auth::check(), 'check2' => auth()->check()]);
     }
+
+    public function deletePublicGreeting(Request $request){
+        DB::table('public_greetings')->where('id', $request->index)->delete();
+        return response(['sc' => true]);
+    }
 }

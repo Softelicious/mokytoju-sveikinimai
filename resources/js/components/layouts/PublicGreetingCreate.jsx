@@ -5,7 +5,9 @@ import Cards from "../../Cards";
 import axios from "axios";
 import Cookies from "universal-cookie"
 
+import ReCAPTCHA from "react-recaptcha";
 
+const recaptchaRef = React.createRef();
 
 class PublicGreetingCreate extends Component {
     constructor(props){
@@ -22,12 +24,13 @@ class PublicGreetingCreate extends Component {
             greetings: [],
             gmax: 0,
             rand: 0,
-            redirect: false
+            redirect: false,
+            captcha: ''
+
         }
     }
 
-    componentWillMount() {
-
+    load = () => {
         axios({
             method: 'get',
             url: '/api/getCards',
@@ -59,6 +62,10 @@ class PublicGreetingCreate extends Component {
         }).catch( err =>{
             console.log(err)
         });
+    };
+    componentWillMount() {
+        this.load()
+
     }
 
     changeWidth  = (e) => {
@@ -67,7 +74,7 @@ class PublicGreetingCreate extends Component {
         this.setState({
             styleChars: $lenth,
             student: e.target.value
-        })
+        });
         console.log(this.state.styleChars);
     };
     onChangeTeacher = (e) => {
@@ -90,16 +97,20 @@ class PublicGreetingCreate extends Component {
         bodyFormData.append('greeting', this.state.greetings[this.state.rand]);
         bodyFormData.append('card', this.state.cards[this.state.card]);
         bodyFormData.append('school', this.state.school);
+        bodyFormData.append('captcha', this.state.captcha)
         axios({
             method: 'post',
             url: '/api/store',
             data: bodyFormData,
         })
             .then(function (response) {
-                self.setState({
-                    redirect: true
-                });
-                console.log(self.state.redirect)
+                if(response.data.success){
+                    self.setState({
+                        redirect: true
+                    });
+                }else{
+                    alert("Recaptcha sako, kad robotas")
+                }
             })
             .catch(function (response) {
                 alert("Nepavyko")
@@ -153,6 +164,14 @@ class PublicGreetingCreate extends Component {
         }
     };
 
+    verifyCallback = (value) => {
+        this.setState({
+            captcha: value
+        })
+    };
+
+
+
     render() {
         let style;
         if(this.state.styleChars> 11){
@@ -200,6 +219,16 @@ class PublicGreetingCreate extends Component {
                                         <Link to={StringValues.CreateUniquePublicGreetings_path}>
                                             <div id={"btn-unique-greeting"}>Unikalus sveikinimas</div>
                                         </Link>
+                                        <div className={"recaptcha"}>
+                                            <ReCAPTCHA
+                                                sitekey="6Lf2ibMUAAAAAMUMmwHWcwyTgk5FJjZjCfbDajsh"
+                                                render="explicit"
+                                                verifyCallback={this.verifyCallback}
+                                            />
+                                        </div>
+
+
+
                                     </div>
                                 </div>
                                 <div className={"createThird"}>

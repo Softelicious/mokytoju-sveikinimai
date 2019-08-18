@@ -249,7 +249,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin-left: 5vw;
 }
 .greetingsSection{
-    margin-top: 100px;
+    margin-top: 150px;
     height: 76.3vh;
     width: 70%;
     margin-right: auto;
@@ -1492,6 +1492,7 @@ html::-webkit-scrollbar-thumb{
 /*//////////////////////////////////////////////////////////////*/
 
 .tutorial-player-container{
+    margin-bottom: 40px;
     margin-top: 300px;
     display: flex;
     width: 100%;
@@ -1547,7 +1548,22 @@ html::-webkit-scrollbar-thumb{
 .openedGreeting{
     margin-top: -200px;
 }
+.recaptcha{
+    margin-top: 45px;
+    width: 100%;
+    display: inline-block;
+}
+.g-recaptcha{
+    width: 310px;
+    float: right;
+}
 @media only screen and (max-width: 1032px) {
+    .recaptcha{
+        position: absolute;
+        bottom: 85px;
+        left: 10px;
+        width: 310px;
+    }
     .openedGreeting{
         margin-top: initial;
     }
@@ -1670,8 +1686,10 @@ html::-webkit-scrollbar-thumb{
         background-size: 100% 100%;
         width: 100%;
         float: initial;
+        height: 90vw;
     }
     .cardInfo{
+        overflow-x: hidden;
         float: initial;
         width: initial;
         min-height: 700px;
@@ -1692,7 +1710,7 @@ html::-webkit-scrollbar-thumb{
         margin-right: auto;
     }
     .infoMiddle{
-        min-height: 300px;
+        min-height: 250px;
         height: initial;
     }
     .greetingsSection{

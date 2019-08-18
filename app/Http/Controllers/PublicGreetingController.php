@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class PublicGreetingController extends Controller
 {
+
     public function getCards(){
         $names = [];
         $sk = 0;
@@ -46,15 +47,31 @@ class PublicGreetingController extends Controller
         }
         return response(['sk' =>$sk, 'greetings' => $greetings, 'names'=>$names]);
     }
+    public function recaptcha(Request $request){
+        $secretKey = "6Lf2ibMUAAAAAO79wNvqLChxrks3xRgAc08FvfHt";
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret='. $secretKey .  '&response=' . $request->captcha;
+        $response = file_get_contents($url);
+        $responseKeys = json_decode($response,true);
+        return response(['success' => $responseKeys["success"]]);
+    }
     public function store(Request $request){
-        $greeting = new PublicGreetings();
-        $greeting->teacher = $request->teacher;
-        $greeting->student = $request->student;
-        $greeting->greeting = $request->greeting;
-        $greeting->card = $request->card;
-        $greeting->school = $request->school;
-        $greeting->save();
-        return Response()->json($greeting);
+        $secretKey = "6Lf2ibMUAAAAAO79wNvqLChxrks3xRgAc08FvfHt";
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret='. $secretKey .  '&response=' . $request->captcha;
+        $response = file_get_contents($url);
+        $responseKeys = json_decode($response,true);
+        if($responseKeys["success"]){
+            $greeting = new PublicGreetings();
+            $greeting->teacher = $request->teacher;
+            $greeting->student = $request->student;
+            $greeting->greeting = $request->greeting;
+            $greeting->card = $request->card;
+            $greeting->school = $request->school;
+            $greeting->save();
+            return Response(['success' =>true]);
+        }else{
+            return Response(['success' =>false]);
+        }
+
     }
     public function get(){
         $greeting = PublicGreetings::all();

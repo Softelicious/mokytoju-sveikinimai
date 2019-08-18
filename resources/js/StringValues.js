@@ -37,6 +37,7 @@ const StringValues = {
         send: "Siųsti Sveikinimą",
         messageDelivery: "Sveikinimas bus pristatytas 10-05",
         upload: "Įkelti Nuotrauką/Video",
+
         searchTeacher: "Įveskite mokytojo(-ės) vardą arba pavardę",
         closeSearchTeacher: "Uždaryti",
         return: "Grįžti į pagrindinį puslapį",
