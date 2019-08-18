@@ -4,6 +4,7 @@ import StringValues from "../../StringValues";
 import Cards from "../../Cards";
 import {Link, Redirect} from "react-router-dom";
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import ReCAPTCHA from "react-recaptcha";
 
 class UniquePublicGreetingCreate extends Component {
     constructor(props){
@@ -18,7 +19,8 @@ class UniquePublicGreetingCreate extends Component {
             cards: [],
             load: false,
             max:0,
-            redirect: false
+            redirect: false,
+            captcha: ''
         }
     }
 
@@ -87,6 +89,7 @@ class UniquePublicGreetingCreate extends Component {
         bodyFormData.append('greeting', this.state.greeting);
         bodyFormData.append('card', this.state.cards[this.state.card]);
         bodyFormData.append('school', this.state.school);
+        bodyFormData.append('captcha', this.state.captcha);
         axios({
             method: 'post',
             url: '/api/store',
@@ -150,6 +153,12 @@ class UniquePublicGreetingCreate extends Component {
             return (<Redirect to={to}/>);
         }
     };
+    verifyCallback = (value) => {
+        this.setState({
+            captcha: value
+        })
+    };
+
     render() {
         let style;
         if(this.state.styleChars> 11){
@@ -198,6 +207,13 @@ class UniquePublicGreetingCreate extends Component {
                                     <Link to={StringValues.CreatePublicGreetings_path} className={"linkStyle"}>
                                         <div id={"btn-unique-greeting"}>Sugeneruotas sveikinimas</div>
                                     </Link>
+                                    <div className={"recaptcha"}>
+                                        <ReCAPTCHA
+                                            sitekey="6Lf2ibMUAAAAAMUMmwHWcwyTgk5FJjZjCfbDajsh"
+                                            render="explicit"
+                                            verifyCallback={this.verifyCallback}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             <div className={"createThird"}>

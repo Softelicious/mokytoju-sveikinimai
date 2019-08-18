@@ -97,7 +97,7 @@ class PublicGreetingCreate extends Component {
         bodyFormData.append('greeting', this.state.greetings[this.state.rand]);
         bodyFormData.append('card', this.state.cards[this.state.card]);
         bodyFormData.append('school', this.state.school);
-        bodyFormData.append('captcha', this.state.captcha)
+        bodyFormData.append('captcha', this.state.captcha);
         axios({
             method: 'post',
             url: '/api/store',

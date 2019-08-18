@@ -21,7 +21,7 @@ html {
 }
 .contentContainer{
     color: black;
-    width: 1032px;
+    width: 1065px;
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -749,7 +749,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 /*/////////////////////////////////////*/
 /*Public Greeting create*/
 .createSecond{
-    width: 1032px;
+    width: 1065px;
     display: inline-block;
     color: white;
     margin-right: auto;
@@ -760,7 +760,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
 .cardInfo{
     color: black;
     background-color: white;
-    width: 514px;
+    width: 545px;
     float: right;
     height: 735px;
     display: block;
@@ -1557,7 +1557,7 @@ html::-webkit-scrollbar-thumb{
     width: 310px;
     float: right;
 }
-@media only screen and (max-width: 1032px) {
+@media only screen and (max-width: 1065px) {
     .recaptcha{
         position: absolute;
         bottom: 85px;
@@ -1680,13 +1680,15 @@ html::-webkit-scrollbar-thumb{
     }
 
     .createSecond{
+        margin-bottom: 15px;
+        margin-top: 70px;
         width: 90%;
     }
     .card{
         background-size: 100% 100%;
         width: 100%;
         float: initial;
-        height: 90vw;
+        height: 110vw;
     }
     .cardInfo{
         overflow-x: hidden;
@@ -1759,7 +1761,7 @@ html::-webkit-scrollbar-thumb{
         width: 340px;
     }
     #videoContainer{
-        width: 100%;
+        width: 385px;
         height: auto;
         background-color: initial;
     }
@@ -1787,7 +1789,7 @@ html::-webkit-scrollbar-thumb{
         margin-bottom: 20px;
     }
     .pre-video {
-        width: 93%;
+        width: 100%;
         height: initial;
     }
 

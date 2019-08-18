@@ -72565,6 +72565,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-notifications */ "./node_modules/react-notifications/lib/index.js");
 /* harmony import */ var react_notifications__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_notifications__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_recaptcha__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-recaptcha */ "./node_modules/react-recaptcha/dist/react-recaptcha.js");
+/* harmony import */ var react_recaptcha__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_recaptcha__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72584,6 +72586,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -72662,6 +72665,7 @@ function (_Component) {
       bodyFormData.append('greeting', _this.state.greeting);
       bodyFormData.append('card', _this.state.cards[_this.state.card]);
       bodyFormData.append('school', _this.state.school);
+      bodyFormData.append('captcha', _this.state.captcha);
       axios__WEBPACK_IMPORTED_MODULE_1___default()({
         method: 'post',
         url: '/api/store',
@@ -72733,6 +72737,12 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "verifyCallback", function (value) {
+      _this.setState({
+        captcha: value
+      });
+    });
+
     _this.state = {
       styleChars: 11,
       teacher: '',
@@ -72743,7 +72753,8 @@ function (_Component) {
       cards: [],
       load: false,
       max: 0,
-      redirect: false
+      redirect: false,
+      captcha: ''
     };
     return _this;
   }
@@ -72841,7 +72852,13 @@ function (_Component) {
         className: "linkStyle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "btn-unique-greeting"
-      }, "Sugeneruotas sveikinimas")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Sugeneruotas sveikinimas")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "recaptcha"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_recaptcha__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        sitekey: "6Lf2ibMUAAAAAMUMmwHWcwyTgk5FJjZjCfbDajsh",
+        render: "explicit",
+        verifyCallback: this.verifyCallback
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createThird"
       }, _StringValues__WEBPACK_IMPORTED_MODULE_2__["default"].messageDelivery), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createBottom"
