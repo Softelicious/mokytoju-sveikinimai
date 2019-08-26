@@ -21,7 +21,9 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
         \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         \App\Http\Middleware\EncryptCookies::class,
-        \Illuminate\Session\Middleware\StartSession::class
+        \Illuminate\Session\Middleware\StartSession::class,
+
+
 
     ];
 
@@ -64,6 +66,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+//        'forceSsl' => \App\Http\Middleware\ForceHttpProtocol::class
     ];
 
     /**

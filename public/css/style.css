@@ -19,6 +19,9 @@ html {
 
 
 }
+.fblogin{
+    display: none;
+}
 .contentContainer{
     color: black;
     width: 1065px;
@@ -93,7 +96,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     margin: 0;
 }
 .bookshelfContainer{
-    background-image:  url("../assets/background6.jpg");
+    background-image:  url("../assets/background66.jpg");
     background-size:  cover;
     background-repeat: no-repeat;
     position: relative;

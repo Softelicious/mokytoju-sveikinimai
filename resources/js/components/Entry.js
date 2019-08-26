@@ -23,6 +23,7 @@ class Entry extends Component {
 
     render() {
         return (
+            <>
                 <Router>
                     <Switch>
                         <Route exact path={StringValues.Index_path} component={Index}/>
@@ -42,6 +43,7 @@ class Entry extends Component {
                         <Redirect to={StringValues.Error_path}/>
                     </Switch>
                 </Router>
+            </>
         );
     }
 }

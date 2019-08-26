@@ -16,7 +16,7 @@ const StringValues = {
         buttonInfo: "Nežinai ką daryti? Spausk čia",
         titleSearch: "Ačiū, kad manimi tikėjai",
         descriptionSearch: "Pasveikink mokytoją su mokytojo diena!",
-        placeholderSearch: "Įveskite mokytojo(-ės) vardą arba pavardę",
+        placeholderSearch: "Įveskite mokytojo(-os) vardą arba pavardę",
         notFoundSearch: "Nėra Facebook paskyros? Palik viešą sveikinimą!",
         titleAds: "Mūsų Socialinės Reklamos Filmukai",
         nameAds: "Vaizdo įrašo pavadinimas",
