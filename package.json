@@ -23,6 +23,7 @@
         "path-to-regexp": "^3.0.0",
         "react-facebook-login": "^4.1.1",
         "react-google-recaptcha": "^2.0.0-rc.1",
+        "react-hyper-modal": "^1.1.1",
         "react-prism": "^4.3.2",
         "react-recaptcha": "^2.3.10",
         "react-router-dom": "^5.0.1",

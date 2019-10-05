@@ -8,7 +8,11 @@ class CardNormal extends Component {
             <div className={"contentContainer openedGreeting"} >
                 <div className={"newGreetingContent"} >
                     <div className={"createSecond"}>
-                        <div className={"card"} style={{backgroundImage:  `url(${this.props.card})`}}></div>
+                        <div className={"card"} style={{backgroundImage:  `url(${this.props.card})`}}>
+                            <div className={"card-fb"}>
+                                <img className={"card-fb-img"} src={this.props.picture} alt=""/>
+                            </div>
+                        </div>
                         <div className={"cardInfo"}>
                             <div className={"infoTop"}>
                                 <h3>{StringValues.adress + this.props.teacher}
@@ -25,7 +29,7 @@ class CardNormal extends Component {
                                     </div>
                                     <div> {this.props.student} </div>
                                 </div>
-                                <div> {this.props.school} </div>
+                                {/*<div> {this.props.school} </div>*/}
                             </div>
                         </div>
                     </div>

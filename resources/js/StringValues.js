@@ -27,7 +27,7 @@ const StringValues = {
         publicTitle: "Viešas Sveikinimas",
         adress: "Gerb. ",
         adress2: "Mokytojau,",
-        adress3: "- Jūsų mokinys, ",
+        adress3: "- Jūsų mokinys,  ",
         greeting: "Automatiškai sugeneruotas sistemos sveikinimas mokytojui. Automatiškai sugeneruotas sistemos" +
             " sveikinimas mokytojui. Automatiškai sugeneruotas sistemos sveikinimas mokytojui. Automatiškai" +
             " sugeneruotas sistemos sveikinimas mokytojui.",

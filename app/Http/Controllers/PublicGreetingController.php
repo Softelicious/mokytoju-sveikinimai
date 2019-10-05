@@ -6,7 +6,9 @@ use App\Cards;
 use App\Greeting;
 use App\PublicGreetings;
 use App\Tutorial;
+use App\Vid;
 use App\Videos;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,14 +30,8 @@ class PublicGreetingController extends Controller
         return response(['tutorial'=>$tutorial]);
     }
     public function getVideos(){
-        $names = [];
-        $sk = 0;
-        $videos = Videos::all();
-        foreach ($videos as $video){
-            array_push($names, $video->path);
-            $sk++;
-        }
-        return response(['sk' =>$sk, 'videos' => $videos, 'names'=>$names]);
+        $vids = Vid::all();
+        return Response()->json($vids);
     }
     public function getGreetings(){
         $sk = 0;
@@ -46,6 +42,7 @@ class PublicGreetingController extends Controller
             $sk++;
         }
         return response(['sk' =>$sk, 'greetings' => $greetings, 'names'=>$names]);
+
     }
     public function recaptcha(Request $request){
         $secretKey = "6Lf2ibMUAAAAAO79wNvqLChxrks3xRgAc08FvfHt";
@@ -64,8 +61,9 @@ class PublicGreetingController extends Controller
             $greeting->teacher = $request->teacher;
             $greeting->student = $request->student;
             $greeting->greeting = $request->greeting;
-            $greeting->card = $request->card;
+            $greeting->card_index = $request->card;
             $greeting->school = $request->school;
+            $greeting->picture = $request->picture;
             $greeting->save();
             return Response(['success' =>true]);
         }else{
@@ -76,5 +74,6 @@ class PublicGreetingController extends Controller
     public function get(){
         $greeting = PublicGreetings::all();
         return Response()->json($greeting);
+//        return Response(['key' =>'value']);
     }
 }

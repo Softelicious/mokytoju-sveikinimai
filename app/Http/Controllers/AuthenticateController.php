@@ -33,8 +33,8 @@ class AuthenticateController extends Controller
 
        $a = auth()->attempt($loginData, true);
         if(!$a) {
-            return response(['message'=>'Invalid credentials', 'auth' => false]);
-        }
+            return response(['message'=>$a, 'auth' => false]);
+       }
         $accessToken = auth()->user()->createToken('authToken')->accessToken;
         return response(['user' => auth()->user(), 'access_token' => $accessToken, 'auth' => true, "attempt" => $a, "auth()" => auth()]);
     }

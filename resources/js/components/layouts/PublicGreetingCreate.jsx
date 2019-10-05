@@ -3,11 +3,9 @@ import {Link, Redirect} from "react-router-dom";
 import StringValues from "../../StringValues";
 import Cards from "../../Cards";
 import axios from "axios";
-import Cookies from "universal-cookie"
-
 import ReCAPTCHA from "react-recaptcha";
-
-const recaptchaRef = React.createRef();
+import GreyBackground from "./GreyBackground";
+import GreyBackgroundLoad from "./GreyBackgroundLoad";
 
 class PublicGreetingCreate extends Component {
     constructor(props){
@@ -17,7 +15,7 @@ class PublicGreetingCreate extends Component {
             teacher: '',
             student: '',
             school: '',
-            card: 0,
+            card_index: 0,
             cards: [],
             load: false,
             max:0,
@@ -25,7 +23,10 @@ class PublicGreetingCreate extends Component {
             gmax: 0,
             rand: 0,
             redirect: false,
-            captcha: ''
+            captcha: '',
+            verified:'',
+            picture: '',
+            display: 'none'
 
         }
     }
@@ -64,7 +65,22 @@ class PublicGreetingCreate extends Component {
         });
     };
     componentWillMount() {
-        this.load()
+        this.load();
+        this.setState( {
+                verified: this.props.verified,
+                picture: this.props.picture,
+                student: this.props.student,
+                styleChars: this.props.student.length,
+        });
+
+        if(this.props.card_index !== undefined){
+            this.setState( {
+                card_index: this.props.card_index,
+                teacher: this.props.teacher,
+                school: this.props.school,
+            });
+        }
+
 
     }
 
@@ -89,15 +105,17 @@ class PublicGreetingCreate extends Component {
             styleChars: 11,
             teacher: '',
             student: '',
-            school: ''
+            school: '',
+            display: 'block'
         });
         var bodyFormData = new FormData;
         bodyFormData.append('student', this.state.student);
         bodyFormData.append('teacher', this.state.teacher);
         bodyFormData.append('greeting', this.state.greetings[this.state.rand]);
-        bodyFormData.append('card', this.state.cards[this.state.card]);
+        bodyFormData.append('card', this.state.cards[this.state.card_index]);
         bodyFormData.append('school', this.state.school);
         bodyFormData.append('captcha', this.state.captcha);
+        bodyFormData.append('picture', this.state.picture);
         axios({
             method: 'post',
             url: '/api/store',
@@ -109,41 +127,43 @@ class PublicGreetingCreate extends Component {
                         redirect: true
                     });
                 }else{
-                    alert("Recaptcha sako, kad robotas")
+                    alert("Recaptcha sako, kad robotas");
+                    self.changeDisplay('none')
                 }
             })
             .catch(function (response) {
-                alert("Nepavyko")
-                console.log(response)
+                alert("Nepavyko");
+                console.log(response);
+                self.changeDisplay('none')
             });
 
     };
     leftArrow = () => {
         console.log(55);
-        if(this.state.card!==0){
+        if(this.state.card_index!==0){
             this.setState({
 
-                card: this.state.card-1
+                card_index: this.state.card_index-1
             })
         }else{
             this.setState({
 
-                card: this.state.max
+                card_index: this.state.max
             })
         }
 
     };
     rightArrow = () => {
         console.log(44);
-        if(this.state.card!==this.state.max){
+        if(this.state.card_index!==this.state.max){
             this.setState({
 
-                card: this.state.card+1
+                card_index: this.state.card_index+1
             })
         }else{
             this.setState({
 
-                card: 0
+                card_index: 0
             })
         }
 
@@ -170,6 +190,12 @@ class PublicGreetingCreate extends Component {
         })
     };
 
+    changeDisplay = (value) => {
+        this.setState({
+            display: value
+        })
+    };
+
 
 
     render() {
@@ -179,6 +205,7 @@ class PublicGreetingCreate extends Component {
         }
             return (
                 <>
+                    <GreyBackgroundLoad display={this.state.display}/>
                     <form  onSubmit={this.submit}>
                         <div className={"contentContainer"}>
                             <div className={"newGreetingContent"}>
@@ -186,8 +213,10 @@ class PublicGreetingCreate extends Component {
                                     {StringValues.publicTitle}
                                 </div>
                                 <div className={"createSecond"}>
-                                    <div className={"card"} style={{backgroundImage:  `url(${this.state.cards[this.state.card]})`}}>
-
+                                    <div className={"card"} style={{backgroundImage:  `url(${this.state.cards[ this.state.card_index ]})`}}>
+                                        <div className={"card-fb"}>
+                                            <img className={"card-fb-img"} src={this.state.picture} alt=""/>
+                                        </div>
                                     </div>
                                     <div className={"cardInfo"}>
                                         <div className={"infoTop"}>
@@ -216,7 +245,19 @@ class PublicGreetingCreate extends Component {
                                                        name={"student-name"} placeholder={"Įveskite mokytojo mokyklą"} value={this.state.school}/>
                                             </div>
                                         </div>
-                                        <Link to={StringValues.CreateUniquePublicGreetings_path}>
+                                        <Link
+                                            to={{
+                                                  pathname: StringValues.CreateUniquePublicGreetings_path,
+                                                  state: {
+                                                      verified: this.props.verified,
+                                                      picture: this.props.picture,
+                                                      student: this.props.student,
+                                                      card_index: this.state.card_index,
+                                                      teacher: this.state.teacher,
+                                                      school: this.state.school
+                                                  }
+                                                }}
+                                        >
                                             <div id={"btn-unique-greeting"}>Unikalus sveikinimas</div>
                                         </Link>
                                         <div className={"recaptcha"}>

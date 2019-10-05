@@ -6,8 +6,9 @@ namespace App\Http\Controllers;
 use App\Cards;
 use App\Greeting;
 use App\Tutorial;
+use App\Vid;
 use App\Videos;
-use http\Cookie;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -27,12 +28,12 @@ class AdminController extends Controller
         if ($files = $request->index) {
             for($i = 0; $i<$request->index; $i++){
                 $name = time() . '.' . explode('/', explode(':', substr($request["file".$i], 0, strpos($request["file".$i], ';')))[1])[1];
-                Image::make($request["file".$i])->save(public_path('storage/') . "card".$i.$name);
-                array_push($arr, "card".$i.$name);
+                Image::make($request["file".$i])->save(public_path('storage/') . "card_index".$i.$name);
+                array_push($arr, "card_index".$i.$name);
                 $sk++;
 
                 $card = new Cards();
-                $card->path = Storage::url("card".$i.$name);
+                $card->path = Storage::url("card_index".$i.$name);
                 $card->save();
             }
             return response(['upload' => 'success', 'sk'=>$arr]);
@@ -58,19 +59,33 @@ class AdminController extends Controller
         }
         return response(['upload' => 'error no files ']);
     }
-    public function uploadTutorial(Request $request) {
-        $name = 'tutorial'.time() . '.' . explode('/', explode(':', substr($request->tutorial, 0, strpos($request->tutorial, ';')))[1])[1];
-        $video = file_get_contents($request->tutorial);
+    public function updateTutorial(Request $request) {
+        $name = 'tutorial'.time() . '.' . explode('/', explode(':', substr($request->video, 0, strpos($request->video, ';')))[1])[1];
+        $video = file_get_contents($request->video);
 
-        $files = Storage::allFiles('/public/tutorial');
-        Storage::delete($files);
-        DB::table('tutorial')->delete();
         Storage::disk('public')->put("tutorial/".$name, $video);
+        Storage::disk('public')->delete(Tutorial::first()->video);
 
-        $tutorial = new Tutorial();
-        $tutorial->path = "/storage/tutorial/".$name;
-        $tutorial->save();
-        return response(['upload' => 'yes']);
+        Tutorial::first()->update(['video' =>  "/storage/tutorial/".$name]);
+
+
+        return response(['upload' => "true"]);
+    }
+    public function updateTutorialThumblain(Request $request) {
+        $name = 'tutorialThumblain'.time() . '.' . explode('/', explode(':', substr($request->thumblain, 0, strpos($request->thumblain, ';')))[1])[1];
+        $thumblain = file_get_contents($request->thumblain);
+
+        Storage::disk('public')->put("tutorial/".$name, $thumblain);
+        Storage::disk('public')->delete(Tutorial::first()->thumblain);
+
+        Tutorial::first()->update(['thumblain' =>  "/storage/tutorial/".$name]);
+
+
+        return response(['upload' => "true"]);
+    }
+    public function updateTutorialDescriptionAndName(Request $request){
+        Tutorial::first()->update(['name' => $request->name, 'description' => $request->description]);;
+        return response([]);
     }
 
     public function uploadGreeting(Request $request) {
@@ -130,5 +145,27 @@ class AdminController extends Controller
     public function deletePublicGreeting(Request $request){
         DB::table('public_greetings')->where('id', $request->index)->delete();
         return response(['sc' => true]);
+    }
+    public function vids(){
+        $vids = Vid::all();
+        return Response()->json($vids);
+    }
+    public function updateDescriptionAndName(Request $request){
+        $vid = DB::table('vids')->where('id', $request->index)->update(['name' => $request->name, 'description' => $request->description]);;
+        return response()->json($vid);
+    }
+    public function updateVideo(Request $request){
+        $name = 'vid'.time() . '.' . explode('/', explode(':', substr($request['video'], 0, strpos($request['video'], ';')))[1])[1];
+        $video = file_get_contents($request['video']);
+        Storage::disk('public')->put("promo/".$name, $video);
+        DB::table('vids')->where('id', $request['index'])->update(['video' => Storage::url('promo/'.$name)]);;
+        return response(["t" => $name]);
+    }
+    public function updateThumblain(Request $request){
+        $name = 'thumb'.time() . '.' . explode('/', explode(':', substr($request['thumblain'], 0, strpos($request['thumblain'], ';')))[1])[1];
+        Image::make($request["thumblain"])->save(public_path('storage/promo/') . $name);
+        DB::table('vids')->where('id', $request['index'])->update(['thumblain' => Storage::url('promo/'.$name)]);;
+        return response(["t" => $name]);
+
     }
 }

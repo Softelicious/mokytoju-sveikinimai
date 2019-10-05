@@ -12,7 +12,7 @@ class Greeting extends Component {
             <div className={"greeting"}>
                 <div className={"content"}>
                     <div className={"leftContent"}>
-                        <img src={foto2}/>
+                        <img src={this.props.data.picture}/>
                     </div>
                     <div className={"middleContent"}>
                         <div className={"fullName"}>

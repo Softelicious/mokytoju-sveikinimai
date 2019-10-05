@@ -8,6 +8,7 @@ import Cookie from "universal-cookie";
 import CardsControl from "../../layouts/admin/CardsControl";
 import TutorialControl from "../../layouts/admin/TutorialControl";
 import VideosControl from "../../layouts/admin/VideosControl";
+import VideosControl2 from "../../layouts/admin/VideoControl2";
 import LandingBottom from "../../layouts/LandingBottom";
 import PublicGreetingsControl from "../../layouts/admin/PublicGreetingsControl";
 
@@ -27,7 +28,8 @@ class Dashboard extends Component {
                 <CardsControl/>
                 <GreetingsControl/>
                 <TutorialControl/>
-                <VideosControl/>
+                {/*<VideosControl/>*/}
+                <VideosControl2/>
                 <PublicGreetingsControl/>
             </div>
 

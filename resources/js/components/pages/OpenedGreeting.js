@@ -13,6 +13,7 @@ class OpenedGreeting extends Component {
                     student={this.props.location.state.student}
                     card={this.props.location.state.card}
                     greeting={this.props.location.state.greeting}
+                    picture={this.props.location.state.picture}
                 />
             </div>
         );

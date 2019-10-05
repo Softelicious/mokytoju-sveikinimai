@@ -4,18 +4,23 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTutorialTable extends Migration
+class CreateVidsTable extends Migration
 {
     /**
      * Run the migrations.
+     *
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('tutorial', function (Blueprint $table) {
+        Schema::create('vids', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('path');
+            $table->string('video');
+            $table->string('thumblain');
+            $table->string('name');
+            $table->string('description');
+            $table->integer('index')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ class CreateTutorialTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutorial');
+        Schema::dropIfExists('vids');
     }
 }

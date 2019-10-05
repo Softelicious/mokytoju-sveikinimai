@@ -65,8 +65,9 @@ class GreetingsSection extends Component {
                                            teacher: data.teacher,
                                            student: data.student,
                                            school: data.school,
-                                           card: data.card,
+                                           card: data.card_index,
                                            greeting: data.greeting,
+                                           picture: data.picture,
                                        }
                                    }
                                    }>

@@ -6,7 +6,7 @@ class CardsUnique extends Component {
     render() {
         return (
             <div className={"createSecond"}>
-                <div className={"card"}>
+                <div className={"card_index"}>
 
                 </div>
                 <div className={"cardInfo"}>

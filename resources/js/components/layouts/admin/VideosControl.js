@@ -115,7 +115,7 @@ class VideosControl extends Component {
                         <label className={"dashboard-cards-label"} htmlFor="dashboard-vids-input">{this.state.choose}</label>
                         <input type={"submit"} value={"Įkelk"} className={"dashboard-cards-submit"}/>
                     </form>
-                    {/*</div>*/}
+b
                     <div className={"video-list"}>
                         {
                             this.state.files.map((data) =>

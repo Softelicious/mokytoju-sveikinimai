@@ -28,6 +28,7 @@ class Video extends Component {
             .catch(error => {
                 console.log(error)
             })
+
     };
     render() {
         return (
@@ -36,9 +37,8 @@ class Video extends Component {
                     <video id="myVideo" className="tutorial-player" src={ this.props.path} controls>
                         <source src={this.props.path} type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
                         <p>Sorry, but your browser does not support this video format.</p>
-
                     </video>
-                    <div onClick={this.delete} className="video-close fas fa-times fa-2x"></div>
+                    <div onClick={this.delete} className="video-close fas fa-times fa-2x"></div>yyy
                 </div>
             </div>
         );

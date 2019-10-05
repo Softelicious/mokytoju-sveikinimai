@@ -32,8 +32,7 @@ class CardsControl extends Component {
             url: '/api/admin/uploadCards',
             data: formData,
             headers: {
-                'Authorization' : 'Bearer ' + cookie.get('access_token'),
-                "Content-type": "multipart/form-data"
+                'Authorization' : 'Bearer ' + cookie.get('access_token')
             }
         })
             .then(function (response) {

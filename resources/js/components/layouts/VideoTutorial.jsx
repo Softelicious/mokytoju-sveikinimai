@@ -3,6 +3,7 @@ import StringValues from '../../StringValues';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+
 class VideoTutorial extends Component {
     constructor(props){
         super(props);
@@ -10,15 +11,21 @@ class VideoTutorial extends Component {
             tutorial: '',
             displayVid: 'none',
             displayPre: 'block',
+            name: '',
+            description: '',
+
         }
     }
+
 
     componentWillMount() {
 
         axios.get('/api/getTutorial')
             .then(response => {
                 this.setState({
-                    tutorial: response.data.tutorial[0].path
+                    tutorial: response.data.tutorial[0].video,
+                    name: response.data.tutorial[0].name,
+                    description: response.data.tutorial[0].description,
                 })
             })
             .catch(response => {
@@ -34,11 +41,12 @@ class VideoTutorial extends Component {
     };
 
     render() {
+
         return (
 
             <div id={"videoContainer"}>
                 <div className="video" style={{display: this.state.displayVid}}>
-                    <video  className="video-player"  src={this.state.tutorial} controls >
+                    <video src={this.state.tutorial} controls >
                         {/*<source src={vid} type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>*/}
                         <p>Sorry, but your browser does not support this video format.</p>
                     </video>
@@ -51,7 +59,7 @@ class VideoTutorial extends Component {
                         <i className="big-icon fa fa-play-circle "></i>
                     </div>
                     <div className="tutorial-description">
-                        {StringValues.tutorial_description}
+                        {this.state.description}
                     </div>
                     <div className={"close-tutorial"}>
                         <Link className={"linkStyle"} to={"/"}>

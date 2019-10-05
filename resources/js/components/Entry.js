@@ -18,8 +18,12 @@ import Dashboard from "./pages/admin/Dashboard";
 import PrivateRoute from "./helpers/PrivateRoute";
 import About from "./pages/About";
 import OpenedGreeting from "./pages/OpenedGreeting";
+import Cookie from "universal-cookie";
 
 class Entry extends Component {
+    constructor(props){
+        super(props);
+    }
 
     render() {
         return (

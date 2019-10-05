@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicGreetingsTable extends Migration
+class CreateTutorialTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreatePublicGreetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('public_greetings', function (Blueprint $table) {
+        Schema::create('tutorial', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('teacher');
-            $table->string('student');
-            $table->string('greeting', 1500);
-            $table->string('card');
-            $table->string('school');
+            $table->string('video');
+            $table->string('thumblain');
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreatePublicGreetingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('public_greetings');
+        Schema::dropIfExists('tutorial');
     }
 }

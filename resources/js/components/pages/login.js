@@ -9,6 +9,7 @@ class Login extends Component {
         this.state = {
             name: '',
             password: '',
+
             redirect: false
         }
     }
@@ -22,7 +23,7 @@ class Login extends Component {
             method: 'post',
             url: '/api/login',
             data: bodyFormData,
-            config: { headers: {'Content-Type': 'multipart/form-data' }}
+            // config: { headers: {'Content-Type': 'multipart/form-data' }}
         })
             .then(function (response) {
                 if(response.data.auth){
@@ -32,11 +33,14 @@ class Login extends Component {
                         redirect: true
                     })
                 }else{
-                    alert("Neprisijungei")
+                    alert("Neprisijungei -  " )
+                    console.log(response)
                 }
+                console.log("yra")
             })
             .catch(function (response) {
                 alert("Nepavyko")
+                console.log(response)
             });
 
         this.setState({
@@ -45,6 +49,8 @@ class Login extends Component {
         });
 
     };
+
+
     redirect = () => {
         if (this.state.redirect) {
             return <Redirect to={"/admin"}/>;
@@ -60,6 +66,8 @@ class Login extends Component {
             password: e.target.value,
         })
     };
+
+
 
     render() {
         return (

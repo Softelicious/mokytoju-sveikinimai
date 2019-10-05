@@ -37,7 +37,7 @@ class AdminGreeting extends Component {
                                   teacher: this.props.data.teacher,
                                   student: this.props.data.student,
                                   school: this.props.data.school,
-                                  card: this.props.data.card,
+                                  card_index: this.props.data.card_index,
                                   greeting: this.props.data.greeting,
                               }
                           }}
