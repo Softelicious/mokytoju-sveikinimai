@@ -64,7 +64,8 @@ class AdminController extends Controller
         $video = file_get_contents($request->video);
 
         Storage::disk('public')->put("tutorial/".$name, $video);
-        Storage::disk('public')->delete(Tutorial::first()->video);
+        $productImage = str_replace('/storage', '', Tutorial::first()->video);
+        Storage::disk('public')->delete($productImage);
 
         Tutorial::first()->update(['video' =>  "/storage/tutorial/".$name]);
 
@@ -76,7 +77,8 @@ class AdminController extends Controller
         $thumblain = file_get_contents($request->thumblain);
 
         Storage::disk('public')->put("tutorial/".$name, $thumblain);
-        Storage::disk('public')->delete(Tutorial::first()->thumblain);
+        $productImage = str_replace('/storage', '', Tutorial::first()->thumblain);
+        Storage::disk('public')->delete($productImage);
 
         Tutorial::first()->update(['thumblain' =>  "/storage/tutorial/".$name]);
 
@@ -100,11 +102,11 @@ class AdminController extends Controller
     }
 
     public function deleteGreeting(Request $request) {
-        $greeting = DB::table('greetings')->where('id', $request->index)->delete();
+        DB::table('greetings')->where('id', $request->index)->delete();
         return response(['id'=>$request->index]);
     }
     public function deleteCard(Request $request) {
-        $card = DB::table('cards')->where('id', $request->index)->delete();
+        DB::table('cards')->where('id', $request->index)->delete();
         $productImage = str_replace('/storage', '', $request->name);
         Storage::delete('/public' . $productImage);
         return response(['id'=>$request->index]);
@@ -158,12 +160,16 @@ class AdminController extends Controller
         $name = 'vid'.time() . '.' . explode('/', explode(':', substr($request['video'], 0, strpos($request['video'], ';')))[1])[1];
         $video = file_get_contents($request['video']);
         Storage::disk('public')->put("promo/".$name, $video);
+        $productImage = str_replace('/storage', '', Vid::find($request['index'])->video);
+        Storage::disk('public')->delete($productImage);
         DB::table('vids')->where('id', $request['index'])->update(['video' => Storage::url('promo/'.$name)]);;
         return response(["t" => $name]);
     }
     public function updateThumblain(Request $request){
         $name = 'thumb'.time() . '.' . explode('/', explode(':', substr($request['thumblain'], 0, strpos($request['thumblain'], ';')))[1])[1];
         Image::make($request["thumblain"])->save(public_path('storage/promo/') . $name);
+        $productImage = str_replace('/storage', '', Vid::find($request['index'])->thumblain);
+        Storage::disk('public')->delete($productImage);
         DB::table('vids')->where('id', $request['index'])->update(['thumblain' => Storage::url('promo/'.$name)]);;
         return response(["t" => $name]);
 
