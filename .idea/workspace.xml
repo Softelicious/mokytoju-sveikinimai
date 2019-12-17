@@ -2,12 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1534cc1-1573-4f9b-aeef-7976cc42a7a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/PrivateGreeting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_17_193129_create_private_greetings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UniqueGenerator/Card/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UniqueGenerator/UniqueGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/Card/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/UsuallGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateGeneratedGreeting/PrivateGeneratedGreeting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateUniqueGreeting/PrivateUniqueGreeting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/app/public/promo/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sveikinimai2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sveikinimai2019.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_27_211654_create_greetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_27_211654_create_greetings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_28_130829_create_public_greetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_28_130829_create_public_greetings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_15_193248_create_vids_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_15_193248_create_vids_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_02_091152_create_tutorial_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_02_091152_create_tutorial_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/StringValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/StringValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Entry.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Entry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/IndexSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/IndexSearch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/SearchTeachersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/SearchTeachersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/Teacher.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/Teacher.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/TeachersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/TeachersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/CreateMultipleGreetings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/CreateMultipleGreetings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/CreatePublicGreeting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/CreatePublicGreeting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +47,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -31,78 +65,6 @@
     <expand />
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/PublicGreetingCreate.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/CardNormal.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/pages/OpenedGreeting.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/pages/PublicGreetings.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/GreetingsSection.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="175" column="5" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-              <folding>
-                <element signature="e#41#55#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -110,99 +72,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>.createT</find>
-      <find>Cookies</find>
-      <find>card-fb</find>
-      <find>this.state.card</find>
-      <find>unique-gree</find>
-      <find>card_index</find>
-      <find>card</find>
-      <find>#teacher-name</find>
-      <find>#teac</find>
-      <find>.adress-stude</find>
-      <find>greyB</find>
-      <find>infoTop</find>
-      <find>h3</find>
-      <find>gerb</find>
-      <find>teacher-name</find>
-      <find>dashboard-nav</find>
-      <find>dashboard-card</find>
-      <find>dashboard-cards</find>
-      <find>tutorial</find>
-      <find>ad0</find>
-      <find>ads</find>
-      <find>playBtn</find>
-      <find>#left</find>
-      <find>section</find>
-      <find>section1</find>
-      <find>video-player</find>
-      <find>footerTable</find>
-      <find>video</find>
-      <find>right</find>
-      <find>#right</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app/Http/Middleware/HttpsProtocol.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/Navigation.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/pages/login.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/Entry.js" />
-        <option value="$PROJECT_DIR$/.env.example" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_28_023305_create_public_greetings_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_28_130829_create_public_greetings_table.php" />
-        <option value="$PROJECT_DIR$/app/PublicGreetings.php" />
-        <option value="$PROJECT_DIR$/app/PublicUniqueGreetings.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/pages/CreatePublicGreeting.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/pages/CreateUniquePublicGreeting.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/Greeting.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/pages/OpenedGreeting.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/CardNormal.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/StringValues.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/GreyBackgroundLoad.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/UniquePublicGreetingCreate.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/PublicGreetingCreate.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/admin/VideosControl.js" />
-        <option value="$PROJECT_DIR$/app/Videoss.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_09_06_082826_create_videosses_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_09_06_082826_create_videoss_table.php" />
-        <option value="$PROJECT_DIR$/app/vid.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/admin/Video.js" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_09_15_193130_create_vids_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_09_06_152141_create_vids_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_09_15_193248_create_vids_table.php" />
-        <option value="$PROJECT_DIR$/app/Vid.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/pages/admin/Dashboard.js" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/admin/CardsControl.js" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_31_092010_create_tutorial_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_10_02_091152_create_tutorial_table.php" />
-        <option value="$PROJECT_DIR$/app/Tutorial.php" />
-        <option value="$PROJECT_DIR$/database/seeds/TutorialSeeder.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/admin/TutorialControl.js" />
-        <option value="$PROJECT_DIR$/resources/js/components/pages/Video.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/LandingBottom.jsx" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/VideoTutorial.jsx" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/admin/VideoControl2.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PublicGreetingController.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/layouts/GreetingsSection.jsx" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      </list>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -306,180 +177,15 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem-cached-adapter" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="23" />
-    <option name="y" value="146" />
-    <option name="width" value="1424" />
-    <option name="height" value="973" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="promo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sveikinimai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sveikinimai" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1UboftQ3xXofnmXizcODRyiuF4j" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/promo" />
@@ -495,10 +201,17 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\pages\private-greetings\PrivateGeneratedGreeting" />
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\layouts\private-greetings\UsuallGenerator" />
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\layouts\private-greetings\UniqueGenerator" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\storage\app\public\promo" />
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\storage\app\public\tutorial" />
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai" />
       <recent name="C:\Users\domin\Projects\Sveikinimai\storage\app\public\promo" />
       <recent name="C:\Users\domin\Projects\Sveikinimai\resources\js\components\layouts" />
-      <recent name="C:\laravel\sveikinimai2019\public\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -578,63 +291,18 @@
       <workItem from="1570105435586" duration="4546000" />
       <workItem from="1570179217113" duration="12233000" />
       <workItem from="1570361203403" duration="5949000" />
+      <workItem from="1575634763617" duration="1019000" />
+      <workItem from="1575738418292" duration="666000" />
+      <workItem from="1575800459686" duration="2871000" />
+      <workItem from="1576020513540" duration="2919000" />
+      <workItem from="1576053598804" duration="13326000" />
+      <workItem from="1576090724485" duration="11057000" />
+      <workItem from="1576152166650" duration="1139000" />
+      <workItem from="1576231347073" duration="1156000" />
+      <workItem from="1576332586237" duration="1463000" />
+      <workItem from="1576533585301" duration="44187000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334264000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23347548" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926686" weight="0.3298731" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.16684724" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="10" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48900294" visible="true" weight="0.2751896" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.51099706" side_tool="true" weight="0.39215687" />
-      <window_info anchor="bottom" id="TypeScript" order="13" weight="0.32936078" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32991204" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15991472" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926686" weight="0.3298731" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.16684724" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Command Line Tools Console" order="10" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48900294" visible="true" weight="0.14842904" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.51099706" side_tool="true" weight="0.39215687" />
-      <window_info anchor="bottom" id="TypeScript" order="13" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32991204" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -645,20 +313,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -679,298 +334,7 @@
       </map>
     </option>
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569845998.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569832951.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569832655.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569832404.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569832996.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569832713.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569834813.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569833986.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569833608.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569833552.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/TutorialSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#7#24#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/36e4f416145ed8182848452e5aea55ff.mp4">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/universal-cookie/es6/Cookies.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/thumb1569958971.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569834758.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/admin/TutorialControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="188" column="99" selection-start-line="188" selection-start-column="99" selection-end-line="188" selection-end-column="99" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/Entry.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/Cards.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/StringValues.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/Navigation.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/LandingTop.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/pages/Video.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/VideoTutorial.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="671" column="17" selection-start-line="671" selection-start-column="8" selection-end-line="671" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/admin/VideoControl2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="245" column="76" selection-start-line="245" selection-start-column="76" selection-end-line="245" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="108" selection-start-line="47" selection-start-column="108" selection-end-line="47" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/LandingBottom.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="155" column="75" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PublicUniqueGreetings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Greeting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PublicGreetings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublicGreetingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="62" column="53" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
-          <folding>
-            <element signature="e#40#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/card_index61570265388.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569832926.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569834597.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569834613.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/vid1569834453.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/card_index161570265388.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/PublicGreetingCreate.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/CardNormal.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/pages/OpenedGreeting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/pages/PublicGreetings.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/layouts/GreetingsSection.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/card11566916742.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/tutorial/tutorialThumblain1570046385.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/promo/thumb1570366906.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="175" column="5" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-          <folding>
-            <element signature="e#41#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

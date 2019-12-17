@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicGreetingsTable extends Migration
+class CreatePrivateGreetingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreatePublicGreetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('public_greetings', function (Blueprint $table) {
+        Schema::create('private_greetings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('teacher');
             $table->string('student');
             $table->longText('greeting');
             $table->string('card_index');
-            $table->string('school');
             $table->string('picture');
+            $table->unsignedBigInteger('teacher_id');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreatePublicGreetingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('public_greetings');
+        Schema::dropIfExists('private_greetings');
     }
 }

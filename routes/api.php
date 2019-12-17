@@ -30,6 +30,7 @@ Route::get('/getGreetings', 'PublicGreetingController@getGreetings');
 Route::get('/getTutorial', 'PublicGreetingController@getTutorial');
 Route::get('/getVideos', 'PublicGreetingController@getVideos');
 Route::post('/recaptcha', 'PublicGreetingController@recaptcha');
+Route::resource('teachers', 'TeachersController');
 
 Route::middleware('auth:api')->group(function (){
     Route::post('/admin/updateTutorial', 'AdminController@updateTutorial');

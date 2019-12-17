@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import PublicGreetingCreate from '../layouts/PublicGreetingCreate';
-import FacebookLogin from 'react-facebook-login';
+import PublicGreetingCreate from "../../PublicGreetingCreate";
+import FacebookLogin from "react-facebook-login";
+import Card from "./Card/Card";
 
-class CreatePublicGreeting extends Component {
+class UsuallGenerator extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -12,16 +13,20 @@ class CreatePublicGreeting extends Component {
 
     componentClicked = () => console.log('clicked');
     responseFacebook = (response) => {
-        localStorage.setItem('verified', "true");
-        localStorage.setItem('student', response.name);
-        localStorage.setItem('picture', response.picture.data.url);
+        if(response.picture.data.url){
+            localStorage.setItem('isVerified', 'true');
+            localStorage.setItem('student', response.name);
+            localStorage.setItem('picture', response.picture.data.url);
+        }else{
+            localStorage.setItem('isVerified', 'false');
+        }
         this.load()
     };
 
     publicGreetingInit = () => {
         try {
-            return (<PublicGreetingCreate
-                verified={localStorage.getItem('verified')}
+            return (<Card
+                verified={localStorage.getItem('verifiedd')}
                 picture={localStorage.getItem('picture')}
                 student={localStorage.getItem('student')}
                 card_index={this.props.location.state.card_index}
@@ -29,8 +34,8 @@ class CreatePublicGreeting extends Component {
                 school={this.props.location.state.school}
             />)
         }catch (e) {
-            return (<PublicGreetingCreate
-                verified={localStorage.getItem('verified')}
+            return (<Card
+                verified={localStorage.getItem('verifiedd')}
                 picture={localStorage.getItem('picture')}
                 student={localStorage.getItem('student')}
                 card_index={0}
@@ -40,14 +45,16 @@ class CreatePublicGreeting extends Component {
         }
     };
     load = () => {
-        if(JSON.parse(localStorage.getItem('verified'))){
+        if(JSON.parse(localStorage.getItem('verifiedd'))){
             this.setState({
-                content: (<div className={"bookshelfContainer"}>
-                    <div></div>
-                    <div id="try">
-                        {this.publicGreetingInit()}
+                content: (
+                    <div className={"bookshelfContainer"}>
+                        <div></div>
+                        <div id="try">
+                            {this.publicGreetingInit()}
+                        </div>
                     </div>
-                </div>)
+                )
             })
         }else{
             this.setState({
@@ -69,12 +76,12 @@ class CreatePublicGreeting extends Component {
                             </div>
                         </div>
                     </div>
-                        )
+                )
             })
         }
     };
     componentWillMount() {
-       this.load()
+        this.load()
     }
 
     render() {
@@ -87,4 +94,4 @@ class CreatePublicGreeting extends Component {
     }
 }
 
-export default CreatePublicGreeting;
+export default UsuallGenerator;

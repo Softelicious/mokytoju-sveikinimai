@@ -38,8 +38,6 @@ class AuthenticateController extends Controller
         $accessToken = auth()->user()->createToken('authToken')->accessToken;
         return response(['user' => auth()->user(), 'access_token' => $accessToken, 'auth' => true, "attempt" => $a, "auth()" => auth()]);
     }
-
-
 }
 
 

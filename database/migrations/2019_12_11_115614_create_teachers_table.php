@@ -4,23 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVidsTable extends Migration
+class CreateTeachersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('vids', function (Blueprint $table) {
+        Schema::create('teachers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('video');
-            $table->string('thumblain');
             $table->string('name');
-            $table->longText('description');
-            $table->integer('index')->unique();
+            $table->string('email');
+            $table->string('school');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateVidsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vids');
+        Schema::dropIfExists('teacher');
     }
 }

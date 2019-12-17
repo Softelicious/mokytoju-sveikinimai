@@ -19,6 +19,8 @@ import PrivateRoute from "./helpers/PrivateRoute";
 import About from "./pages/About";
 import OpenedGreeting from "./pages/OpenedGreeting";
 import Cookie from "universal-cookie";
+import PrivateGeneratedGreeting from "./pages/private-greetings/PrivateGeneratedGreeting/PrivateGeneratedGreeting";
+import PrivateUniqueGreeting from "./pages/private-greetings/PrivateUniqueGreeting/PrivateUniqueGreeting";
 
 class Entry extends Component {
     constructor(props){
@@ -44,6 +46,8 @@ class Entry extends Component {
                         <PrivateRoute exact path={"/admin"} component={Dashboard}/>
                         <Route exact path={"/about"} component={About}/>
                         <Route exact path={StringValues.Error_path} component={Error}/>
+                        <Route exact path={StringValues.private_usual_card_path+'/:id'} component={PrivateGeneratedGreeting}/>
+                        <Route exact path={StringValues.private_unique_card_path+'/:id'} component={PrivateUniqueGreeting}/>
                         <Redirect to={StringValues.Error_path}/>
                     </Switch>
                 </Router>

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
         <head>
@@ -10,22 +9,21 @@
 
             <!-- Fonts -->
 
-    {{--        <link href={{asset('css/app.css')}} rel="stylesheet">--}}
+{{--        <link href={{asset('css/app.css')}} rel="stylesheet">--}}
             <link href={{asset('css/style.css')}} rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
             <script src="https://kit.fontawesome.com/3451ecd6e5.js"></script>
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         </head>
     <body>
-
         <div class="flex-center position-ref full-height">
             <div style="overflow: hidden" id="root"></div>
-            <script src={{asset("js/app.js")}}></script>
         </div>
-        <script>
-            window.axios.defaults.headers.common = {
-                'X-Requested-With': 'XMLHttpRequest',
-            };
-        </script>
+{{--        <script>--}}
+{{--            window.axios.defaults.headers.common = {--}}
+{{--                'X-Requested-With': 'XMLHttpRequest',--}}
+{{--            };--}}
+{{--        </script>--}}
+        <script src={{asset("js/app.js")}}></script>
     </body>
 </html>

@@ -1,7 +1,10 @@
 
 
 const StringValues = {
+        private_unique_card_path: '/sukurti/mokytojui/unikalus',
+        private_usual_card_path: '/sukurti/mokytojui/iprastas',
         Index_path: "/",
+        GreetingForTeacher: "/sukurti/mokytojui",
         Greetings_path: "/Sveikinimai",
         CreatePublicGreetings_path: "/Sukurti",
         CreateUniquePublicGreetings_path: "/Unikalus",
@@ -17,7 +20,7 @@ const StringValues = {
         titleSearch: "Ačiū, kad manimi tikėjai",
         descriptionSearch: "Pasveikink mokytoją su mokytojo diena!",
         placeholderSearch: "Įveskite mokytojo(-os) vardą arba pavardę",
-        notFoundSearch: "Nėra Facebook paskyros? Palik viešą sveikinimą!",
+        notFoundSearch: "Nerandi mokytojo? Palik viešą sveikinimą!",
         titleAds: "Mūsų Socialinės Reklamos Filmukai",
         nameAds: "Vaizdo įrašo pavadinimas",
         descriptionAds: "Įrašo apibūdinimas/mintis",
