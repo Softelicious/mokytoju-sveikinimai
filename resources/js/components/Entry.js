@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
 import PublicGreetings from './pages/PublicGreetings';
 import CreatePublicGreeting from './pages/CreatePublicGreeting';
-import CreateMultipleGreetings from './pages/CreateMultipleGreetings';
+import TeacherSearchHeading from './pages/TeacherSearchHeading';
 import CreateUniqueGreetings from './pages/CreateUniqueGreetings';
 import Finish from './pages/Finish';
 import Video from './pages/Video';
@@ -36,7 +36,7 @@ class Entry extends Component {
                         <Route exact path={StringValues.Greetings_path} component={PublicGreetings}/>
                         <Route exact path={StringValues.CreatePublicGreetings_path} component={CreatePublicGreeting}/>
                         <Route exact path={StringValues.CreateUniquePublicGreetings_path} component={CreateUniquePublicGreeting}/>
-                        <Route exact path={StringValues.CreateMultipleGreetings_path} component={CreateMultipleGreetings}/>
+                        <Route exact path={StringValues.CreateMultipleGreetings_path} component={TeacherSearchHeading}/>
                         <Route exact path={StringValues.CreateUniqueGreetings_path} component={CreateUniqueGreetings}/>
                         <Route exact path={StringValues.Finish} component={Finish}/>
                         <Route exact path={StringValues.Video_path} component={Video}/>

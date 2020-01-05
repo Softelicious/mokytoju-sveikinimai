@@ -2,42 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1534cc1-1573-4f9b-aeef-7976cc42a7a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/PrivateGreeting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_17_193129_create_private_greetings_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UniqueGenerator/Card/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UniqueGenerator/UniqueGenerator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/Card/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/UsuallGenerator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateGeneratedGreeting/PrivateGeneratedGreeting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateUniqueGreeting/PrivateUniqueGreeting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/app/public/promo/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sveikinimai2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sveikinimai2019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/PinnedPhoto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_144438_create_pinned_photos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/TeacherSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/contexts/TeacherContext.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_27_211654_create_greetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_27_211654_create_greetings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_28_130829_create_public_greetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_28_130829_create_public_greetings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_15_193248_create_vids_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_15_193248_create_vids_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_02_091152_create_tutorial_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_02_091152_create_tutorial_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rnd" beforeDir="false" afterPath="$PROJECT_DIR$/.rnd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PublicGreetingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PublicGreetingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PrivateGreeting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PrivateGreeting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_17_193129_create_private_greetings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_05_171457_create_private_greetings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/StringValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/StringValues.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Entry.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Entry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/IndexSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/IndexSearch.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/SearchTeachersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/SearchTeachersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/Teacher.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/Teacher.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/TeachersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/TeachersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/CreateMultipleGreetings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/CreateMultipleGreetings.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/CreatePublicGreeting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/CreatePublicGreeting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/admin/CardsControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/admin/CardsControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UniqueGenerator/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UniqueGenerator/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/UsuallGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/layouts/private-greetings/UsuallGenerator/UsuallGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/CreateMultipleGreetings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/TeacherSearchHeading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateGeneratedGreeting/PrivateGeneratedGreeting.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateGeneratedGreeting/PrivateGeneratedGreeting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateUniqueGreeting/PrivateUniqueGreeting.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/pages/private-greetings/PrivateUniqueGreeting/PrivateUniqueGreeting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +179,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/promo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -201,17 +192,17 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\pages\private-greetings\PrivateGeneratedGreeting" />
-      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\layouts\private-greetings\UsuallGenerator" />
-      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\layouts\private-greetings\UniqueGenerator" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\storage\app\public\promo" />
       <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\storage\app\public\tutorial" />
       <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai" />
       <recent name="C:\Users\domin\Projects\Sveikinimai\storage\app\public\promo" />
       <recent name="C:\Users\domin\Projects\Sveikinimai\resources\js\components\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\pages\private-greetings\PrivateGeneratedGreeting" />
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\layouts\private-greetings\UsuallGenerator" />
+      <recent name="C:\Users\Dominykas\Projects\mokytoju-sveikinimai\resources\js\components\layouts\private-greetings\UniqueGenerator" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -300,7 +291,11 @@
       <workItem from="1576152166650" duration="1139000" />
       <workItem from="1576231347073" duration="1156000" />
       <workItem from="1576332586237" duration="1463000" />
-      <workItem from="1576533585301" duration="44187000" />
+      <workItem from="1576533585301" duration="47146000" />
+      <workItem from="1576931595161" duration="26438000" />
+      <workItem from="1577478381180" duration="673000" />
+      <workItem from="1578137671690" duration="598000" />
+      <workItem from="1578141916624" duration="58718000" />
     </task>
     <servers />
   </component>

@@ -55,11 +55,11 @@ class CardsControl extends Component {
             const promises = files.map(file => {
                 return (new Promise((resolve, reject) => {
                     const reader = new FileReader();
+                    reader.readAsDataURL(file);
                     reader.addEventListener('load', (ev) => {
                         resolve(ev.target.result);
                     });
                     reader.addEventListener('error', reject);
-                    reader.readAsDataURL(file);
                 }))
             });
 
@@ -112,7 +112,6 @@ class CardsControl extends Component {
                 console.log(error)
             })
     };
-
     redirect = () => {
         if (this.state.redirect) {
             return <Redirect to={"/"}/>;
@@ -137,7 +136,6 @@ class CardsControl extends Component {
                             this.state.files.map((data) =>
                                 <Photo load={this.load} key={data.id} id={data.id} path={data.path}/>
                             )
-
                         }
                     </div>
                 </div>

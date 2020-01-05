@@ -35,9 +35,9 @@ class SearchTeachersContainer extends Component {
                     <input onChange={this.onChangeSearch} value={this.state.search} type={"text"} className={"searchTeachers"} placeholder={StringValues.searchTeacher}/>
                     <div className={"searchTeachersBtn fas fa-search fa-1x"}> </div>
                 </div>
-                <div className={"closeTeachers"} onClick={this.trigger}>
-                    {StringValues.closeSearchTeacher}
-                </div>
+                {/*<div className={"closeTeachers"} onClick={this.trigger}>*/}
+                {/*    {StringValues.closeSearchTeacher}*/}
+                {/*</div>*/}
             </div>
         );
     }

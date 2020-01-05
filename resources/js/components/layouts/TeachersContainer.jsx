@@ -5,13 +5,8 @@ class TeachersContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            deleteFlag: false
+            deleteFlag: false,
         }
-    }
-    componentDidMount() {
-        this.setState({
-            teachers: this.props.teachersArray
-        })
     }
     trigger = () => {
         this.props.toggle();

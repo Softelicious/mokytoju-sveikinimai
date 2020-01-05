@@ -21,13 +21,17 @@
     "dependencies": {
         "@babel/plugin-proposal-class-properties": "^7.4.4",
         "path-to-regexp": "^3.0.0",
+        "react-animated-modal": "^1.1.1",
+        "react-awesome-modal": "^2.0.5",
         "react-facebook-login": "^4.1.1",
         "react-google-recaptcha": "^2.0.0-rc.1",
         "react-hyper-modal": "^1.1.1",
+        "react-modal": "^3.11.1",
         "react-prism": "^4.3.2",
         "react-recaptcha": "^2.3.10",
         "react-router-dom": "^5.0.1",
         "react-toastify": "^5.3.2",
+        "uuid": "^3.3.3",
         "video-react": "^0.14.1"
     },
     "devDependencies": {
@@ -43,8 +47,8 @@
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.6.0",
+        "react-dom": "^16.6.0",
         "react-notifications": "^1.4.3",
         "react-router": "^5.0.1",
         "react-scroll": "^1.7.12",

@@ -5,11 +5,17 @@ import {Redirect} from "react-router";
 import GreyBackgroundLoad from "../../../GreyBackgroundLoad";
 import {Link} from "react-router-dom";
 import ReCAPTCHA from "react-recaptcha";
+import {TeacherContext} from "../../../../../contexts/TeacherContext";
+import Modal from 'react-awesome-modal';
+import uuid from 'uuid/v1'
 
 class Card extends Component {
     constructor(props){
         super(props);
         this.state = {
+            imageArray: [],
+            choose: 'Prisekite nuotraukas',
+            modalIsOpen: false,
             styleChars: 11,
             teacher: '',
             student: '',
@@ -24,9 +30,11 @@ class Card extends Component {
             picture:'',
             name:'',
             verified:'',
-            display: 'none'
+            display: 'none',
+            teacherArray: [],
         }
     }
+
 
     componentWillMount() {
         this.setState({
@@ -51,7 +59,6 @@ class Card extends Component {
                 load: true,
                 max: res.data.sk-1,
             });
-            console.log(res.data.names)
         }).catch( err =>{
             console.log(err)
         });
@@ -64,57 +71,66 @@ class Card extends Component {
             styleChars: $lenth,
             student: e.target.value
         });
-        console.log(this.state.styleChars);
     };
     onChangeTeacher = (e) => {
         this.setState({
             teacher: e.target.value
         })
     };
-    submit = (e) => {
-        e.preventDefault();
-        self=this;
-        console.log(2);
-        this.setState({
-            styleChars: 11,
-            teacher: '',
-            student: '',
-            greeting: '',
-            school: '',
-            display: 'block'
+    storeData = (captcha) => {
+        console.log(this.state, this.context.teachers);
+        let self=this;
+        let bodyFormData = new FormData();
+        let i=0;
+        this.state.imageArray.forEach((image_file) => {
+            bodyFormData.append(`file${i}`, image_file);
+            i++;
         });
-        var bodyFormData = new FormData;
+        bodyFormData.append(`index`, i);
         bodyFormData.append('student', this.state.student);
-        bodyFormData.append('teacher', this.state.teacher);
+        bodyFormData.append('teachers', JSON.stringify(this.context.teachers));
         bodyFormData.append('greeting', this.state.greeting);
         bodyFormData.append('card', this.state.cards[this.state.card_index]);
-        bodyFormData.append('school', this.state.school);
-        bodyFormData.append('captcha', this.state.captcha);
+        bodyFormData.append('captcha', captcha);
         bodyFormData.append('picture', this.state.picture);
         axios({
             method: 'post',
-            url: '/api/store',
+            url: '/api/store-private',
             data: bodyFormData,
-            config: { headers: {'Content-Type': 'multipart/form-data' }}
+            config:
+                {
+                    headers:
+                    {
+                        'Content-Type': 'multipart/form-data',
+
+                    }
+                }
         })
             .then(function (response) {
                 if(response.data.success){
+                    alert("Jūsų sveikinimas bus išsiųstas 10-5");
+                    console.log(response.data.info);
                     self.setState({
-                        redirect: true
+                        redirect: true,
+                        imageArray: [],
+                        choose: 'Pasirink atvirutes'
                     });
                 }else{
+                    console.log('captcha or info', response.data.info);
                     alert("Recaptcha sako, kad robotas");
-                    self.changeDisplay('none')
+                    // self.changeDisplay('none')
                 }
             })
             .catch(function (response) {
-                alert("Nepavyko")
-                self.changeDisplay('none')
+                alert("Nepavyko");
+                // self.changeDisplay('none')
             });
-
+    };
+    submit = (e) => {
+        e.preventDefault();
+        this.openModal();
     };
     leftArrow = () => {
-        console.log(55);
         if(this.state.card_index!==0){
             this.setState({
 
@@ -128,7 +144,6 @@ class Card extends Component {
 
     };
     rightArrow = () => {
-        console.log(44);
         if(this.state.card_index!==this.state.max){
             this.setState({
 
@@ -147,7 +162,6 @@ class Card extends Component {
         })
     };
     onChangeSchool = (e) => {
-        console.log(44);
         this.setState({
             school: e.target.value
         })
@@ -161,6 +175,7 @@ class Card extends Component {
         }
     };
     verifyCallback = (value) => {
+        this.storeData(value);
         this.setState({
             captcha: value
         })
@@ -171,13 +186,67 @@ class Card extends Component {
         })
     };
 
+    openModal = () =>{
+        this.setState({modalIsOpen: true});
+    };
+
+    closeModal = () => {
+        this.setState({modalIsOpen: false});
+    };
+
+    handleFileChange = (e) =>{
+        if (e.target.files) {
+            const files = Array.from(e.target.files);
+
+            const promises = files.map(file => {
+                return (new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.addEventListener('load', (ev) => {
+                        resolve(ev.target.result);
+                    });
+                    reader.addEventListener('error', reject);
+                }))
+            });
+
+            Promise.all(promises).then(images => {
+                console.log(images);
+                this.setState({
+                    imageArray: [...this.state.imageArray,...images],
+                    choose: 'Nuotraukos pasirinktos'
+                })
+            }, error => { console.error(error); });
+        }
+    };
+    imageList = () => {
+        console.log("imageList", this.state.imageArray);
+        this.state.imageArray.map((image) => {
+            console.log(image);
+            return (
+                <div className={"thumb-card"}>
+                    <img src={image} alt="image"/>
+                    <i className={'fas fa-times'}></i>
+                </div>
+            );
+        });
+    };
+    deletePinned = (index) => {
+        let array = this.state.imageArray;
+        array.splice(index, 1);
+        this.setState({
+            imageArray: array
+        })
+    };
+
+    static contextType = TeacherContext;
+
     render() {
         let style;
         if(this.state.styleChars> 11){
             style = {width: this.state.styleChars*9+"px"}
         }
+        // console.log(this.context.teachers);
         return (
-
             <>
                 <GreyBackgroundLoad display={this.state.display}/>
                 <form  onSubmit={this.submit}>
@@ -214,41 +283,38 @@ class Card extends Component {
                                            (pasirinktų mokytojų mokyklos)
                                         </div>
                                     </div>
-                                    <Link
-                                        to={{
-                                            pathname: StringValues.private_usual_card_path+'/0',
-                                            state: {
-                                                verified: this.props.verified,
-                                                picture: this.props.picture,
-                                                student: this.props.student,
-                                                card_index: this.state.card_index,
-                                                teacher: this.state.teacher,
-                                                school: this.state.school
+                                    <div className={'thumbs'}>
+                                        <div className={'thumb-title'}>
+                                                Prisegta:
+                                        </div>
+                                        <article className={"thumb-wrapper"}>
+                                            {
+                                                this.state.imageArray.map((value, index) =>
+                                                    <div key={uuid()} className={"thumb-card"}>
+                                                        <img src={value} alt=""/>
+                                                        <i onClick={() => this.deletePinned(index)} className={'fas fa-times'}> </i>
+                                                    </div>
+                                                )
                                             }
-                                        }}
-                                        className={"linkStyle"}>
-                                        <div id={"btn-unique-greeting"}>Sugeneruotas sveikinimas</div>
-                                    </Link>
-                                    <div className={"recaptcha"}>
-                                        <ReCAPTCHA
-                                            sitekey="6Lf2ibMUAAAAAMUMmwHWcwyTgk5FJjZjCfbDajsh"
-                                            render="explicit"
-                                            verifyCallback={this.verifyCallback}
-                                        />
+                                        </article>
                                     </div>
                                 </div>
                             </div>
                             <div className={"createThird"}>
                                 {StringValues.messageDelivery}
                             </div>
-                            <div className={"createBottom"}>
-                                <ul className={"leftButtons"}>
-                                    <li onClick={this.leftArrow} className="changeStyleBtnArrow fas fa-arrow-left fa-1x"> </li>
-                                    <li>{StringValues.cardStyle}</li>
-                                    <li onClick={this.rightArrow} className="changeStyleBtnArrow fas fa-arrow-right fa-1x"> </li>
+                            <div className={'wrapperStyleT'}>
+                                <ul className={'leftStyleT'}>
+                                    <li onClick={this.leftArrow} className=" fas fa-arrow-left fa-1x btnStyleT"> </li>
+                                    <li className={'btnStyleT-noHover'} >{StringValues.cardStyle}</li>
+                                    <li onClick={this.rightArrow} className=" fas fa-arrow-right fa-1x btnStyleT"> </li>
                                 </ul>
-                                <ul className={"rightButtons"}>
-                                    <input type={"submit"} value={StringValues.send}/>
+                                <ul className={'middleStyleT'}>
+                                    <label className={'btnStyleT btnStyle2T labelT'} htmlFor={'imgu'}>Pasirinkite nuotraukas</label>
+                                    <input onChange={this.handleFileChange} accept="image/*" className={'btnStyleT btnStyle2T d-none'} id={'imgu'} name={'imgu'} type="file"/>
+                                </ul>
+                                <ul className={'rightStyleT'}>
+                                    <input className={' btnStyleT btnStyle3T'} type={"submit"} value={StringValues.send}/>
                                 </ul>
                             </div>
                         </div>
@@ -256,9 +322,24 @@ class Card extends Component {
 
                 </form>
                 {this.redirect()}
+                <Modal
+                    visible={this.state.modalIsOpen}
+                    effect="fadeInUp"
+                    onClickAway={() => this.closeModal()}
+                >
+                        <div className={'aw-wrapper'}>
+                            <h4>Dar reikia, kad patvirtintumėte, kad esate žmogus</h4>
+                            <div className={'aw-recaptcha'}>
+                                <ReCAPTCHA
+                                    sitekey="6Lf2ibMUAAAAAMUMmwHWcwyTgk5FJjZjCfbDajsh"
+                                    render="explicit"
+                                    verifyCallback={this.verifyCallback}
+                                    onloadCallback={() => console.log('loaded')}
+                                />
+                            </div>
+                        </div>
+                </Modal>
             </>
-
-
         );
     }
 }

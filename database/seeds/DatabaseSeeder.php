@@ -43,5 +43,13 @@ class DatabaseSeeder extends Seeder
             'description' => Str::random(50),
             'index' => 4
         ]);
+//        $user = new \App\User();
+//        $user->name = 'admin';
+//        $user->password = Facades\Hash::make('password');
+//        $user->createToken('authToken')->accessToken;
+//        $user->save();
+
+        $this->call('TeacherSeeder');
+        $this->call('TutorialSeeder');
     }
 }

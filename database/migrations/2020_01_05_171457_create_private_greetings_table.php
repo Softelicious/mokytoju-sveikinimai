@@ -21,6 +21,7 @@ class CreatePrivateGreetingsTable extends Migration
             $table->string('picture');
             $table->unsignedBigInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+            $table->integer('upload_id');
             $table->timestamps();
         });
     }

@@ -16,14 +16,9 @@
             <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" id="app">
             <div style="overflow: hidden" id="root"></div>
         </div>
-{{--        <script>--}}
-{{--            window.axios.defaults.headers.common = {--}}
-{{--                'X-Requested-With': 'XMLHttpRequest',--}}
-{{--            };--}}
-{{--        </script>--}}
         <script src={{asset("js/app.js")}}></script>
     </body>
 </html>

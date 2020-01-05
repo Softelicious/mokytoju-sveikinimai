@@ -9,8 +9,10 @@ import axios from "axios";
 import PublicGreetingCreate from "../layouts/PublicGreetingCreate";
 import CreatePublicGreeting from "./CreatePublicGreeting";
 import UniquePublicGreetingCreate from "../layouts/UniquePublicGreetingCreate";
+import {TeacherContext} from "../../contexts/TeacherContext";
 
-class CreateMultipleGreetings extends Component {
+class TeacherSearchHeading extends Component {
+    static contextType = TeacherContext;
     constructor(props) {
         super(props);
         this.state = {
@@ -30,10 +32,20 @@ class CreateMultipleGreetings extends Component {
     };
     toggleSearch = () => {
         this.setState({
-            showSearch: !this.state.showSearch
+            showSearch: !this.state.showSearch,
         });
+        if(this.state.visibleList){
+            this.setState({
+                visibleList: !this.state.visibleList
+            });
+        }
     };
     componentDidMount() {
+        this.setTeachersContext();
+    }
+
+    componentWillMount() {
+
         // const { match: { params } } = this.props;
         const params = this.props.params;
         this.setState({
@@ -65,10 +77,10 @@ class CreateMultipleGreetings extends Component {
                 });
                 if(!flag){
                     array.push(data);
+                    this.setState({
+                        teachersArray: array
+                    });
                 }
-                this.setState({
-                    teachersArray: array
-                });
             });
     };
     setListVisibility = (bool) => {
@@ -90,7 +102,11 @@ class CreateMultipleGreetings extends Component {
             teachersArray: array
         });
     };
+    setTeachersContext = () => {
+        this.context.setTeachers(this.state.teachersArray);
+    };
     greyClick = () => {
+        this.setTeachersContext();
         this.setState({
             visibleList: false,
             showSearch: false
@@ -105,6 +121,7 @@ class CreateMultipleGreetings extends Component {
             );
         }
     };
+
     render() {
         let filtered;
         filtered = this.state.data.filter((item) => {
@@ -133,4 +150,4 @@ class CreateMultipleGreetings extends Component {
     }
 }
 
-export default CreateMultipleGreetings;
+export default TeacherSearchHeading;

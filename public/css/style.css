@@ -17,6 +17,114 @@ input[type="submit"],
 html {
     overflow-y: scroll;
 }
+.labelT{
+    margin: 0 auto!important;
+    display: block;
+}
+.d-none {
+    display: none;
+}
+.thumbs{
+    max-width: 83vw;
+}
+.thumb-wrapper{
+    display: flex;
+    overflow-x: auto;
+}
+.thumb-card{
+    position: relative;
+    margin: 13px;
+}
+.thumb-card img{
+    border-radius: 10px;
+    width: 110px;
+    height: 110px;
+}
+.thumb-card i{
+    position: absolute;
+    z-index: 5;
+    top: 5px;
+    right: 5px;
+    color: orangered;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+.thumb-card i:hover{
+    color: red;
+}
+.thumb-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px;
+}
+.wrapperStyleT {
+    display: flex;
+}
+
+.btnStyleT-noHover{
+    color: white;
+    height: 50px;
+    background-color: #1E90FF;
+    margin-right: 5px;
+    vertical-align: middle;
+    line-height: 50px!important;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.1s linear;
+    font-size: 16px;
+}
+.btnStyleT {
+    color: white;
+    height: 50px;
+    background-color: #1E90FF;
+    margin-right: 5px;
+    vertical-align: middle;
+    line-height: 50px!important;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.1s linear;
+    font-size: 16px;
+}
+.btnStyleT:hover{
+    background-color: white;
+    color: #1E90FF;
+}
+.btnStyle2T{
+    width: 50%;
+}
+.btnStyle3T{
+    width: 100%;
+}
+
+.leftStyleT{
+    flex: 1;
+    list-style: none;
+    display: flex;
+    text-align: left;
+}
+
+.middleStyleT{
+    flex: 2;
+    text-align: center;
+}
+
+.rightStyleT {
+    flex: 1;
+    text-align: right;
+}
+.aw-wrapper{
+    margin: 20px;
+}
+.aw-recaptcha{
+    width: 300px;
+    margin: 0 auto;
+}
 .CreatePublicGreeting-generate-private{
 }
 .dropDown-IndexSearch{
@@ -946,7 +1054,7 @@ video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, 
     font-size: 14px;
 }
 .infoMiddle{
-    height: 320px;
+    height: 280px;
 }
 .infoBottom{
     height: 10%;
@@ -1810,6 +1918,22 @@ html::-webkit-scrollbar-thumb{
 }
 
 @media only screen and (max-width: 1065px) {
+    .createThird{
+        margin-right: 20px;
+    }
+    .wrapperStyleT {
+        display: block;
+    }
+
+    .leftStyleT{
+        margin: 0 auto;
+        width: 240px;
+    }
+
+    .rightStyleT {
+        width: 240px;
+        margin: 0 auto 20px;
+    }
     .addTeacherContainer{
         width: 95%;
         min-width: 320px;

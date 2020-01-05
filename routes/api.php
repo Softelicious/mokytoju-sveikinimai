@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/store', 'PublicGreetingController@store');
+Route::post('/store-private', 'PublicGreetingController@storePrivate');
 Route::get('/get', 'PublicGreetingController@get');
 
 Route::post('/register', 'AuthenticateController@register');

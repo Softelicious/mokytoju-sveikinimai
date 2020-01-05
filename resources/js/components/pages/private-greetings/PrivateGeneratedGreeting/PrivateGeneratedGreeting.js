@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import TeacherSearchHeading from "../../CreateMultipleGreetings";
-import PublicGreetingCreate from "../../../layouts/PublicGreetingCreate";
-import CreatePublicGreeting from "../../CreatePublicGreeting";
+import TeacherSearchHeading from "../../TeacherSearchHeading";
 import UsualGenerator from "../../../layouts/private-greetings/UsuallGenerator/UsuallGenerator";
+import TeacherContextProvider from "../../../../contexts/TeacherContext";
 
 class PrivateGeneratedGreeting extends Component {
     constructor(props){
@@ -19,17 +18,18 @@ class PrivateGeneratedGreeting extends Component {
             params: params
         });
     }
-
     render() {
         return (
             <div className={"bookshelfContainer"}>
-                <div></div>
-                <div className={"contentContainer"}>
-                    <TeacherSearchHeading params={this.state.params}/>
-                </div>
-                <div className={"CreatePublicGreeting-generate-private"}>
-                    <UsualGenerator/>
-                </div>
+                <TeacherContextProvider>
+                    <div></div>
+                    <div className={"contentContainer"}>
+                        <TeacherSearchHeading params={this.state.params}/>
+                    </div>
+                    <div className={"CreatePublicGreeting-generate-private"}>
+                        <UsualGenerator/>
+                    </div>
+                </TeacherContextProvider>
             </div>
         );
     }

@@ -26,7 +26,7 @@ class UsuallGenerator extends Component {
     publicGreetingInit = () => {
         try {
             return (<Card
-                verified={localStorage.getItem('verifiedd')}
+                verified={localStorage.getItem('isVerified')}
                 picture={localStorage.getItem('picture')}
                 student={localStorage.getItem('student')}
                 card_index={this.props.location.state.card_index}
@@ -35,7 +35,7 @@ class UsuallGenerator extends Component {
             />)
         }catch (e) {
             return (<Card
-                verified={localStorage.getItem('verifiedd')}
+                verified={localStorage.getItem('isVerified')}
                 picture={localStorage.getItem('picture')}
                 student={localStorage.getItem('student')}
                 card_index={0}
@@ -45,7 +45,7 @@ class UsuallGenerator extends Component {
         }
     };
     load = () => {
-        if(JSON.parse(localStorage.getItem('verifiedd'))){
+        if(JSON.parse(localStorage.getItem('isVerified'))){
             this.setState({
                 content: (
                     <div className={"bookshelfContainer"}>
@@ -81,9 +81,8 @@ class UsuallGenerator extends Component {
         }
     };
     componentWillMount() {
-        this.load()
+        this.load();
     }
-
     render() {
         return (
             <div className={"bookshelfContainer"}>
